@@ -8,16 +8,17 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/collect.mjs
+      - run: node scripts/ingest.mjs
+      - run: node scripts/collect-large.mjs
       - name: Commit snapshot
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add jobs.json
+          git add jobs.json directory-sources.json
           git diff --cached --quiet || (git commit -m 'Refresh employer jobs snapshot' && git push)
