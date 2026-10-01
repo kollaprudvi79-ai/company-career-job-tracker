@@ -14,8 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs
       - run: node scripts/ingest.mjs
       - run: node scripts/collect-large.mjs
+      - run: node scripts/filter-directory.mjs
       - name: Commit snapshot
         run: |
           git config user.name 'github-actions[bot]'
