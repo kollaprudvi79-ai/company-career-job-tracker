@@ -89,12 +89,20 @@ async function loadWorkday(out, seen) {
 }
 
 async function loadIbisBoards(out, seen) {
-  try {
-    const boards = JSON.parse(await readFile(new URL('../ibis-boards.json', import.meta.url)));
-    const before = out.length;
-    for (const b of Array.isArray(boards) ? boards : []) add(out, seen, b);
-    return out.length - before;
-  } catch { return 0; }
+  // Extra name-verified Greenhouse boards resolved outside the public
+  // inventories: ibis-boards.json (IBISWorld list) and transport-boards.json
+  // (transport/trucking/airline/rail/logistics carriers), both produced by
+  // scripts/resolve-companies.mjs with board-name verification.
+  let added = 0;
+  for (const file of ['ibis-boards.json', 'transport-boards.json']) {
+    try {
+      const boards = JSON.parse(await readFile(new URL(`../${file}`, import.meta.url)));
+      const before = out.length;
+      for (const b of Array.isArray(boards) ? boards : []) add(out, seen, b);
+      added += out.length - before;
+    } catch {}
+  }
+  return added;
 }
 
 const out = [];
@@ -107,6 +115,20 @@ let seeds = [];
 try { seeds = JSON.parse(await readFile(new URL('../sources.json', import.meta.url))); } catch {}
 for (const s of seeds) add(out, seen, s);
 const filtered = out.filter(x => !excludedEmployer(x.company));
+// Priority pass: Prudhvi asked for transport/trucking/logistics/airline/rail
+// employers to be visible. Boards matching transport-companies.json rotate
+// FIRST in every cycle so carriers get re-checked at the start of each sweep
+// instead of sitting mid-directory. Stable sort keeps all other boards in
+// their existing relative order.
+try {
+  const list = JSON.parse(await readFile(new URL('../transport-companies.json', import.meta.url), 'utf8'));
+  const stop = new Set(['inc', 'llc', 'corp', 'corporation', 'company', 'co', 'ltd', 'plc', 'group', 'holdings', 'holding', 'technologies', 'technology', 'systems', 'system', 'international', 'global', 'industries', 'enterprises', 'the', 'and', 'of']);
+  const nrm = s => String(s || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim();
+  const core = s => nrm(s).split(' ').filter(w => w && !stop.has(w)).join(' ');
+  const wanted = [...new Set((Array.isArray(list) ? list : []).map(core).filter(Boolean))];
+  const rank = row => { const c = core(row.company); for (const w of wanted) { if (c === w || c.startsWith(w + ' ') || w.startsWith(c + ' ')) return 0; } return 1; };
+  filtered.sort((a, b) => rank(a) - rank(b));
+} catch {}
 await writeFile(new URL('../directory-sources.json', import.meta.url), JSON.stringify(filtered));
 const byType = {};
 for (const x of filtered) byType[x.type] = (byType[x.type] || 0) + 1;
