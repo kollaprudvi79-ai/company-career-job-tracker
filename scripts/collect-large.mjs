@@ -16,6 +16,8 @@ function safe(url) {
 }
 function boardUrl(source) {
   if (source.type === 'workday') return `https://${source.token}`;
+  if (source.type === 'icims') return `https://${source.token}/`;
+  if (source.type === 'oracle') { const [host, site] = source.token.split('/'); return `https://${host}/hcmUI/CandidateExperience/en/sites/${site}`; }
   const slug = encodeURIComponent(source.token);
   if (source.type === 'greenhouse') return `https://job-boards.greenhouse.io/${slug}`;
   if (source.type === 'lever') return `https://jobs.lever.co/${slug}`;
@@ -27,6 +29,10 @@ function boardUrl(source) {
   if (source.type === 'bamboohr') return `https://${slug}.bamboohr.com/careers/`;
   if (source.type === 'teamtailor') return `https://${slug}.teamtailor.com/`;
   if (source.type === 'personio') return `https://${slug}.jobs.personio.com/`;
+  if (source.type === 'pinpoint') return `https://${slug}.pinpointhq.com/`;
+  if (source.type === 'rippling') return `https://ats.rippling.com/${slug}/jobs`;
+  if (source.type === 'jazzhr') return `https://${slug}.applytojob.com/apply`;
+  if (source.type === 'jobvite') return `https://jobs.jobvite.com/${slug}`;
   return null;
 }
 function requestFor(source) {
@@ -41,6 +47,16 @@ function requestFor(source) {
   if (source.type === 'bamboohr') return { url: `https://${slug}.bamboohr.com/careers/list`, options: {} };
   if (source.type === 'teamtailor') return { url: `https://${slug}.teamtailor.com/jobs.json`, options: {} };
   if (source.type === 'personio') return { url: `https://${slug}.jobs.personio.com/search.json`, options: {} };
+  if (source.type === 'pinpoint') return { url: `https://${slug}.pinpointhq.com/postings.json`, options: {} };
+  if (source.type === 'rippling') return { url: `https://ats.rippling.com/api/v1/board/${slug}/jobs`, options: {} };
+  if (source.type === 'jazzhr') return { url: `https://${slug}.applytojob.com/apply`, options: {}, html: true };
+  if (source.type === 'jobvite') return { url: `https://jobs.jobvite.com/${slug}/jobs`, options: {}, html: true };
+  if (source.type === 'icims') return { url: `https://${source.token}/jobs/search?ss=1&in_iframe=1`, options: {}, html: true };
+  if (source.type === 'oracle') {
+    const [host, site] = source.token.split('/');
+    if (!host || !site) throw Error('Invalid Oracle board reference');
+    return { url: `https://${host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.workLocation,requisitionList.secondaryLocations&finder=findReqs;siteNumber=${encodeURIComponent(site)},sortBy=POSTING_DATES_DESC&limit=25`, options: {} };
+  }
   if (source.type === 'workday') {
     const [host, tenant, site] = source.token.split('/');
     if (!host || !tenant || !site) throw Error('Invalid Workday board reference');
@@ -50,6 +66,8 @@ function requestFor(source) {
 }
 function listFrom(data) {
   if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.items) && data.items[0]?.requisitionList) return data.items[0].requisitionList;
+  if (Array.isArray(data?.data)) return data.data;
   if (Array.isArray(data?.jobs)) return data.jobs;
   if (Array.isArray(data?.content)) return data.content;
   if (Array.isArray(data?.offers)) return data.offers;
@@ -58,6 +76,49 @@ function listFrom(data) {
   if (Array.isArray(data?.items)) return data.items;
   if (Array.isArray(data?.jobPostings)) return data.jobPostings;
   return null;
+}
+function decodeEntities(s) {
+  return String(s || '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, ' ');
+}
+function stripTags(s) { return decodeEntities(String(s || '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim(); }
+function locationNear(html, fromIdx) {
+  const window = stripTags(html.slice(fromIdx, fromIdx + 600));
+  const m = window.match(/\b(Remote(?:\s*[-,]\s*[A-Z]{2})?|[A-Z][A-Za-z .]{1,40},\s*[A-Z]{2}\b|US-[A-Z]{2}-[A-Za-z .]{2,30})/);
+  return m ? m[1].trim() : 'Not listed';
+}
+function parseHtmlJobs(x, html) {
+  const out = [];
+  const seen = new Set();
+  const push = (title, url, location) => {
+    title = stripTags(title);
+    if (!title || title.length < 3 || title.length > 140) return;
+    if (/^(apply|apply now|view|view job|learn more|back|home|skip)/i.test(title)) return;
+    if (seen.has(url)) return;
+    seen.add(url);
+    out.push({ title, url, location: location || 'Not listed' });
+  };
+  if (x.type === 'jazzhr') {
+    const re = /<a\s[^>]*href="((?:https:\/\/[a-z0-9-]+\.applytojob\.com)?\/apply\/[A-Za-z0-9]+[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+    let m;
+    while ((m = re.exec(html))) {
+      const url = m[1].startsWith('http') ? m[1] : `https://${x.token}.applytojob.com${m[1]}`;
+      push(m[2], url.split('?')[0], locationNear(html, re.lastIndex));
+    }
+  } else if (x.type === 'icims') {
+    const re = /<a\s[^>]*href="(https:\/\/[a-z0-9.-]+\.icims\.com\/jobs\/\d+\/[^"]*?\/job[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+    let m;
+    while ((m = re.exec(html))) push(m[2], m[1].split('?')[0], locationNear(html, re.lastIndex));
+  } else if (x.type === 'jobvite') {
+    const re = /<a\s[^>]*href="(\/[a-z0-9-]+\/job\/[A-Za-z0-9]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+    let m;
+    while ((m = re.exec(html))) {
+      const inAnchor = m[2].match(/jv-job-location[^>]*>([^<]+)/i);
+      const titleHtml = inAnchor ? m[2].replace(/<[^>]*jv-job-location[^>]*>[^<]*<\/?[a-z]+>/i, ' ') : m[2];
+      const after = !inAnchor ? html.slice(re.lastIndex, re.lastIndex + 600).match(/jv-job-location[^>]*>([^<]+)/i) : null;
+      push(titleHtml, `https://jobs.jobvite.com${m[1]}`, inAnchor ? stripTags(inAnchor[1]) : after ? stripTags(after[1]) : locationNear(html, re.lastIndex));
+    }
+  }
+  return out;
 }
 function isAlreadyApplied(source) {
   const byName = appliedSet.has(normalizeCompany(source.company));
@@ -130,6 +191,26 @@ function normalize(j, x, checked) {
     else if (/yesterday/i.test(posted)) published = new Date(Date.now() - 86400000).toISOString();
     else { const m = posted.match(/(\d+)\+?\s*days?/i); if (m) published = new Date(Date.now() - Number(m[1]) * 86400000).toISOString(); }
     base = { id: `${x.type}:${x.token}:${j.bulletFields?.[0] || j.externalPath || title}`, company: x.company, source: x.type, title, role: classify(title, ''), location: j.locationsText || 'Not listed', workplace: null, salary: null, published, publishedMeaning: 'Workday relative posting label converted to an approximate date', applyUrl: safe(`https://${host}/${site}${j.externalPath || ''}`) };
+  } else if (x.type === 'pinpoint') {
+    const title = j.title || '';
+    description = j.description || '';
+    const loc = j.location?.name || [j.location?.city, j.location?.province].filter(Boolean).join(', ') || 'Not listed';
+    base = { id: `${x.type}:${x.token}:${j.id || j.url}`, company: x.company, source: x.type, title, role: classify(title, description), location: loc, workplace: j.workplace_type || null, salary: j.compensation_visible ? (j.compensation || null) : null, published: null, publishedMeaning: 'Pinpoint feed does not expose a publication date', applyUrl: safe(j.url) };
+  } else if (x.type === 'rippling') {
+    const title = j.name || '';
+    base = { id: `${x.type}:${x.token}:${j.uuid || j.url}`, company: x.company, source: x.type, title, role: classify(title, ''), location: j.workLocation?.label || 'Not listed', workplace: null, salary: null, published: null, publishedMeaning: 'Rippling board feed does not expose a publication date', applyUrl: safe(j.url) };
+  } else if (x.type === 'oracle') {
+    const title = j.Title || '';
+    if (j.Language && !/^(us|en)/i.test(String(j.Language))) return null;
+    description = [j.ShortDescriptionStr, j.ExternalResponsibilitiesStr, j.ExternalQualificationsStr].filter(Boolean).join('\n');
+    const [host, site] = x.token.split('/');
+    const wpCode = String(j.WorkplaceTypeCode || j.WorkplaceType || '');
+    const workplace = /remote/i.test(wpCode) ? 'remote' : /hybrid/i.test(wpCode) ? 'hybrid' : /onsite|on-site/i.test(wpCode) ? 'onsite' : null;
+    base = { id: `${x.type}:${x.token}:${j.Id || title}`, company: x.company, source: x.type, title, role: classify(title, description), location: j.PrimaryLocation || 'Not listed', workplace, salary: null, published: isoDate(j.PostedDate), publishedMeaning: 'Oracle Recruiting PostedDate', applyUrl: safe(`https://${host}/hcmUI/CandidateExperience/en/sites/${site}/job/${encodeURIComponent(j.Id || '')}`) };
+  } else if (x.type === 'jazzhr' || x.type === 'icims' || x.type === 'jobvite') {
+    const title = j.title || '';
+    const meaning = x.type === 'jazzhr' ? 'JazzHR board page does not expose a publication date in list view' : x.type === 'icims' ? 'iCIMS board page does not expose a publication date in list view' : 'Jobvite board page does not expose a publication date in list view';
+    base = { id: `${x.type}:${x.token}:${j.url}`, company: x.company, source: x.type, title, role: classify(title, ''), location: j.location || 'Not listed', workplace: null, salary: null, published: null, publishedMeaning: meaning, applyUrl: safe(j.url) };
   }
   if (!base || !base.role || !base.applyUrl) return null;
   return finish(base, description, structuredSalaryText, checked);
@@ -153,10 +234,11 @@ async function worker() {
     const checked = new Date().toISOString();
     try {
       const req = requestFor(x);
-      const response = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: 'application/json', ...(req.options.headers || {}) } });
+      const response = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: req.html ? 'text/html' : 'application/json', ...(req.options.headers || {}) } });
       if (!response.ok) throw Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      const list = listFrom(data);
+      let list;
+      if (req.html) list = parseHtmlJobs(x, await response.text());
+      else { const data = await response.json(); list = listFrom(data); }
       if (!Array.isArray(list)) throw Error('Invalid feed');
       const jobs = list.map(j => normalize(j, x, checked)).filter(Boolean);
       results.push({ company: x.company, type: x.type, token: x.token, ok: true, checkedAt: checked, matched: jobs.length, jobs });

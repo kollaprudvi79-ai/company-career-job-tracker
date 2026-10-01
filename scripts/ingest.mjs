@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { excludedEmployer } from './employer-filter.mjs';
 
 const PRIMARY_URL = 'https://raw.githubusercontent.com/fyrosofttech/lastroundai-hiring-data/main/ats-directory/lastroundai-ats-company-directory-2026-08.csv';
-const EXTRA_TYPES = ['greenhouse', 'ashby', 'lever', 'smartrecruiters', 'workable', 'recruitee', 'breezy', 'bamboohr', 'teamtailor', 'personio'];
+const EXTRA_TYPES = ['greenhouse', 'ashby', 'lever', 'smartrecruiters', 'workable', 'recruitee', 'breezy', 'bamboohr', 'teamtailor', 'personio', 'pinpoint', 'rippling', 'jazzhr', 'jobvite'];
 const EXTRA_BASE = 'https://raw.githubusercontent.com/kalil0321/ats-scrapers/main/ats-companies';
 const validToken = /^[a-z0-9][a-z0-9._-]{1,90}$/;
 const validWorkdayToken = /^[a-z0-9][a-z0-9._/-]{1,180}$/;
@@ -30,7 +30,7 @@ function parseCsv(text) {
 function add(out, seen, { company, type, token }) {
   if (!company || !type || !token) return;
   token = String(token).toLowerCase();
-  if (!(type === 'workday' ? validWorkdayToken : validToken).test(token)) return;
+  if (!(['workday', 'oracle', 'icims'].includes(type) ? validWorkdayToken : validToken).test(token)) return;
   const key = `${type}:${token}`;
   if (seen.has(key)) return;
   seen.add(key);
@@ -88,13 +88,79 @@ async function loadWorkday(out, seen) {
   } catch (e) { return String(e.message); }
 }
 
+async function loadHostTokenCsv(out, seen, file, type) {
+  // kalil CSVs whose collector token is derived from the board URL host
+  // (iCIMS portals) or host+site path (Oracle CE).
+  try {
+    const response = await fetch(`${EXTRA_BASE}/${file}`, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+    if (!response.ok) return `HTTP ${response.status}`;
+    const raw = parseCsv(await response.text());
+    const before = out.length;
+    for (const r of raw) {
+      let u;
+      try { u = new URL(r.url || ''); } catch { continue; }
+      if (type === 'icims') {
+        if (!u.host.endsWith('.icims.com')) continue;
+        add(out, seen, { company: r.name, type, token: u.host });
+      } else if (type === 'oracle') {
+        const parts = u.pathname.split('/');
+        const si = parts.indexOf('sites');
+        if (si < 0 || !parts[si + 1]) continue;
+        add(out, seen, { company: r.name, type, token: `${u.host}/${parts[si + 1]}` });
+      }
+    }
+    return out.length - before;
+  } catch (e) { return String(e.message); }
+}
+
+const MSJW_BASE = 'https://raw.githubusercontent.com/likithreddy25/ms-job-watcher/main/data/boards';
+async function loadMsjw(out, seen) {
+  // MIT-licensed US-verified board lists (Greenhouse/Lever/Workday) from
+  // likithreddy25/ms-job-watcher staging CSVs that were never ingested there.
+  const counts = {};
+  try {
+    const response = await fetch(`${MSJW_BASE}/greenhouse_lever_verified_live.csv`, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+    if (!response.ok) counts.ghLever = `HTTP ${response.status}`;
+    else {
+      const raw = parseCsv(await response.text());
+      const before = out.length;
+      for (const r of raw) {
+        const platform = (r.platform || '').toLowerCase();
+        if (platform !== 'greenhouse' && platform !== 'lever') continue;
+        let token = '';
+        try { token = new URL(r.board_url || '').pathname.split('/').filter(Boolean)[0] || ''; } catch {}
+        add(out, seen, { company: r.company_name, type: platform, token });
+      }
+      counts.ghLever = out.length - before;
+    }
+  } catch (e) { counts.ghLever = String(e.message); }
+  try {
+    const response = await fetch(`${MSJW_BASE}/workday_verified_live.csv`, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+    if (!response.ok) counts.workday = `HTTP ${response.status}`;
+    else {
+      const raw = parseCsv(await response.text());
+      const before = out.length;
+      for (const r of raw) {
+        let u;
+        try { u = new URL(r.board_url || ''); } catch { continue; }
+        const site = u.pathname.split('/').filter(Boolean)[0] || '';
+        const tenant = u.host.split('.')[0] || '';
+        if (!site || !tenant) continue;
+        add(out, seen, { company: r.company_name, type: 'workday', token: `${u.host}/${tenant}/${site}` });
+      }
+      counts.workday = out.length - before;
+    }
+  } catch (e) { counts.workday = String(e.message); }
+  return counts;
+}
+
 async function loadIbisBoards(out, seen) {
   // Extra name-verified Greenhouse boards resolved outside the public
   // inventories: ibis-boards.json (IBISWorld list) and transport-boards.json
   // (transport/trucking/airline/rail/logistics carriers), both produced by
   // scripts/resolve-companies.mjs with board-name verification.
   let added = 0;
-  for (const file of ['ibis-boards.json', 'transport-boards.json']) {
+  for (const file of ['ibis-boards.json', 'transport-boards.json', 'cc-boards.json']) {
     try {
       const boards = JSON.parse(await readFile(new URL(`../${file}`, import.meta.url)));
       const before = out.length;
@@ -110,6 +176,9 @@ const seen = new Set();
 const primaryRows = await loadPrimary(out, seen);
 const extraCounts = await loadExtras(out, seen);
 extraCounts.workday = await loadWorkday(out, seen);
+extraCounts.icims = await loadHostTokenCsv(out, seen, 'icims.csv', 'icims');
+extraCounts.oracle = await loadHostTokenCsv(out, seen, 'oracle.csv', 'oracle');
+extraCounts.msjw = await loadMsjw(out, seen);
 extraCounts.ibis = await loadIbisBoards(out, seen);
 let seeds = [];
 try { seeds = JSON.parse(await readFile(new URL('../sources.json', import.meta.url))); } catch {}
