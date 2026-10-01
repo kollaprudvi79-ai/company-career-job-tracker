@@ -1,0 +1,1 @@
+const oldFetch=window.fetch.bind(window);window.fetch=(input,init)=>oldFetch(input==='/api/jobs'?'./jobs.json':input,init);
