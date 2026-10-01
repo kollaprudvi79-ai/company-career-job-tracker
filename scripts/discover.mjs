@@ -78,6 +78,13 @@ async function resolveRedirect(url) {
   }
   return current;
 }
+async function fetchHtml(url) {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 20000);
+  try {
+    const r = await fetch(url, { signal: ctl.signal, headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36' } });
+    return r.ok ? await r.text() : '';
+  } catch { return ''; } finally { clearTimeout(t); }
+}
 async function pool(items, size, fn) {
   let i = 0;
   await Promise.all(Array.from({ length: Math.min(size, items.length) }, async () => {
@@ -95,8 +102,13 @@ for (const repo of LANDED) {
     const company = j.company || j.company_name || '';
     const raw = j.applyUrl || j.apply_url || j.url || '';
     if (!raw) return;
-    if (raw.includes('go.landed.jobs')) { const resolved = await resolveRedirect(raw); if (resolved !== raw) fromUrl(resolved, company); }
-    else fromUrl(raw, company);
+    if (raw.includes('go.landed.jobs')) {
+      // shortlink -> landed.jobs job page -> direct employer ATS URL
+      const resolved = await resolveRedirect(raw);
+      const html = await fetchHtml(resolved);
+      if (html) scanText(html, company);
+      else fromUrl(resolved, company);
+    } else fromUrl(raw, company);
   });
   log('landedjobs', repo, 'postings', list.length, 'boards so far', boards.size);
 }
