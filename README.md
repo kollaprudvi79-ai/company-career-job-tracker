@@ -1,2 +1,6 @@
-# company-career-job-tracker
-Employer career-page and ATS job tracker for data, AI and full-stack .NET roles
+# Career Radar
+Live-read MVP using official public Greenhouse and Ashby job feeds, hosted on Vercel. Five verified reference-list employers are configured initially: Stripe, Robinhood, Lyft, HubSpot and 1Password. Add only verified ATS tenant names to sources.json. This is NOT complete coverage of the PDF, not every job board, and not minute-by-minute autonomous monitoring.
+
+The browser reloads hourly; `/api/jobs` is cached at Vercel CDN for about an hour. With no background scheduler or database, the feed refreshes when visited, not continuously while nobody visits. The source health panel distinguishes feeds that fail from feeds that succeed. Jobs without a trustworthy publication timestamp show under All current jobs / Date unavailable. Ashby `publishedAt` is last publication; Greenhouse `updated_at` is NOT a publication date and is intentionally not used for the 24h filter. Salary when published or extractable. No visa sponsorship inference.
+
+Run locally: `npm start` starts a simple static file server only; use `vercel dev` for serverless `/api/jobs`. For production deploy this repository to Vercel. To extend coverage resolve career site and ATS board for each PDF company and append verified `{company,type,token}`. Respect employer terms, quotas and robots policies. Workday/iCIMS/other ATS require separate adapters; no arbitrary company name to tenant-guessing.

@@ -1,0 +1,1 @@
+import {createServer} from 'node:http';import {readFile} from 'node:fs/promises';createServer(async(req,res)=>{if(req.url!=='/'){res.writeHead(404);return res.end('Use vercel dev for /api/jobs')}res.setHeader('Content-Type','text/html; charset=utf-8');res.end(await readFile(new URL('./index.html',import.meta.url)))}).listen(process.env.PORT||3000);
