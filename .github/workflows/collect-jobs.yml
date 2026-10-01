@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs
+      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs
       - run: node scripts/ingest.mjs
       - run: node scripts/collect-large.mjs
       - run: node scripts/filter-directory.mjs
@@ -22,5 +22,5 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add jobs.json directory-sources.json
+          git add jobs.json directory-sources.json collector-state.json
           git diff --cached --quiet || (git commit -m 'Refresh employer jobs snapshot' && git push)

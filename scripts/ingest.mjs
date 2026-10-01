@@ -1,8 +1,103 @@
-import {readFile,writeFile} from 'node:fs/promises';
-const url='https://raw.githubusercontent.com/fyrosofttech/lastroundai-hiring-data/main/ats-directory/lastroundai-ats-company-directory-2026-08.csv';
-const text=await (await fetch(url)).text();if(!text.includes('greenhouse')||text.length<100000)throw Error('Unexpected directory response');
-function csv(s){let rows=[],row=[],field='',quote=false;for(let i=0;i<s.length;i++){const c=s[i];if(quote){if(c==='"'&&s[i+1]==='"'){field+='"';i++}else if(c==='"')quote=false;else field+=c}else if(c==='"')quote=true;else if(c===','){row.push(field);field=''}else if(c==='\n'){row.push(field.replace(/\r$/,''));rows.push(row);row=[];field=''}else field+=c}if(field||row.length){row.push(field);rows.push(row)}return rows}
-const rows=csv(text);const header=rows.shift().map(x=>x.trim().toLowerCase());console.log('Directory columns:',header);
-const pick=(r,patterns)=>{for(const p of patterns){let i=header.findIndex(x=>x===p);if(i>=0&&r[i])return r[i].trim()}return ''};
-let sources=[];for(const r of rows){let type=pick(r,['ats_vendor','ats_platform','ats','vendor','platform','provider']).toLowerCase();let company=pick(r,['company_name','company','name','organization']);let token=pick(r,['board_slug','board_token','slug','token','company_slug']);let board=pick(r,['board_url','job_board_url','careers_url','url']);if(!type&&board){type=/greenhouse/.test(board)?'greenhouse':/ashby/.test(board)?'ashby':/lever/.test(board)?'lever':''}if(!token&&board){try{token=new URL(board).pathname.split('/').filter(Boolean)[0]}catch{}}type=type.includes('greenhouse')?'greenhouse':type.includes('ashby')?'ashby':type.includes('lever')?'lever':'';if(!type||!company||!token||!/^[a-z0-9][a-z0-9._-]{1,90}$/i.test(token))continue;sources.push({company,type,token})}
-if(sources.length<1000)throw Error(`Parsed only ${sources.length} boards; schema requires review`);const existing=JSON.parse(await readFile(new URL('../sources.json',import.meta.url)));sources=[...existing,...sources];sources=[...new Map(sources.map(x=>[x.type+':'+x.token.toLowerCase(),x])).values()];await writeFile(new URL('../directory-sources.json',import.meta.url),JSON.stringify(sources));console.log(JSON.stringify({imported:sources.length,columns:header}));
+import { readFile, writeFile } from 'node:fs/promises';
+import { excludedEmployer } from './employer-filter.mjs';
+
+const PRIMARY_URL = 'https://raw.githubusercontent.com/fyrosofttech/lastroundai-hiring-data/main/ats-directory/lastroundai-ats-company-directory-2026-08.csv';
+const EXTRA_TYPES = ['greenhouse', 'ashby', 'lever', 'smartrecruiters', 'workable', 'recruitee', 'breezy', 'bamboohr', 'teamtailor', 'personio'];
+const EXTRA_BASE = 'https://raw.githubusercontent.com/kalil0321/ats-scrapers/main/ats-companies';
+const validToken = /^[a-z0-9][a-z0-9._-]{1,90}$/;
+const validWorkdayToken = /^[a-z0-9][a-z0-9._/-]{1,180}$/;
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [], field = '', quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') quoted = false;
+      else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
+    else if (c !== '\r') field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  const [headers, ...body] = rows.filter(r => r.some(v => String(v).trim()));
+  const keys = headers.map(h => h.trim().toLowerCase());
+  return body.map(values => Object.fromEntries(keys.map((k, i) => [k, (values[i] || '').trim()])));
+}
+
+function add(out, seen, { company, type, token }) {
+  if (!company || !type || !token) return;
+  token = String(token).toLowerCase();
+  if (!(type === 'workday' ? validWorkdayToken : validToken).test(token)) return;
+  const key = `${type}:${token}`;
+  if (seen.has(key)) return;
+  seen.add(key);
+  out.push({ company: String(company).trim(), type, token });
+}
+
+async function loadPrimary(out, seen) {
+  const response = await fetch(PRIMARY_URL, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+  if (!response.ok) throw Error(`HTTP ${response.status}`);
+  const raw = parseCsv(await response.text());
+  if (raw.length < 1000) throw Error(`Unexpected directory size ${raw.length}`);
+  for (const r of raw) {
+    const rawType = (r.ats_vendor || '').toLowerCase();
+    const url = r.board_url || '';
+    const inferred = url.includes('ashbyhq.com') ? 'ashby' : url.includes('lever.co') ? 'lever' : url.includes('greenhouse.io') ? 'greenhouse' : rawType;
+    const type = ['ashby', 'lever', 'greenhouse'].includes(inferred) ? inferred : null;
+    if (!type) continue;
+    let token = (r.board_slug || '').toLowerCase();
+    if (!token && url) {
+      try { token = new URL(url).pathname.split('/').filter(Boolean).at(-1)?.toLowerCase() || ''; } catch {}
+    }
+    add(out, seen, { company: r.company_name, type, token });
+  }
+  return raw.length;
+}
+
+async function loadExtras(out, seen) {
+  const counts = {};
+  for (const type of EXTRA_TYPES) {
+    try {
+      const response = await fetch(`${EXTRA_BASE}/${type}.csv`, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+      if (!response.ok) { counts[type] = `HTTP ${response.status}`; continue; }
+      const raw = parseCsv(await response.text());
+      const before = out.length;
+      for (const r of raw) add(out, seen, { company: r.name, type, token: r.slug });
+      counts[type] = out.length - before;
+    } catch (e) { counts[type] = String(e.message); }
+  }
+  return counts;
+}
+
+async function loadWorkday(out, seen) {
+  try {
+    const response = await fetch(`${EXTRA_BASE}/workday.csv`, { headers: { accept: 'text/csv,text/plain;q=0.9' } });
+    if (!response.ok) return `HTTP ${response.status}`;
+    const raw = parseCsv(await response.text());
+    const before = out.length;
+    for (const r of raw) {
+      let host = '';
+      try { host = new URL(r.url || '').host; } catch {}
+      if (!host || !r.slug) continue;
+      add(out, seen, { company: r.name, type: 'workday', token: `${host}/${r.slug}` });
+    }
+    return out.length - before;
+  } catch (e) { return String(e.message); }
+}
+
+const out = [];
+const seen = new Set();
+const primaryRows = await loadPrimary(out, seen);
+const extraCounts = await loadExtras(out, seen);
+extraCounts.workday = await loadWorkday(out, seen);
+let seeds = [];
+try { seeds = JSON.parse(await readFile(new URL('../sources.json', import.meta.url))); } catch {}
+for (const s of seeds) add(out, seen, s);
+const filtered = out.filter(x => !excludedEmployer(x.company));
+await writeFile(new URL('../directory-sources.json', import.meta.url), JSON.stringify(filtered));
+const byType = {};
+for (const x of filtered) byType[x.type] = (byType[x.type] || 0) + 1;
+console.log(JSON.stringify({ primaryRows, extraCounts, imported: filtered.length, excluded: out.length - filtered.length, byType }));

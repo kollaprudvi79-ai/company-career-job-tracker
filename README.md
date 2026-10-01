@@ -1,4 +1,38 @@
 # Career Radar
-Source: LastRound AI ATS Company Directory (August 2026), CC BY 4.0; https://github.com/fyrosofttech/lastroundai-hiring-data . Licensed with attribution; data excludes Workday and many other ATSs. On each GitHub Action run scripts/ingest.mjs downloads directory and verifies schema (>=1000 parsed boards); scripts/collect-large.mjs checks up to 1200 boards and emits jobs.json. The portal's `Source health` reports success/failure in the latest batch only. Candidate directory rows are NOT counted as live monitored feeds until checked successfully. GitHub scheduled workflows are best effort.
-Initial five feeds are retained in sources.json. This is NOT 100000+ sources and NOT complete IBISWorld PDF coverage. The primary dashboard still shows the number of responding boards. 24h time filtering is supported for Ashby publishedAt (may be republished). Greenhouse and Lever original post timestamps are unavailable in their feed listing and appear as date unavailable. Direct application URLs come from ATS records.
-Manual run: repository Actions -> Collect employer jobs -> Run workflow. Pages deployment: repository Actions -> Deploy job tracker to Pages; switch Settings -> Pages source to GitHub Actions if necessary. Data provider attribution LastRound AI, CC BY 4.0; https://creativecommons.org/licenses/by/4.0/ .
+
+Job tracker for Data Analyst, Data Engineer, Data Scientist, AI Engineer, and Full Stack .NET roles. It reads employer ATS feeds directly — no aggregators — and publishes a static dashboard to GitHub Pages.
+
+## Directory sources
+
+The board directory (`directory-sources.json`) is rebuilt by `scripts/ingest.mjs` from public ATS inventories:
+
+- **LastRound AI ATS Company Directory** (August 2026), CC BY 4.0 — https://github.com/fyrosofttech/lastroundai-hiring-data (https://creativecommons.org/licenses/by/4.0/)
+- **kalil0321/ats-scrapers** company inventories, MIT License — https://github.com/kalil0321/ats-scrapers
+
+Imported boards are **candidates**, not verified active feeds: a board only counts as monitored after its feed responds in a collection batch. Staffing/consulting firms on a conservative exclusion list (`scripts/employer-filter.mjs`) are removed before publishing.
+
+Currently imports ~34.7k candidate boards across 11 ATS platforms: Greenhouse, Ashby, Lever, SmartRecruiters, Workable, Recruitee, Breezy, BambooHR, Teamtailor, Personio, and Workday. This is deliberately **not** a "100,000+ companies" claim — only boards with a public feed the collector can actually read are included.
+
+## Collection
+
+`.github/workflows/collect-jobs.yml` runs every 3 hours (and on demand):
+
+1. `scripts/ingest.mjs` — rebuilds the directory
+2. `scripts/collect-large.mjs` — checks one rotating batch of boards (default 3,000; rotation position persists in `collector-state.json`, so the full directory is covered in turn), normalizes postings, and writes `jobs.json`
+3. `scripts/filter-directory.mjs` — applies employer exclusions to the snapshot before commit
+
+Freshness semantics per ATS:
+
+- **Greenhouse**: `first_published` from the `?content=true` list feed (original publication)
+- **Lever**: `createdAt` from the postings feed (original creation)
+- **Ashby**: `publishedAt` (may be a republication)
+- **Workday**: relative `postedOn` label converted to an approximate date
+- Teamtailor/Personio/BambooHR etc.: feed timestamp where the ATS exposes one; otherwise "date unavailable"
+
+Each job is annotated by `scripts/job-utils.mjs` with: a role lane (Data Engineer / Data Scientist / AI Engineer / Data Analyst / Full Stack .NET) and matching Tsenta profile, US-remote verification from primary-location fields, parsed salary range, and flags for excluded title levels, internships, Java/Spring-centric JDs, stated sponsorship restrictions, government/clearance/citizenship restrictions, high experience asks, below-$125k listed salary, and companies already applied to (`applied-companies.json`). A job is marked **fit** only when it is fresh within 7 days, verifiably US-remote, and clear of every block — the dashboard defaults to that fit view.
+
+## Hosting
+
+GitHub Pages (workflow `.github/workflows/deploy-pages.yml`) is the live deployment. `vercel.json`/`api/jobs.js` remain as an optional serverless variant over the seed feeds in `sources.json` (Stripe, Robinhood, Lyft, HubSpot, 1Password).
+
+Manual run: repository Actions → Collect employer jobs → Run workflow.
