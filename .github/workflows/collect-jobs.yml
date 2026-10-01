@@ -1,22 +1,31 @@
 name: Collect employer jobs
 on:
   schedule:
-    - cron: '17 */3 * * *'
+    - cron: '17 */2 * * *'
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs
+      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs && node --check scripts/discover.mjs
+      - run: node scripts/discover.mjs
+      - name: Commit discovered boards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add discovered-boards.json
+          git diff --cached --quiet || (git commit -m 'Refresh discovered boards' && git push)
       - run: node scripts/ingest.mjs
       - run: node scripts/collect-large.mjs
+        env:
+          BATCH_SIZE: '6000'
       - run: node scripts/filter-directory.mjs
       - name: Commit snapshot
         run: |

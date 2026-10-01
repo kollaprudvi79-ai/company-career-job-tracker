@@ -160,7 +160,7 @@ async function loadIbisBoards(out, seen) {
   // (transport/trucking/airline/rail/logistics carriers), both produced by
   // scripts/resolve-companies.mjs with board-name verification.
   let added = 0;
-  for (const file of ['ibis-boards.json', 'transport-boards.json', 'cc-boards.json']) {
+  for (const file of ['ibis-boards.json', 'transport-boards.json', 'cc-boards.json', 'discovered-boards.json']) {
     try {
       const boards = JSON.parse(await readFile(new URL(`../${file}`, import.meta.url)));
       const before = out.length;
