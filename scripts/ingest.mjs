@@ -88,11 +88,21 @@ async function loadWorkday(out, seen) {
   } catch (e) { return String(e.message); }
 }
 
+async function loadIbisBoards(out, seen) {
+  try {
+    const boards = JSON.parse(await readFile(new URL('../ibis-boards.json', import.meta.url)));
+    const before = out.length;
+    for (const b of Array.isArray(boards) ? boards : []) add(out, seen, b);
+    return out.length - before;
+  } catch { return 0; }
+}
+
 const out = [];
 const seen = new Set();
 const primaryRows = await loadPrimary(out, seen);
 const extraCounts = await loadExtras(out, seen);
 extraCounts.workday = await loadWorkday(out, seen);
+extraCounts.ibis = await loadIbisBoards(out, seen);
 let seeds = [];
 try { seeds = JSON.parse(await readFile(new URL('../sources.json', import.meta.url))); } catch {}
 for (const s of seeds) add(out, seen, s);

@@ -8,6 +8,9 @@ The board directory (`directory-sources.json`) is rebuilt by `scripts/ingest.mjs
 
 - **LastRound AI ATS Company Directory** (August 2026), CC BY 4.0 — https://github.com/fyrosofttech/lastroundai-hiring-data (https://creativecommons.org/licenses/by/4.0/)
 - **kalil0321/ats-scrapers** company inventories, MIT License — https://github.com/kalil0321/ats-scrapers
+- **IBISWorld company list** (Prudhvi's own reference list, `ibis-companies.json`): companies are matched to boards already in the inventories by name; the rest are resolved by `scripts/resolve-ibis.mjs`, which accepts a guessed Greenhouse token **only** when the board-info endpoint returns a matching company name (verified attribution) and writes `ibis-boards.json`.
+
+The snapshot is **USA-only**: jobs whose primary location or description marks them outside the US are dropped before publishing; US-onsite and location-unknown jobs remain for review, and the fit view still requires verified US remote.
 
 Imported boards are **candidates**, not verified active feeds: a board only counts as monitored after its feed responds in a collection batch. Staffing/consulting firms on a conservative exclusion list (`scripts/employer-filter.mjs`) are removed before publishing.
 

@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { classify, enrichJob, isoDate, normalizeCompany, tsentaProfile } from './job-utils.mjs';
+import { classify, enrichJob, isoDate, isUsJob, normalizeCompany, tsentaProfile } from './job-utils.mjs';
 
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
 let previous = { jobs: [] };
@@ -171,6 +171,7 @@ const oldJobs = (previous.jobs || [])
   .filter(j => !checkedKeys.has(`${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
   .map(j => ({ ...j, stale: true }));
 const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
+  .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted))
   .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
 const statuses = results.map(({ jobs: unused, ...status }) => status);
 const checkedAt = new Date().toISOString();

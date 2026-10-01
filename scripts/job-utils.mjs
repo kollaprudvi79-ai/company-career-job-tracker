@@ -82,7 +82,8 @@ export function textFlags(title = '', description = '') {
     .map(m => Number(m[2] || m[1]))
     .filter(n => Number.isFinite(n) && n > 0 && n <= 30);
   const experienceMaxYears = years.length ? Math.max(...years) : null;
-  return { javaCentric, sponsorshipRisk, restricted, experienceMaxYears };
+  const nonUsText = /(\bir35\b|right to work in the (uk|united kingdom)|must be (based|located|residing|living) in (the )?(uk|united kingdom|england|canada|india)|uk[- ]based (only|role)|uk only role|canada[- ]based only|india[- ]based only|must (live|reside) in (the )?(uk|canada|india))/i.test(text);
+  return { javaCentric, sponsorshipRisk, restricted, experienceMaxYears, nonUsText };
 }
 
 const US_STATES = 'Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|District of Columbia';
@@ -122,6 +123,13 @@ export function normalizeCompany(value = '') {
   return String(value || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
+// USA-only snapshot rule: a job stays only when nothing marks it non-US.
+// US-onsite and US-unknown locations remain visible for manual review;
+// fit still requires verified US remote.
+export function isUsJob(job) {
+  return job && job.remoteType !== 'non-us' && !(job.flags && job.flags.nonUsText);
+}
+
 export function assessJob(job, now = Date.now()) {
   const flags = { ...(job.flags || {}) };
   const fresh = freshness(job.published, now);
@@ -135,6 +143,7 @@ export function assessJob(job, now = Date.now()) {
   if (flags.javaCentric) blocks.push('Java/Spring-centric');
   if (flags.sponsorshipRisk) blocks.push('JD states sponsorship restriction');
   if (flags.restricted) blocks.push('Government, clearance, or citizenship restriction');
+  if (flags.nonUsText) blocks.push('JD indicates location outside the US');
   if (flags.experienceMaxYears && flags.experienceMaxYears >= 7) blocks.push(`Experience ask may be ${flags.experienceMaxYears}+ years`);
   if (job.salaryMax && job.salaryMax < SALARY_FLOOR) blocks.push('Listed salary is below $125k');
   if (job.alreadyApplied) notes.push('Company already applied');
