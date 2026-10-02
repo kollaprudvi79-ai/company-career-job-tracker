@@ -238,7 +238,24 @@ async function worker() {
       if (!response.ok) throw Error(`HTTP ${response.status}`);
       let list;
       if (req.html) list = parseHtmlJobs(x, await response.text());
-      else { const data = await response.json(); list = listFrom(data); }
+      else {
+        const data = await response.json();
+        list = listFrom(data);
+        // Workday CXS caps limit at 20 and board ordering is not reliably
+        // newest-first; walk two more pages so fresh postings ranked past
+        // page 1 are not lost.
+        if (x.type === 'workday' && Array.isArray(list) && list.length >= 20 && Number(data?.total) > list.length) {
+          for (const off of [20, 40]) {
+            try {
+              const r2 = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: 'application/json', ...(req.options.headers || {}) }, body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: off, searchText: '' }) });
+              if (!r2.ok) break;
+              const more = listFrom(await r2.json());
+              if (!Array.isArray(more) || !more.length) break;
+              list = [...list, ...more];
+            } catch { break; }
+          }
+        }
+      }
       if (!Array.isArray(list)) throw Error('Invalid feed');
       const jobs = list.map(j => normalize(j, x, checked)).filter(Boolean);
       results.push({ company: x.company, type: x.type, token: x.token, ok: true, checkedAt: checked, matched: jobs.length, jobs });
