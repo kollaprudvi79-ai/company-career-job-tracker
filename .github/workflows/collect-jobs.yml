@@ -20,6 +20,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --rebase origin main
           git add discovered-boards.json
           git diff --cached --quiet || (git commit -m 'Refresh discovered boards' && git push)
       - run: node scripts/ingest.mjs
@@ -31,5 +32,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --rebase origin main
           git add jobs.json directory-sources.json collector-state.json
           git diff --cached --quiet || (git commit -m 'Refresh employer jobs snapshot' && git push)
