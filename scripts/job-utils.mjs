@@ -137,7 +137,9 @@ export function assessJob(job, now = Date.now()) {
   const notes = [];
   if (!job.role) blocks.push('No target role lane');
   if (!fresh.within7d) blocks.push(job.published ? 'Outside 7-day window' : 'Posting date unknown');
-  if (job.usRemote !== true) blocks.push(job.remoteReason || 'US remote not verified');
+  // Location rule (relocation-open, Oct 2 2026): only non-US blocks fit.
+  // US remote, US onsite/hybrid, and unverified locations stay eligible with notes.
+  if (job.remoteType === 'non-us') blocks.push(job.remoteReason || 'Location outside the US');
   if (flags.excludedLevel) blocks.push('Excluded seniority/title level');
   if (flags.intern) blocks.push('Intern or entry-level');
   if (flags.javaCentric) blocks.push('Java/Spring-centric');
@@ -150,6 +152,9 @@ export function assessJob(job, now = Date.now()) {
   if (job.salaryMin && job.salaryMin >= SALARY_FLOOR) notes.push('Listed salary meets $125k floor');
   else if (job.salaryMax && job.salaryMax >= SALARY_FLOOR) notes.push('Listed salary range reaches $125k');
   else if (!job.salaryMax) notes.push('Salary not listed');
+  if (job.remoteType === 'onsite' || job.remoteType === 'hybrid') notes.push('US onsite/hybrid — relocation open');
+  else if (job.remoteType === 'remote-unknown') notes.push('Remote — US eligibility unverified');
+  else if (job.usRemote === true) notes.push('Verified US remote');
   return { ...job, ...fresh, flags, fit: blocks.length === 0, fitBlocks: blocks, fitNotes: notes };
 }
 
