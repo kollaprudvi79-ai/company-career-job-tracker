@@ -143,7 +143,7 @@ const US_ST='Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Del
   if(!j.role)blocks.push('No target role lane');
   if(j.published){const age=now-Date.parse(j.published);if(!(age>=0&&age<=7*864e5))blocks.push('Outside 7-day window');}
   else blocks.push('Posting date unknown');
-  if(!(j.remoteType==='us-remote'||usLoc(j.location)))blocks.push('Location not verifiably in the US');
+  if(!(j.remoteType==='us-remote'||usLoc(j.location)))blocks.push('Location not verifiably in the US');if(/\b(jobgether|alten|guidehouse|booz allen|bah|randstad|teksystems|robert half|kforce|apex systems|insight global|modis|experis|aston carter|synergisticit)\b/i.test(j.company||''))blocks.push('Staffing agency / consultancy');
   if(f.excludedLevel)blocks.push('Excluded seniority/title level');
   if(f.intern)blocks.push('Intern or entry-level');
   if(f.javaCentric)blocks.push('Java/Spring-centric');

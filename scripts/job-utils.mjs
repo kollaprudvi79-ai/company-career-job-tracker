@@ -130,6 +130,7 @@ export function isUsJob(job) {
   return job && job.remoteType !== 'non-us' && !(job.flags && job.flags.nonUsText);
 }
 
+const STAFFING_RE = /\b(jobgether|alten|guidehouse|booz allen|bah|randstad|teksystems|robert half|kforce|apex systems|insight global|modis|experis|aston carter|synergisticit)\b/i;
 export function assessJob(job, now = Date.now()) {
   const flags = { ...(job.flags || {}) };
   const fresh = freshness(job.published, now);
@@ -146,6 +147,7 @@ export function assessJob(job, now = Date.now()) {
   if (flags.sponsorshipRisk) blocks.push('JD states sponsorship restriction');
   if (flags.restricted) blocks.push('Government, clearance, or citizenship restriction');
   if (flags.nonUsText) blocks.push('JD indicates location outside the US');
+  if (STAFFING_RE.test(job.company || '')) blocks.push('Staffing agency / consultancy');
   if (flags.experienceMaxYears && flags.experienceMaxYears >= 7) blocks.push(`Experience ask may be ${flags.experienceMaxYears}+ years`);
   if (job.salaryMax && job.salaryMax < SALARY_FLOOR) blocks.push('Listed salary is below $125k');
   if (job.alreadyApplied) notes.push('Company already applied');
