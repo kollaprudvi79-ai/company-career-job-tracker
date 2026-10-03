@@ -102,7 +102,7 @@ export function remoteAssessment({ location = '', workplace = null, isRemote = n
   const textUsRemote = /(remote[^.]{0,80}(united states|usa|u\.s\.)|(united states|usa|u\.s\.)[^.]{0,80}remote|based in the united states|u\.s\.-based|us-based)/i.test(text);
   if (hasNonUs) return { usRemote: false, remoteType: 'non-us', remoteReason: 'Primary location is outside the US' };
   if (hybridSignal || onsiteSignal) return { usRemote: false, remoteType: hybridSignal ? 'hybrid' : 'onsite', remoteReason: 'Hybrid or onsite location' };
-  if (remoteSignal && (hasUs || textUsRemote || /^remote$/i.test(loc))) return { usRemote: true, remoteType: 'us-remote', remoteReason: 'US remote signal verified from ATS fields' };
+  if (remoteSignal && (hasUs || textUsRemote)) return { usRemote: true, remoteType: 'us-remote', remoteReason: 'US remote signal verified from ATS fields' };
   if (remoteSignal) return { usRemote: null, remoteType: 'remote-unknown', remoteReason: 'Remote is stated, but US eligibility is not explicit' };
   return { usRemote: false, remoteType: 'not-remote', remoteReason: 'No remote signal in ATS fields' };
 }
