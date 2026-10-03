@@ -266,9 +266,11 @@ async function worker() {
   }
 }
 await Promise.all(Array.from({ length: 12 }, () => worker()));
-const checkedKeys = new Set(selected.map(s => `${s.type}:${s.token.toLowerCase()}`));
+// Full-sweep mode: keep jobs from boards that failed this run as stale (up to
+// 36h) instead of dropping them, so one flaky board doesn't wipe its jobs.
+const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
 const oldJobs = (previous.jobs || [])
-  .filter(j => !checkedKeys.has(`${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
+  .filter(j => !okKeys.has(`${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
   .map(j => ({ ...j, stale: true }));
 const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
   .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
