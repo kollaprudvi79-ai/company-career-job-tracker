@@ -1,1 +1,207 @@
-[]
+[
+  {
+    "company": "A. Duie Pyle",
+    "type": "careerpage",
+    "token": "https://www.aduiepyle.com/careers"
+  },
+  {
+    "company": "AAA Cooper",
+    "type": "careerpage",
+    "token": "https://www.aaacooper.com/careers"
+  },
+  {
+    "company": "ABF Freight",
+    "type": "careerpage",
+    "token": "https://www.abf.com/careers"
+  },
+  {
+    "company": "Americold",
+    "type": "careerpage",
+    "token": "https://www.americold.com/careers"
+  },
+  {
+    "company": "ArcBest",
+    "type": "careerpage",
+    "token": "https://www.arcb.com/careers"
+  },
+  {
+    "company": "C.H. Robinson",
+    "type": "careerpage",
+    "token": "https://www.chrobinson.com/careers"
+  },
+  {
+    "company": "C.R. England",
+    "type": "careerpage",
+    "token": "https://www.crengland.com/careers"
+  },
+  {
+    "company": "DB Schenker",
+    "type": "careerpage",
+    "token": "https://www.dbschenker.com/careers"
+  },
+  {
+    "company": "Dayton Freight",
+    "type": "careerpage",
+    "token": "https://www.daytonfreight.com/careers"
+  },
+  {
+    "company": "Delta Air Lines",
+    "type": "careerpage",
+    "token": "https://www.delta.com/careers"
+  },
+  {
+    "company": "Echo Global Logistics",
+    "type": "careerpage",
+    "token": "https://www.echo.com/careers"
+  },
+  {
+    "company": "Estes Express Lines",
+    "type": "careerpage",
+    "token": "https://www.estes-express.com/careers"
+  },
+  {
+    "company": "Expeditors",
+    "type": "careerpage",
+    "token": "https://www.expeditors.com/careers"
+  },
+  {
+    "company": "FedEx Freight",
+    "type": "careerpage",
+    "token": "https://careers.fedex.com"
+  },
+  {
+    "company": "Flexport",
+    "type": "careerpage",
+    "token": "https://www.flexport.com/careers"
+  },
+  {
+    "company": "GXO Logistics",
+    "type": "careerpage",
+    "token": "https://www.gxo.com/careers"
+  },
+  {
+    "company": "Hub Group",
+    "type": "careerpage",
+    "token": "https://www.hubgroup.com/careers"
+  },
+  {
+    "company": "J.B. Hunt",
+    "type": "careerpage",
+    "token": "https://www.jbhunt.com/careers"
+  },
+  {
+    "company": "Lineage Logistics",
+    "type": "careerpage",
+    "token": "https://www.lineagelogistics.com/careers"
+  },
+  {
+    "company": "Marten Transport",
+    "type": "careerpage",
+    "token": "https://www.marten.com/careers"
+  },
+  {
+    "company": "Maverick USA",
+    "type": "careerpage",
+    "token": "https://www.maverickusa.com/careers"
+  },
+  {
+    "company": "Old Dominion Freight Line",
+    "type": "careerpage",
+    "token": "https://www.odfl.com/careers"
+  },
+  {
+    "company": "Penske Logistics",
+    "type": "careerpage",
+    "token": "https://www.penske.com/careers"
+  },
+  {
+    "company": "Pitt Ohio",
+    "type": "careerpage",
+    "token": "https://www.pittohio.com/careers"
+  },
+  {
+    "company": "Prime Inc",
+    "type": "careerpage",
+    "token": "https://www.primeinc.com/careers"
+  },
+  {
+    "company": "R+L Carriers",
+    "type": "careerpage",
+    "token": "https://www.rlcarriers.com/careers"
+  },
+  {
+    "company": "Saia",
+    "type": "careerpage",
+    "token": "https://www.saia.com/careers"
+  },
+  {
+    "company": "Schneider",
+    "type": "careerpage",
+    "token": "https://schneider.com/careers"
+  },
+  {
+    "company": "Southwest Airlines",
+    "type": "careerpage",
+    "token": "https://www.southwest.com/careers"
+  },
+  {
+    "company": "Stevens Transport",
+    "type": "careerpage",
+    "token": "https://www.stevenstransport.com/careers"
+  },
+  {
+    "company": "TMC Transportation",
+    "type": "careerpage",
+    "token": "https://www.tmctrans.com/careers"
+  },
+  {
+    "company": "U.S. Xpress",
+    "type": "careerpage",
+    "token": "https://www.usxpress.com/careers"
+  },
+  {
+    "company": "Uber Freight",
+    "type": "careerpage",
+    "token": "https://www.uberfreight.com/careers"
+  },
+  {
+    "company": "Union Pacific",
+    "type": "careerpage",
+    "token": "https://www.up.com/careers"
+  },
+  {
+    "company": "Werner Enterprises",
+    "type": "careerpage",
+    "token": "https://www.werner.com/careers"
+  },
+  {
+    "company": "XPO Logistics",
+    "type": "careerpage",
+    "token": "https://www.xpo.com/careers"
+  },
+  {
+    "company": "Geodis",
+    "type": "careerpage",
+    "token": "https://www.geodis.com/us/en/careers"
+  },
+  {
+    "company": "NFI Industries",
+    "type": "careerpage",
+    "token": "https://www.nfiindustries.com/jobs"
+  },
+  {
+    "company": "American Airlines",
+    "type": "careerpage",
+    "token": "https://jobs.aa.com"
+  },
+  {
+    "company": "Averitt Express",
+    "type": "careerpage",
+    "token": "https://www.averittexpress.com/careers"
+  },
+  {
+    "company": "CSX Transportation",
+    "type": "careerpage",
+    "token": "https://www.csx.com/careers"
+  }
+]

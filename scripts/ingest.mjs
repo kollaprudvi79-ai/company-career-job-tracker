@@ -30,7 +30,8 @@ function parseCsv(text) {
 function add(out, seen, { company, type, token }) {
   if (!company || !type || !token) return;
   token = String(token).toLowerCase();
-  if (!(['workday', 'oracle', 'icims'].includes(type) ? validWorkdayToken : validToken).test(token)) return;
+  if (type === 'careerpage') { if (!/^https:\/\/[^\/\s]{3,}(\/\S*)?$/.test(token)) return; }
+  else if (!(['workday', 'oracle', 'icims'].includes(type) ? validWorkdayToken : validToken).test(token)) return;
   const key = `${type}:${token}`;
   if (seen.has(key)) return;
   seen.add(key);
