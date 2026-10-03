@@ -189,7 +189,8 @@ function bindCard(id,fn){const c=$(id).parentElement;c.style.cursor='pointer';c.
 bindCard('discovered',()=>{tab('companies');$('state').value='';cp=0;rows();});
 bindCard('attempted',()=>{tab('companies');$('state').value='checked';cp=0;rows();});
 bindCard('success',()=>{tab('companies');$('state').value='responding';cp=0;rows();});
-bindCard('jobCount',()=>{tab('jobs');$('fit').value='all';jp=0;rows();});
-bindCard('fitCount',()=>{tab('jobs');$('fit').value='fit';jp=0;rows();});
+function resetJobFilters(){jp=0;$('jobQuery').value='';$('role').value='';}
+bindCard('jobCount',()=>{tab('jobs');resetJobFilters();$('fit').value='all';$('date').value='all';$('appState').value='';rows();});
+bindCard('fitCount',()=>{tab('jobs');resetJobFilters();$('fit').value='fit';$('date').value='7d';$('appState').value='';rows();});
 $('refreshJobs').onclick=serverRefresh;
 load();setInterval(load,900000)</script></body></html>
