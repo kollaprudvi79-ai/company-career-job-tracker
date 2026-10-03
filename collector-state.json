@@ -1,1 +1,6 @@
-{"batchSize": 12000, "discovered": 48433, "nextOffset": 37781, "updatedAt": "2026-10-03T04:54:16.871Z"}
+{
+  "nextOffset": 1348,
+  "updatedAt": "2026-10-03T05:29:05.270Z",
+  "batchSize": 12000,
+  "discovered": 48433
+}
