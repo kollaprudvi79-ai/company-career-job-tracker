@@ -216,6 +216,7 @@ function normalize(j, x, checked) {
   return finish(base, description, structuredSalaryText, checked);
 }
 
+const APP_VERSION = '20261003c';
 const now = Date.now();
 const batch = Number(process.env.BATCH_SIZE) || 3000;
 const hasEnvOffset = process.env.BATCH_OFFSET !== undefined && process.env.BATCH_OFFSET !== '';
@@ -278,6 +279,6 @@ const recentCount = jobs.filter(j => !j.stale && j.within7d).length;
 const fitCount = jobs.filter(j => j.fit).length;
 const coverage = { discovered: sources.length, attempted: results.length, success: statuses.filter(s => s.ok).length, failed: statuses.filter(s => !s.ok).length, batchOffset: offset, batchSize: batch, nextOffset, rotationRuns: Math.ceil(sources.length / batch), fitCount, recent7dCount: recentCount };
 await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: checkedAt, batchSize: batch, discovered: sources.length }, null, 2));
-await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt, jobs, statuses, recentCount, coverage, note: 'Employer ATS snapshot. Greenhouse uses first_published, Lever uses createdAt, and Ashby publishedAt may be a republication. Fit flags are computed from ATS title, location, description, salary, and applied-company data. Imported directory rows are candidates until their feed responds.' }));
+await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt, appVersion: APP_VERSION, jobs, statuses, recentCount, coverage, note: 'Employer ATS snapshot. Greenhouse uses first_published, Lever uses createdAt, and Ashby publishedAt may be a republication. Fit flags are computed from ATS title, location, description, salary, and applied-company data. Imported directory rows are candidates until their feed responds.' }));
 console.log(JSON.stringify({ coverage, jobs: jobs.length, recentCount, fitCount }));
 if (!coverage.success) process.exitCode = 1;
