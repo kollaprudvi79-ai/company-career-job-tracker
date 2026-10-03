@@ -24,7 +24,7 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh discovered boards'
           fi
-          git pull --rebase origin main
+          git pull --rebase -Xours origin main
           git push origin main
       - run: node scripts/ingest.mjs
       - run: node scripts/collect-large.mjs
@@ -39,5 +39,5 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh employer jobs snapshot'
           fi
-          git pull --rebase origin main
+          git pull --rebase -Xours origin main
           git push origin main
