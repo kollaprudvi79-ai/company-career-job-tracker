@@ -98,7 +98,7 @@ export function remoteAssessment({ location = '', workplace = null, isRemote = n
   const hybridSignal = /hybrid/.test(lower) || wp === 'hybrid';
   const onsiteSignal = /on[- ]site|in[- ]office/.test(lower) || wp === 'onsite' || wp === 'on-site';
   const hasNonUs = NON_US.test(loc);
-  const hasUs = /\b(united states|usa|u\.s\.a\.|u\.s\.)\b/i.test(loc) || new RegExp(`\\b(${US_STATES})\\b`, 'i').test(loc) || /,\s*(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/.test(loc);
+  const hasUs = /\b(united states|usa|u\.s\.a\.|u\.s\.)\b/i.test(loc) || new RegExp(`\\b(${US_STATES})\\b`, 'i').test(loc) || /(?:^|[\s,])(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/.test(loc);
   const textUsRemote = /(remote[^.]{0,80}(united states|usa|u\.s\.)|(united states|usa|u\.s\.)[^.]{0,80}remote|based in the united states|u\.s\.-based|us-based)/i.test(text);
   if (hasNonUs) return { usRemote: false, remoteType: 'non-us', remoteReason: 'Primary location is outside the US' };
   if (hybridSignal || onsiteSignal) return { usRemote: false, remoteType: hybridSignal ? 'hybrid' : 'onsite', remoteReason: 'Hybrid or onsite location' };
