@@ -27,8 +27,10 @@ function parseCsv(text) {
   return body.map(values => Object.fromEntries(keys.map((k, i) => [k, (values[i] || '').trim()])));
 }
 
+const JUNK_TOKEN = /\/(robots\.txt|sitemap\.xml|sitemap_index\.xml|favicon\.ico|manifest\.json)$/i;
 function add(out, seen, { company, type, token }) {
   if (!company || !type || !token) return;
+  if (JUNK_TOKEN.test(String(token))) return;
   token = String(token).toLowerCase();
   if (type === 'careerpage') { if (!/^https:\/\/[^\/\s]{3,}(\/\S*)?$/.test(token)) return; }
   else if (!(['workday', 'oracle', 'icims'].includes(type) ? validWorkdayToken : validToken).test(token)) return;
