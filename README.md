@@ -14,7 +14,7 @@ The snapshot is **USA-only**: jobs whose primary location or description marks t
 
 Imported boards are **candidates**, not verified active feeds: a board only counts as monitored after its feed responds in a collection batch. Staffing/consulting firms on a conservative exclusion list (`scripts/employer-filter.mjs`) are removed before publishing.
 
-Currently imports ~34.7k candidate boards across 11 ATS platforms: Greenhouse, Ashby, Lever, SmartRecruiters, Workable, Recruitee, Breezy, BambooHR, Teamtailor, Personio, and Workday. This is deliberately **not** a "100,000+ companies" claim — only boards with a public feed the collector can actually read are included.
+Currently imports candidate boards across 27 ATS platforms: Greenhouse, Ashby, Lever, SmartRecruiters, Workable, Recruitee, Breezy, BambooHR, Teamtailor, Personio, Pinpoint, Rippling, JazzHR, Jobvite, iCIMS, Oracle, Workday, Hireology, ADP, Dover, UKG/UltiPro, SuccessFactors, BrassRing, Phenom, Paylocity, Zoho Recruit, and CareerPlug. Dayforce is excluded — its JSON API is Cloudflare-blocked from plain-HTTP clients. This is deliberately **not** a "100,000+ companies" claim — only boards with a public feed the collector can actually read are included.
 
 ## Collection
 

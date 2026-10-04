@@ -6,6 +6,11 @@ const EXTRA_TYPES = ['greenhouse', 'ashby', 'lever', 'smartrecruiters', 'workabl
 const EXTRA_BASE = 'https://raw.githubusercontent.com/kalil0321/ats-scrapers/main/ats-companies';
 const validToken = /^[a-z0-9][a-z0-9._-]{1,90}$/;
 const validWorkdayToken = /^[a-z0-9][a-z0-9._/-]{1,180}$/;
+// Tokens that legitimately contain '/' (host/tenant style references).
+const SLASH_TOKEN_TYPES = ['workday', 'oracle', 'icims', 'adp', 'ukg', 'brassring', 'phenom', 'zoho'];
+// Tokens that are full https:// origin URLs (SuccessFactors career-site origins).
+const URL_TOKEN_TYPES = ['successfactors'];
+const validUrlToken = /^https:\/\/[a-z0-9.-]+\.[a-z]{2,}(\/\S*)?$/;
 
 function parseCsv(text) {
   const rows = [];
@@ -33,7 +38,8 @@ function add(out, seen, { company, type, token }) {
   if (JUNK_TOKEN.test(String(token))) return;
   token = String(token).toLowerCase();
   if (type === 'careerpage') { if (!/^https:\/\/[^\/\s]{3,}(\/\S*)?$/.test(token)) return; }
-  else if (!(['workday', 'oracle', 'icims'].includes(type) ? validWorkdayToken : validToken).test(token)) return;
+  else if (URL_TOKEN_TYPES.includes(type)) { if (!validUrlToken.test(token)) return; }
+  else if (!(SLASH_TOKEN_TYPES.includes(type) ? validWorkdayToken : validToken).test(token)) return;
   const key = `${type}:${token}`;
   if (seen.has(key)) return;
   seen.add(key);
