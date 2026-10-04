@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { classify, enrichJob, isoDate, isUsJob, normalizeCompany, remoteAssessment, tsentaProfile } from './job-utils.mjs';
+import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from './ats-extra.mjs';
 
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
 let previous = { jobs: [] };
@@ -15,6 +16,8 @@ function safe(url) {
   try { const u = new URL(url); return u.protocol === 'https:' ? u.href : null; } catch { return null; }
 }
 function boardUrl(source) {
+  const extra = extraBoardUrl(source);
+  if (extra) return extra;
   if (source.type === 'workday') return `https://${source.token}`;
   if (source.type === 'icims') return `https://${source.token}/`;
   if (source.type === 'oracle') { const [host, site] = source.token.split('/'); return `https://${host}/hcmUI/CandidateExperience/en/sites/${site}`; }
@@ -125,9 +128,9 @@ function isAlreadyApplied(source) {
   const byToken = appliedTokens.has(normalizeCompany(source.token).replace(/\s+/g, '')) || appliedTokens.has(String(source.token || '').toLowerCase());
   return byName || byToken;
 }
-function finish(base, description, structuredSalaryText, checked) {
+function finish(x, base, description, structuredSalaryText, checked) {
   const job = enrichJob({ ...base, checked, alreadyApplied: isAlreadyApplied(base) }, { description, structuredSalaryText }, Date.now());
-  return { ...job, tsentaProfile: tsentaProfile(job.role) };
+  return { ...job, tsentaProfile: tsentaProfile(job.role), boardKey: `${x.type}:${String(x.token || '').toLowerCase()}` };
 }
 function normalize(j, x, checked) {
   let base = null;
@@ -211,12 +214,18 @@ function normalize(j, x, checked) {
     const title = j.title || '';
     const meaning = x.type === 'jazzhr' ? 'JazzHR board page does not expose a publication date in list view' : x.type === 'icims' ? 'iCIMS board page does not expose a publication date in list view' : 'Jobvite board page does not expose a publication date in list view';
     base = { id: `${x.type}:${x.token}:${j.url}`, company: x.company, source: x.type, title, role: classify(title, ''), location: j.location || 'Not listed', workplace: null, salary: null, published: null, publishedMeaning: meaning, applyUrl: safe(j.url) };
+  } else if (isExtraType(x.type)) {
+    const r = normalizeExtraJob(j, x, checked);
+    if (!r) return null;
+    base = r.base;
+    description = r.description || '';
+    structuredSalaryText = r.structuredSalaryText || '';
   }
   if (!base || !base.role || !base.applyUrl) return null;
-  return finish(base, description, structuredSalaryText, checked);
+  return finish(x, base, description, structuredSalaryText, checked);
 }
 
-const APP_VERSION = '20261003c';
+const APP_VERSION = '20261004b';
 const now = Date.now();
 const batch = Number(process.env.BATCH_SIZE) || 3000;
 const hasEnvOffset = process.env.BATCH_OFFSET !== undefined && process.env.BATCH_OFFSET !== '';
@@ -231,13 +240,18 @@ async function worker() {
   while (cursor < selected.length) {
     const x = selected[cursor++];
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 12000);
+    // Extra ATS types run multi-step flows (handshakes, pagination, detail
+    // fetches) — give them a longer per-board budget.
+    const timer = setTimeout(() => controller.abort(), isExtraType(x.type) ? 60000 : 12000);
     const checked = new Date().toISOString();
     try {
+      let list;
+      if (isExtraType(x.type)) {
+        list = await fetchExtraJobs(x, controller.signal);
+      } else {
       const req = requestFor(x);
       const response = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: req.html ? 'text/html' : 'application/json', ...(req.options.headers || {}) } });
       if (!response.ok) throw Error(`HTTP ${response.status}`);
-      let list;
       if (req.html) list = parseHtmlJobs(x, await response.text());
       else {
         const data = await response.json();
@@ -256,7 +270,8 @@ async function worker() {
             } catch { break; }
           }
         }
-      }
+      } // end inner else (JSON branch)
+      } // end outer else (standard single-request types)
       if (!Array.isArray(list)) throw Error('Invalid feed');
       const jobs = list.map(j => normalize(j, x, checked)).filter(Boolean);
       results.push({ company: x.company, type: x.type, token: x.token, ok: true, checkedAt: checked, matched: jobs.length, jobs });
@@ -270,7 +285,7 @@ await Promise.all(Array.from({ length: 12 }, () => worker()));
 // 36h) instead of dropping them, so one flaky board doesn't wipe its jobs.
 const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
 const oldJobs = (previous.jobs || [])
-  .filter(j => !okKeys.has(`${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
+  .filter(j => !okKeys.has(j.boardKey || `${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
   .map(j => ({ ...j, stale: true }));
 const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
   .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
