@@ -177,7 +177,7 @@ async function serverRefresh(){
     await load();
     const cov=data.coverage||{};
     const when=data.checkedAt?new Date(data.checkedAt).toLocaleString():'—';
-    if(cov.sweepInProgress){const _rt=Number(cov.sweepTotal||cov.discovered||0),_ra=Number(cov.attempted||0);st.textContent='\uD83D\uDD04 Refreshing… '+_ra.toLocaleString()+' of '+_rt.toLocaleString()+' boards refreshed · '+Math.max(0,_rt-_ra).toLocaleString()+' still refreshing';}else{st.textContent='\u2713 Sweep data '+when+' \u00b7 '+Number(cov.nextOffset||0).toLocaleString()+'/'+Number(cov.discovered||directory.length||0).toLocaleString()+' boards rotated \u00b7 '+(cov.success!=null?cov.success.toLocaleString():'\u2014')+' responding';}
+    if(cov.sweepInProgress){const _rt=Number(cov.sweepTotal||cov.discovered||0),_ra=Number(cov.attempted||0);st.textContent='\uD83D\uDD04 Refreshing… '+_ra.toLocaleString()+' of '+_rt.toLocaleString()+' boards refreshed · '+Math.max(0,_rt-_ra).toLocaleString()+' still refreshing';}else{st.textContent='\u2713 Sweep data '+when+' \u00b7 '+Number(cov.attempted||cov.discovered||directory.length||0).toLocaleString()+'/'+Number(cov.discovered||directory.length||0).toLocaleString()+' boards checked \u00b7 '+(cov.success!=null?cov.success.toLocaleString():'\u2014')+' responding';}
   }catch(e){st.textContent='Refresh failed: '+((e&&e.message)||e);}
   btn.disabled=false;
 }
