@@ -280,12 +280,12 @@ async function worker() {
     } catch (e) {
       results.push({ company: x.company, type: x.type, token: x.token, ok: false, checkedAt: checked, error: String(e.message), matched: 0, jobs: [] });
     } finally { clearTimeout(timer); }
-  }
-  // Live progress streaming: every PROGRESS_EVERY boards, write a partial
-  // snapshot and push it so the site updates during the run, not just after.
-  if (results.length - lastFlushCount >= PROGRESS_EVERY) {
-    lastFlushCount = results.length;
-    await flushProgress();
+    // Live progress streaming: every PROGRESS_EVERY boards, write a partial
+    // snapshot and push it so the site updates during the run, not just after.
+    if (results.length - lastFlushCount >= PROGRESS_EVERY) {
+      lastFlushCount = results.length;
+      await flushProgress();
+    }
   }
 }
 
@@ -332,6 +332,9 @@ function gitPushBestEffort(message) {
 async function flushProgress() {
   try {
     const snap = buildSnapshot();
+    snap.coverage.sweepInProgress = true;
+    snap.coverage.sweepTotal = selected.length;
+    snap.coverage.nextOffset = offset;
     await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
     // Keep nextOffset at the run's start offset until the run completes, so a
     // failed run retries the same range instead of skipping boards.
