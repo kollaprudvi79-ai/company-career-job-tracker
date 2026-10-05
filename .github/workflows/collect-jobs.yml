@@ -1,7 +1,7 @@
 name: Collect employer jobs
 on:
   schedule:
-    - cron: '17 */12 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
