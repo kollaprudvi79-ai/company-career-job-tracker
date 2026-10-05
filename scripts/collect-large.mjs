@@ -1,4 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { classify, enrichJob, isoDate, isUsJob, normalizeCompany, remoteAssessment, tsentaProfile } from './job-utils.mjs';
 import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from './ats-extra.mjs';
 
@@ -279,23 +281,73 @@ async function worker() {
       results.push({ company: x.company, type: x.type, token: x.token, ok: false, checkedAt: checked, error: String(e.message), matched: 0, jobs: [] });
     } finally { clearTimeout(timer); }
   }
+  // Live progress streaming: every PROGRESS_EVERY boards, write a partial
+  // snapshot and push it so the site updates during the run, not just after.
+  if (results.length - lastFlushCount >= PROGRESS_EVERY) {
+    lastFlushCount = results.length;
+    await flushProgress();
+  }
 }
+
+// ---- Live progress streaming helpers ----
+const PROGRESS_EVERY = Math.max(1000, Number(process.env.PROGRESS_FLUSH_EVERY) || 8000);
+const REPO_ROOT = fileURLToPath(new URL('..', import.meta.url));
+const SNAPSHOT_NOTE = 'Employer ATS snapshot. Greenhouse uses first_published, Lever uses createdAt, and Ashby publishedAt may be a republication. Fit flags are computed from ATS title, location, description, salary, and applied-company data. Imported directory rows are candidates until their feed responds.';
+let lastFlushCount = 0;
+
+function buildSnapshot() {
+  const nowTs = Date.now();
+  const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
+  const oldJobs = (previous.jobs || [])
+    .filter(j => !okKeys.has(j.boardKey || `${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && nowTs - Date.parse(j.checked) < 36 * 3600000)
+    .map(j => ({ ...j, stale: true }));
+  const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
+    .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
+    .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
+  const statuses = results.map(({ jobs: unused, ...status }) => status);
+  const checkedAt = new Date().toISOString();
+  const recentCount = jobs.filter(j => !j.stale && j.within7d).length;
+  const fitCount = jobs.filter(j => j.fit).length;
+  const coverage = { discovered: sources.length, attempted: results.length, success: statuses.filter(s => s.ok).length, failed: statuses.filter(s => !s.ok).length, batchOffset: offset, batchSize: batch, nextOffset, rotationRuns: Math.ceil(sources.length / batch), fitCount, recent7dCount: recentCount };
+  return { checkedAt, jobs, statuses, recentCount, fitCount, coverage };
+}
+
+function gitPushBestEffort(message) {
+  const opts = { cwd: REPO_ROOT, stdio: 'pipe', timeout: 180000 };
+  try {
+    execFileSync('git', ['add', 'jobs.json', 'collector-state.json'], opts);
+    try {
+      execFileSync('git', ['diff', '--cached', '--quiet'], opts);
+      return; // nothing changed
+    } catch { /* staged changes present, proceed */ }
+    execFileSync('git', ['-c', 'user.name=github-actions[bot]', '-c', 'user.email=41898282+github-actions[bot]@users.noreply.github.com', 'commit', '-m', message], opts);
+    try { execFileSync('git', ['pull', '--rebase', '-Xours', 'origin', 'main'], opts); } catch { /* best effort */ }
+    execFileSync('git', ['push', 'origin', 'main'], opts);
+    console.log('progress snapshot pushed:', message);
+  } catch (e) {
+    console.error('progress push failed (non-fatal):', String((e && e.message) || e).slice(0, 200));
+  }
+}
+
+async function flushProgress() {
+  try {
+    const snap = buildSnapshot();
+    await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
+    // Keep nextOffset at the run's start offset until the run completes, so a
+    // failed run retries the same range instead of skipping boards.
+    await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset: offset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length, sweepInProgress: true, sweepAttempted: snap.coverage.attempted, sweepTotal: selected.length }, null, 2));
+  } catch (e) {
+    console.error('progress flush write failed (non-fatal):', String((e && e.message) || e).slice(0, 200));
+    return;
+  }
+  gitPushBestEffort(`Sweep progress ${results.length}/${selected.length} boards`);
+}
+
 await Promise.all(Array.from({ length: 12 }, () => worker()));
 // Full-sweep mode: keep jobs from boards that failed this run as stale (up to
 // 36h) instead of dropping them, so one flaky board doesn't wipe its jobs.
-const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
-const oldJobs = (previous.jobs || [])
-  .filter(j => !okKeys.has(j.boardKey || `${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && now - Date.parse(j.checked) < 36 * 3600000)
-  .map(j => ({ ...j, stale: true }));
-const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
-  .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
-  .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
-const statuses = results.map(({ jobs: unused, ...status }) => status);
-const checkedAt = new Date().toISOString();
-const recentCount = jobs.filter(j => !j.stale && j.within7d).length;
-const fitCount = jobs.filter(j => j.fit).length;
-const coverage = { discovered: sources.length, attempted: results.length, success: statuses.filter(s => s.ok).length, failed: statuses.filter(s => !s.ok).length, batchOffset: offset, batchSize: batch, nextOffset, rotationRuns: Math.ceil(sources.length / batch), fitCount, recent7dCount: recentCount };
-await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: checkedAt, batchSize: batch, discovered: sources.length }, null, 2));
-await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt, appVersion: APP_VERSION, jobs, statuses, recentCount, coverage, note: 'Employer ATS snapshot. Greenhouse uses first_published, Lever uses createdAt, and Ashby publishedAt may be a republication. Fit flags are computed from ATS title, location, description, salary, and applied-company data. Imported directory rows are candidates until their feed responds.' }));
-console.log(JSON.stringify({ coverage, jobs: jobs.length, recentCount, fitCount }));
-if (!coverage.success) process.exitCode = 1;
+const snap = buildSnapshot();
+await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length }, null, 2));
+await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
+console.log(JSON.stringify({ coverage: snap.coverage, jobs: snap.jobs.length, recentCount: snap.recentCount, fitCount: snap.fitCount }));
+if (!snap.coverage.success) process.exitCode = 1;
