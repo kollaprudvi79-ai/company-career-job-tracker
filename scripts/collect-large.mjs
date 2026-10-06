@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { classify, enrichJob, isoDate, isUsJob, normalizeCompany, remoteAssessment, tsentaProfile } from './job-utils.mjs';
+import { assessJob, classify, enrichJob, isoDate, isUsJob, normalizeCompany, remoteAssessment, tsentaProfile } from './job-utils.mjs';
 import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from './ats-extra.mjs';
 
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
@@ -301,14 +301,23 @@ function buildSnapshot() {
   // firstSeen: timestamp this job was FIRST pulled by a sweep. Preserved across
   // runs so the site can surface genuinely new jobs per run instead of relying
   // on ATS published dates (often missing, or republications).
-  const prevSeen = new Map();
-  for (const j of (previous.jobs || [])) { if (j && j.id && j.firstSeen) prevSeen.set(j.id, j.firstSeen); }
+  // published is likewise frozen at first sight: coarse ATS labels (e.g. Workday
+  // "Posted today") would otherwise re-stamp to "now" on every hourly pull,
+  // making old jobs look perpetually fresh.
+  const prevJobs = new Map();
+  for (const j of (previous.jobs || [])) { if (j && j.id && !prevJobs.has(j.id)) prevJobs.set(j.id, j); }
   const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
   const oldJobs = (previous.jobs || [])
     .filter(j => !okKeys.has(j.boardKey || `${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && nowTs - Date.parse(j.checked) < 36 * 3600000)
     .map(j => ({ ...j, stale: true }));
   const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
-    .map(j => { const fs = j.firstSeen || prevSeen.get(j.id) || j.checked || nowIso; return fs === j.firstSeen ? j : { ...j, firstSeen: fs }; })
+    .map(j => {
+      const pj = prevJobs.get(j.id);
+      const fs = j.firstSeen || (pj && pj.firstSeen) || j.checked || nowIso;
+      const pub = (pj && pj.published) || j.published;
+      if (fs === j.firstSeen && pub === j.published) return j;
+      return assessJob({ ...j, firstSeen: fs, published: pub, publishedMeaning: (pj && pj.publishedMeaning) || j.publishedMeaning }, nowTs);
+    })
     .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
     .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
   const statuses = results.map(({ jobs: unused, ...status }) => status);

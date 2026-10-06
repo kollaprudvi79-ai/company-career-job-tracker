@@ -164,6 +164,7 @@ export function enrichJob(base, { description = '', structuredSalaryText = '' } 
   const salary = parseSalary(description, structuredSalaryText || base.salary || '');
   const tf = titleFlags(base.title);
   const xf = textFlags(base.title, description);
+  if (/\bgovernment\b|\.gov\b/i.test(base.company || '')) xf.restricted = true; // state/federal employers hide in the company name
   const remote = remoteAssessment({ location: base.location, workplace: base.workplace, isRemote: base.isRemote, description });
   const job = {
     ...base,
