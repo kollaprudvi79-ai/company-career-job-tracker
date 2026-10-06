@@ -297,11 +297,18 @@ let lastFlushCount = 0;
 
 function buildSnapshot() {
   const nowTs = Date.now();
+  const nowIso = new Date(nowTs).toISOString();
+  // firstSeen: timestamp this job was FIRST pulled by a sweep. Preserved across
+  // runs so the site can surface genuinely new jobs per run instead of relying
+  // on ATS published dates (often missing, or republications).
+  const prevSeen = new Map();
+  for (const j of (previous.jobs || [])) { if (j && j.id && j.firstSeen) prevSeen.set(j.id, j.firstSeen); }
   const okKeys = new Set(results.filter(r => r.ok).map(r => `${r.type}:${String(r.token || '').toLowerCase()}`));
   const oldJobs = (previous.jobs || [])
     .filter(j => !okKeys.has(j.boardKey || `${j.source}:${String(j.id || '').split(':')[1]?.toLowerCase()}`) && nowTs - Date.parse(j.checked) < 36 * 3600000)
     .map(j => ({ ...j, stale: true }));
   const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
+    .map(j => { const fs = j.firstSeen || prevSeen.get(j.id) || j.checked || nowIso; return fs === j.firstSeen ? j : { ...j, firstSeen: fs }; })
     .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
     .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
   const statuses = results.map(({ jobs: unused, ...status }) => status);
