@@ -285,7 +285,27 @@ async function worker() {
       const req = requestFor(x);
       const response = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: req.html ? 'text/html' : 'application/json', ...(req.options.headers || {}) } });
       if (!response.ok) throw Error(`HTTP ${response.status}`);
-      if (req.html) list = parseHtmlJobs(x, await response.text());
+      if (req.html) {
+        list = parseHtmlJobs(x, await response.text());
+        // iCIMS: paginate via ss= parameter (start index). Each page ~50 jobs.
+        // Without this, boards with >50 jobs lose data roles on page 2+.
+        if (x.type === 'icims' && list.length >= 40) {
+          for (let ss = 51; ss <= 201; ss += 50) {
+            try {
+              const pgUrl = `https://${x.token}/jobs/search?ss=${ss}&in_iframe=1`;
+              const r2 = await fetch(pgUrl, { signal: controller.signal, headers: { accept: 'text/html' } });
+              if (!r2.ok) break;
+              const more = parseHtmlJobs(x, await r2.text());
+              if (!more.length) break;
+              // Deduplicate by URL
+              const seenUrls = new Set(list.map(j => j.url));
+              const fresh = more.filter(j => j.url && !seenUrls.has(j.url));
+              if (!fresh.length) break;
+              list = [...list, ...fresh];
+            } catch { break; }
+          }
+        }
+      }
       else {
         const data = await response.json();
         list = listFrom(data);
