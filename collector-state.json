@@ -1,9 +1,9 @@
 {
   "nextOffset": 35616,
-  "updatedAt": "2026-10-06T08:52:36.883Z",
+  "updatedAt": "2026-10-06T08:54:39.673Z",
   "batchSize": 100000,
   "discovered": 48183,
   "sweepInProgress": true,
-  "sweepAttempted": 24000,
+  "sweepAttempted": 32000,
   "sweepTotal": 48183
 }
