@@ -320,6 +320,20 @@ async function worker() {
             } catch { break; }
           }
         }
+        // Oracle: paginate when more than 25 jobs exist. Cap at 150.
+        if (x.type === 'oracle' && Array.isArray(list) && list.length >= 25) {
+          const [host, site] = x.token.split('/');
+          for (let off = 25; off < 150; off += 25) {
+            try {
+              const r2 = await fetch(`https://${host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.workLocation,requisitionList.secondaryLocations&finder=findReqs;siteNumber=${encodeURIComponent(site)},sortBy=POSTING_DATES_DESC&limit=25&offset=${off}`, { signal: controller.signal, headers: { accept: 'application/json' } });
+              if (!r2.ok) break;
+              const d2 = await r2.json();
+              const more = listFrom(d2);
+              if (!Array.isArray(more) || !more.length) break;
+              list = [...list, ...more];
+            } catch { break; }
+          }
+        }
       } // end inner else (JSON branch)
       } // end outer else (standard single-request types)
       if (!Array.isArray(list)) throw Error('Invalid feed');
