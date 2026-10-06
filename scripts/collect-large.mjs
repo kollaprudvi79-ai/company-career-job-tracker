@@ -247,6 +247,25 @@ const requestedOffset = hasEnvOffset ? Number(process.env.BATCH_OFFSET) : Number
 const offset = Number.isFinite(requestedOffset) && sources.length ? ((requestedOffset % sources.length) + sources.length) % sources.length : 0;
 const selected = sources.length ? Array.from({ length: Math.min(batch, sources.length) }, (_, i) => sources[(offset + i) % sources.length]) : [];
 if (!selected.length) throw Error('No sources selected');
+// Board prioritization: sort by historical yield (matching jobs per board) so
+// high-value boards are checked first. If sweep is interrupted, the best boards
+// are already done. Yield from previous jobs.json boardKey counts.
+try {
+  const prevJobs = JSON.parse(await readFile(new URL('../jobs.json', import.meta.url), 'utf8'));
+  const yieldMap = new Map();
+  for (const j of (prevJobs.jobs || [])) {
+    const bk = j.boardKey;
+    if (bk) yieldMap.set(bk, (yieldMap.get(bk) || 0) + 1);
+  }
+  selected.sort((a, b) => {
+    const ya = yieldMap.get(`${a.type}:${a.token}`) || 0;
+    const yb = yieldMap.get(`${b.type}:${b.token}`) || 0;
+    return yb - ya; // descending: high-yield first
+  });
+  console.log(`Prioritized ${selected.length} boards by yield (${yieldMap.size} boards have history)`);
+} catch (e) {
+  console.log('Board prioritization skipped (no previous jobs.json):', String((e && e.message) || e).slice(0, 100));
+}
 const nextOffset = sources.length ? (offset + selected.length) % sources.length : 0;
 let cursor = 0;
 const results = [];
