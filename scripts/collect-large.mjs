@@ -271,12 +271,29 @@ async function worker() {
         const data = await response.json();
         list = listFrom(data);
         // Workday CXS caps limit at 20 and board ordering is not reliably
-        // newest-first; walk two more pages so fresh postings ranked past
-        // page 1 are not lost.
+        // newest-first; walk additional pages so fresh postings ranked past
+        // page 1 are not lost. Cap at 200 jobs (10 pages) to bound sweep time.
         if (x.type === 'workday' && Array.isArray(list) && list.length >= 20 && Number(data?.total) > list.length) {
-          for (const off of [20, 40]) {
+          const total = Number(data.total);
+          const maxJobs = Math.min(total, 200);
+          for (let off = 20; off < maxJobs; off += 20) {
             try {
               const r2 = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: 'application/json', ...(req.options.headers || {}) }, body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: off, searchText: '' }) });
+              if (!r2.ok) break;
+              const more = listFrom(await r2.json());
+              if (!Array.isArray(more) || !more.length) break;
+              list = [...list, ...more];
+            } catch { break; }
+          }
+        }
+        // SmartRecruiters: paginate when more than 100 jobs exist. Cap at 300.
+        if (x.type === 'smartrecruiters' && Array.isArray(list) && list.length >= 100 && Number(data?.totalFound) > list.length) {
+          const total = Number(data.totalFound);
+          const maxJobs = Math.min(total, 300);
+          const slug = encodeURIComponent(x.token);
+          for (let off = 100; off < maxJobs; off += 100) {
+            try {
+              const r2 = await fetch(`https://api.smartrecruiters.com/v1/companies/${slug}/postings?limit=100&offset=${off}`, { signal: controller.signal, headers: { accept: 'application/json' } });
               if (!r2.ok) break;
               const more = listFrom(await r2.json());
               if (!Array.isArray(more) || !more.length) break;
