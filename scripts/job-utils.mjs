@@ -67,7 +67,7 @@ export function isoDate(value) {
 
 export function titleFlags(title = '') {
   const t = String(title || '');
-  const excludedLevel = /\b(staff|principal|lead|manager|director|vp|vice president|chief|architect|distinguished|fellow|head)\b/i.test(t) || /\bsr\.?\s*principal\b/i.test(t);
+  const excludedLevel = /\b(staff|principal|lead|manager|director|vp|vice president|chief|architect|distinguished|fellow|head|senior)\b/i.test(t) || /\bsr\.?\s/i.test(t) || /\bsr\.?\s*principal\b/i.test(t);
   const intern = /\b(intern|internship|co-op|coop|new grad|entry[- ]level|graduate program)\b/i.test(t);
   return { excludedLevel, intern };
 }
