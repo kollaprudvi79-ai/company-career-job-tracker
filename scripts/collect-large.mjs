@@ -7,6 +7,11 @@ import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from '.
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
 let previous = { jobs: [] };
 try { previous = JSON.parse(await readFile(new URL('../jobs.json', import.meta.url))); } catch {}
+// Historical date repair map (built Oct 6 2026): job id -> earliest commit
+// timestamp containing it. Used in buildSnapshot() to restore true first-seen
+// dates and clamp polluted Workday published dates. Missing file = no-op.
+let dateRepairMap = {};
+try { dateRepairMap = JSON.parse(await readFile(new URL('../first-seen-map.json', import.meta.url))); } catch {}
 let collectorState = {};
 try { collectorState = JSON.parse(await readFile(new URL('../collector-state.json', import.meta.url))); } catch {}
 let appliedCompanies = [];
@@ -313,10 +318,21 @@ function buildSnapshot() {
   const jobs = [...new Map([...oldJobs, ...results.flatMap(r => r.jobs)].map(j => [j.id, j])).values()]
     .map(j => {
       const pj = prevJobs.get(j.id);
-      const fs = j.firstSeen || (pj && pj.firstSeen) || j.checked || nowIso;
-      const pub = (pj && pj.published) || j.published;
+      let fs = j.firstSeen || (pj && pj.firstSeen) || j.checked || nowIso;
+      let pub = (pj && pj.published) || j.published;
+      let pubMean = (pj && pj.publishedMeaning) || j.publishedMeaning;
+      // Historical repair (Oct 6 2026): restore the true first-seen date from
+      // git history, and clamp Workday published dates that were re-stamped to
+      // "now" by hourly pulls before the freeze. Idempotent: a repaired job is
+      // a no-op on later runs.
+      const hist = dateRepairMap[j.id];
+      if (hist && hist < fs) fs = hist;
+      if (j.source === 'workday' && pub && fs && pub > fs) {
+        pub = fs;
+        pubMean = 'Workday relative posting label converted to an approximate date; reset to first-seen date (label was re-stamped by hourly pulls before the freeze)';
+      }
       if (fs === j.firstSeen && pub === j.published) return j;
-      return assessJob({ ...j, firstSeen: fs, published: pub, publishedMeaning: (pj && pj.publishedMeaning) || j.publishedMeaning }, nowTs);
+      return assessJob({ ...j, firstSeen: fs, published: pub, publishedMeaning: pubMean }, nowTs);
     })
     .filter(j => isUsJob(j) && !(j.flags && j.flags.restricted) && remoteAssessment({ location: j.location || '', description: j.descriptionText || '' }).remoteType !== 'non-us')
     .sort((a, b) => Number(b.fit) - Number(a.fit) || (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0));
