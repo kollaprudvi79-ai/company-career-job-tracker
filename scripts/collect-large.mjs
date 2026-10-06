@@ -9,9 +9,16 @@ let previous = { jobs: [] };
 try { previous = JSON.parse(await readFile(new URL('../jobs.json', import.meta.url))); } catch {}
 // Historical date repair map (built Oct 6 2026): job id -> earliest commit
 // timestamp containing it. Used in buildSnapshot() to restore true first-seen
-// dates and clamp polluted Workday published dates. Missing file = no-op.
+// dates and clamp polluted Workday published dates. Stored as chunks
+// (first-seen-map-00.json ...) due to push size limits; missing = no-op.
 let dateRepairMap = {};
-try { dateRepairMap = JSON.parse(await readFile(new URL('../first-seen-map.json', import.meta.url))); } catch {}
+try { dateRepairMap = JSON.parse(await readFile(new URL('../first-seen-map.json', import.meta.url))); }
+catch {
+  for (let i = 0; i < 12; i++) {
+    try { Object.assign(dateRepairMap, JSON.parse(await readFile(new URL(`../first-seen-map-${String(i).padStart(2, '0')}.json`, import.meta.url)))); }
+    catch { break; }
+  }
+}
 let collectorState = {};
 try { collectorState = JSON.parse(await readFile(new URL('../collector-state.json', import.meta.url))); } catch {}
 let appliedCompanies = [];
