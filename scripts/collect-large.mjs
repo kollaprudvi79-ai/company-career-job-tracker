@@ -441,5 +441,15 @@ await Promise.all(Array.from({ length: 12 }, () => worker()));
 const snap = buildSnapshot();
 await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length }, null, 2));
 await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
+// AI quality scoring (Python): re-scores jobs for experience match, role relevance,
+// company quality. Runs on final snapshot only (not progress flushes). Non-fatal if missing.
+try {
+  const scriptPath = new URL('./ai_classifier.py', import.meta.url);
+  const jobsPath = new URL('../jobs.json', import.meta.url);
+  execFileSync('python3', [scriptPath.pathname, jobsPath.pathname, '--rescore'], { timeout: 180000, stdio: 'pipe' });
+  console.log('AI classifier rescored jobs.json');
+} catch (e) {
+  console.error('AI classifier skipped (non-fatal):', String((e && e.message) || e).slice(0, 200));
+}
 console.log(JSON.stringify({ coverage: snap.coverage, jobs: snap.jobs.length, recentCount: snap.recentCount, fitCount: snap.fitCount }));
 if (!snap.coverage.success) process.exitCode = 1;
