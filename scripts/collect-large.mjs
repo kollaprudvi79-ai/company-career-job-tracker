@@ -270,21 +270,40 @@ async function worker() {
       else {
         const data = await response.json();
         list = listFrom(data);
-        // Workday CXS caps limit at 20 and board ordering is not reliably
-        // newest-first; walk additional pages so fresh postings ranked past
-        // page 1 are not lost. Cap at 200 jobs (10 pages) to bound sweep time.
-        if (x.type === 'workday' && Array.isArray(list) && list.length >= 20 && Number(data?.total) > list.length) {
-          const total = Number(data.total);
-          const maxJobs = Math.min(total, 200);
-          for (let off = 20; off < maxJobs; off += 20) {
-            try {
-              const r2 = await fetch(req.url, { ...req.options, signal: controller.signal, headers: { accept: 'application/json', ...(req.options.headers || {}) }, body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: off, searchText: '' }) });
-              if (!r2.ok) break;
-              const more = listFrom(await r2.json());
-              if (!Array.isArray(more) || !more.length) break;
-              list = [...list, ...more];
-            } catch { break; }
+        // Workday: use targeted searches for data roles instead of blind pagination.
+        // Generic fetch misses data jobs on large boards (e.g., McKesson 630 jobs, we saw 60).
+        // Search "data" catches data engineer/scientist/analyst/AI roles; ".net" catches .NET devs.
+        if (x.type === 'workday') {
+          const [host, tenant, site] = x.token.split('/');
+          const wdUrl = `https://${host}/wday/cxs/${tenant}/${site}/jobs`;
+          const wdHeaders = { accept: 'application/json', 'content-type': 'application/json' };
+          async function wdSearch(term, maxPages) {
+            const out = [];
+            for (let pg = 0; pg < maxPages; pg++) {
+              try {
+                const r = await fetch(wdUrl, { method: 'POST', signal: controller.signal, headers: wdHeaders,
+                  body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: pg * 20, searchText: term }) });
+                if (!r.ok) break;
+                const d = await r.json();
+                const items = listFrom(d);
+                if (!Array.isArray(items) || !items.length) break;
+                out.push(...items);
+                if (out.length >= Number(d?.total || 0)) break;
+              } catch { break; }
+            }
+            return out;
           }
+          try {
+            const dataJobs = await wdSearch('data', 5);   // up to 100 data-role jobs
+            const netJobs = await wdSearch('.net', 2);    // up to 40 .NET jobs
+            // Deduplicate by requisition ID, prefer data-search results
+            const seen = new Set();
+            list = [];
+            for (const j of [...dataJobs, ...netJobs]) {
+              const key = j?.bulletFields?.[0] || j?.externalPath || j?.title;
+              if (key && !seen.has(key)) { seen.add(key); list.push(j); }
+            }
+          } catch { /* fall back to generic list from initial fetch */ }
         }
         // SmartRecruiters: paginate when more than 100 jobs exist. Cap at 300.
         if (x.type === 'smartrecruiters' && Array.isArray(list) && list.length >= 100 && Number(data?.totalFound) > list.length) {
