@@ -4,6 +4,20 @@ import { fileURLToPath } from 'node:url';
 import { assessJob, classify, enrichJob, isoDate, isUsJob, normalizeCompany, remoteAssessment, tsentaProfile } from './job-utils.mjs';
 import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from './ats-extra.mjs';
 
+// Sweep tracking: record start time to compute per-sweep stats at the end
+const sweepStartTime = Date.now();
+const sweepStartIso = new Date(sweepStartTime).toISOString();
+
+// Employer type classification for university/non-profit tracking
+function employerType(company, source) {
+  // Boards from directory-extra.json are H-1B cap-exempt universities
+  if (source && source._fromExtra) return 'university';
+  const c = String(company || '').toLowerCase();
+  if (/universit|college|institute of technolog|\bmit\b|caltech|stanford|harvard|yale|princeton|columbia universit|uchicago|upenn|duke universit|johns hopkins/.test(c)) return 'university';
+  if (/foundation|nonprofit|non-profit|charit|hospital|health system|red cross|goodwill|ymca|united way|salvation army|museum|symphony|opera|theatre|theater|library|libraries|church|synagogue|mosque|diocese|archdiocese/.test(c)) return 'nonprofit';
+  return 'other';
+}
+
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
 // Extra boards (e.g., H-1B cap-exempt universities) — small file, merged with main directory
 try {
@@ -12,7 +26,7 @@ try {
     const seen = new Set(sources.map(s => `${s.type}:${s.token}`));
     for (const b of extra) {
       const key = `${b.type}:${b.token}`;
-      if (!seen.has(key)) { seen.add(key); sources.push(b); }
+      if (!seen.has(key)) { seen.add(key); sources.push({ ...b, _fromExtra: true }); }
     }
     console.log(`Merged ${extra.length} extra boards from directory-extra.json`);
   }
@@ -457,7 +471,7 @@ function buildSnapshot() {
 function gitPushBestEffort(message) {
   const opts = { cwd: REPO_ROOT, stdio: 'pipe', timeout: 180000 };
   try {
-    execFileSync('git', ['add', 'jobs.json', 'collector-state.json'], opts);
+    execFileSync('git', ['add', 'jobs.json', 'collector-state.json', 'sweep-history.json'], opts);
     try {
       execFileSync('git', ['diff', '--cached', '--quiet'], opts);
       return; // nothing changed
@@ -494,6 +508,52 @@ await Promise.all(Array.from({ length: 12 }, () => worker()));
 const snap = buildSnapshot();
 await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length }, null, 2));
 await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
+
+// ---- Sweep history tracking ----
+// Record per-sweep stats: sweep number, timing, job counts (total/new/fit),
+// and university/non-profit breakdown. Appended to sweep-history.json (kept
+// to last 14 days) so the site can show a per-sweep column view.
+try {
+  const sweepEndTime = Date.now();
+  const sweepDate = new Date(sweepStartTime);
+  const dateStr = sweepDate.toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+  const hh = String(sweepDate.getUTCHours()).padStart(2, '0');
+  const mm = String(sweepDate.getUTCMinutes()).padStart(2, '0');
+  // Sweep number: workflow runs at :05 and :45 → 48 sweeps/day
+  const sweepNum = sweepDate.getUTCHours() * 2 + (sweepDate.getUTCMinutes() >= 30 ? 2 : 1);
+  // New jobs: firstSeen at or after this sweep started
+  const newJobs = snap.jobs.filter(j => { try { return Date.parse(j.firstSeen) >= sweepStartTime; } catch { return false; } });
+  const uniJobs = newJobs.filter(j => employerType(j.company, null) === 'university');
+  const npJobs = newJobs.filter(j => employerType(j.company, null) === 'nonprofit');
+  const entry = {
+    sweep: sweepNum,
+    date: dateStr,
+    time: `${hh}:${mm}`,
+    startTime: sweepStartIso,
+    endTime: new Date(sweepEndTime).toISOString(),
+    durationMin: Math.round((sweepEndTime - sweepStartTime) / 60000),
+    boardsChecked: snap.coverage.attempted || 0,
+    boardsOk: snap.coverage.success || 0,
+    newJobs: newJobs.length,
+    totalJobs: snap.jobs.length,
+    fitJobs: snap.fitCount || 0,
+    universityJobs: uniJobs.length,
+    nonProfitJobs: npJobs.length,
+  };
+  let history = [];
+  try { history = JSON.parse(await readFile(new URL('../sweep-history.json', import.meta.url))); if (!Array.isArray(history)) history = []; } catch {}
+  // Replace entry for same sweep+date (re-runs), else append
+  const idx = history.findIndex(h => h.date === dateStr && h.sweep === sweepNum);
+  if (idx >= 0) history[idx] = entry; else history.push(entry);
+  // Keep last 14 days only
+  const cutoff = new Date(sweepStartTime - 14 * 86400000).toISOString().slice(0, 10);
+  history = history.filter(h => h.date >= cutoff).sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : a.sweep - b.sweep);
+  await writeFile(new URL('../sweep-history.json', import.meta.url), JSON.stringify(history, null, 1));
+  console.log(`Sweep history recorded: sweep ${sweepNum} on ${dateStr}, ${entry.newJobs} new jobs (${entry.universityJobs} univ, ${entry.nonProfitJobs} nonprofit)`);
+} catch (e) {
+  console.error('Sweep history write failed (non-fatal):', String((e && e.message) || e).slice(0, 200));
+}
+
 // AI quality scoring (Python): re-scores jobs for experience match, role relevance,
 // company quality. Runs on final snapshot only (not progress flushes). Non-fatal if missing.
 try {
