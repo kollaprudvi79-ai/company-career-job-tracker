@@ -54,34 +54,43 @@ try { appliedCompanies = JSON.parse(await readFile(new URL('../applied-companies
 const appliedSet = new Set(appliedCompanies.map(normalizeCompany));
 const appliedTokens = new Set(appliedCompanies.map(x => normalizeCompany(x).replace(/\s+/g, '')));
 
-// ---------- TIERED SWEEP (Oct 7 2026): hot boards every run, full directory weekly ----------
-// 90% of the 48k boards never produce jobs. On normal sweeps, check only "hot"
-// boards (produced a job in the last 14 days) plus always-hot extras (universities).
-// A full deep sweep runs automatically if the last one was >7 days ago.
-const HOT_DAYS = 14;
-const DEEP_SWEEP_DAYS = 7;
+// ---------- TIERED SWEEP V2 (Oct 7 2026): hot every sweep + rotating coverage ----------
+// Every sweep checks:
+//   T1 HOT: boards with jobs first seen in last 7d + all directory-extra.json (always)
+//   T2 ROTATING: deterministic slice of all remaining boards (1/12 per sweep)
+// Full directory coverage every ~8h (12 sweeps x 40min). No board goes stale >8h.
+// This replaces the old hot-only + weekly-deep-sweep model which missed
+// infrequent posters for up to 7 days.
+const HOT_DAYS = 7;
+const ROTATION_SLICES = 12;
 const nowMs = Date.now();
-const lastDeepMs = collectorState.lastDeepSweep ? Date.parse(collectorState.lastDeepSweep) : 0;
-let isDeepSweep = (nowMs - lastDeepMs) > DEEP_SWEEP_DAYS * 24 * 3600 * 1000;
-if (isDeepSweep) {
-  console.log('DEEP SWEEP: checking all boards (last deep sweep >7d ago or never)');
-  collectorState.lastDeepSweep = new Date(nowMs).toISOString();
-} else if (previous && Array.isArray(previous.jobs)) {
-  const cutoff = nowMs - HOT_DAYS * 24 * 3600 * 1000;
-  const hotKeys = new Set();
+const boardLastSeen = new Map();
+if (previous && Array.isArray(previous.jobs)) {
   for (const j of previous.jobs) {
+    if (!j.boardKey) continue;
     const fs = j.firstSeen ? Date.parse(j.firstSeen) : 0;
-    if (fs >= cutoff && j.boardKey) hotKeys.add(j.boardKey);
+    if (fs > (boardLastSeen.get(j.boardKey) || 0)) boardLastSeen.set(j.boardKey, fs);
   }
-  const before = sources.length;
-  const hotSources = sources.filter(s => {
-    if (s._fromExtra) return true; // universities/nonprofits always hot
-    return hotKeys.has(`${s.type}:${String(s.token || '').toLowerCase()}`);
-  });
-  console.log(`TIERED SWEEP: ${hotSources.length}/${before} boards (hot: jobs in last ${HOT_DAYS}d + extras)`);
-  sources.length = 0;
-  sources.push(...hotSources);
 }
+const hotCutoff = nowMs - HOT_DAYS * 24 * 3600 * 1000;
+const hotKeys = new Set();
+for (const [k, fs] of boardLastSeen) if (fs >= hotCutoff) hotKeys.add(k);
+const rotationIdx = Number(collectorState.rotationIdx || 0) % ROTATION_SLICES;
+collectorState.rotationIdx = rotationIdx + 1;
+// Persist deep-sweep timestamp for backward compat (rotation now covers it)
+collectorState.lastDeepSweep = collectorState.lastDeepSweep || new Date(nowMs).toISOString();
+const before = sources.length;
+const tiered = sources.filter(s => {
+  if (s._fromExtra) return true;
+  const key = `${s.type}:${String(s.token || '').toLowerCase()}`;
+  if (hotKeys.has(key)) return true;
+  let h = 0;
+  for (let i = 0; i < key.length; i++) h = (((h * 31) + key.charCodeAt(i)) >>> 0);
+  return (h % ROTATION_SLICES) === rotationIdx;
+});
+console.log(`TIERED V2: ${tiered.length}/${before} boards (hot:${hotKeys.size} + extras + slice ${rotationIdx + 1}/${ROTATION_SLICES})`);
+sources.length = 0;
+sources.push(...tiered);
 
 function safe(url) {
   try { const u = new URL(url); return u.protocol === 'https:' ? u.href : null; } catch { return null; }
@@ -529,7 +538,7 @@ async function flushProgress() {
     await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
     // Keep nextOffset at the run's start offset until the run completes, so a
     // failed run retries the same range instead of skipping boards.
-    await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset: offset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length, lastDeepSweep: collectorState.lastDeepSweep || null, sweepInProgress: true, sweepAttempted: snap.coverage.attempted, sweepTotal: selected.length }, null, 2));
+    await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset: offset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length, lastDeepSweep: collectorState.lastDeepSweep || null, rotationIdx: collectorState.rotationIdx || 0, sweepInProgress: true, sweepAttempted: snap.coverage.attempted, sweepTotal: selected.length }, null, 2));
   } catch (e) {
     console.error('progress flush write failed (non-fatal):', String((e && e.message) || e).slice(0, 200));
     return;
@@ -541,7 +550,7 @@ await Promise.all(Array.from({ length: 12 }, () => worker()));
 // Full-sweep mode: keep jobs from boards that failed this run as stale (up to
 // 36h) instead of dropping them, so one flaky board doesn't wipe its jobs.
 const snap = buildSnapshot();
-await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length, lastDeepSweep: collectorState.lastDeepSweep || null }, null, 2));
+await writeFile(new URL('../collector-state.json', import.meta.url), JSON.stringify({ nextOffset, updatedAt: snap.checkedAt, batchSize: batch, discovered: sources.length, lastDeepSweep: collectorState.lastDeepSweep || null, rotationIdx: collectorState.rotationIdx || 0 }, null, 2));
 await writeFile(new URL('../jobs.json', import.meta.url), JSON.stringify({ checkedAt: snap.checkedAt, appVersion: APP_VERSION, jobs: snap.jobs, statuses: snap.statuses, recentCount: snap.recentCount, coverage: snap.coverage, note: SNAPSHOT_NOTE }));
 
 // ---- Sweep history tracking ----
