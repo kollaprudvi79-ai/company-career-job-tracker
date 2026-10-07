@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: career-radar-sweep
+  cancel-in-progress: false
 jobs:
   collect:
     runs-on: ubuntu-latest
