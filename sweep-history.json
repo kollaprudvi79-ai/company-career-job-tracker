@@ -272,15 +272,15 @@
  {
   "sweep": 45,
   "date": "2026-10-07",
-  "time": "22:00",
-  "startTime": "2026-10-07T22:00:37.878Z",
-  "endTime": "2026-10-07T22:11:09.627Z",
-  "durationMin": 11,
-  "boardsChecked": 8280,
-  "boardsOk": 7980,
+  "time": "22:22",
+  "startTime": "2026-10-07T22:22:46.202Z",
+  "endTime": "2026-10-07T22:32:03.039Z",
+  "durationMin": 9,
+  "boardsChecked": 8203,
+  "boardsOk": 7885,
   "newJobs": 18,
-  "totalJobs": 11378,
-  "fitJobs": 701,
+  "totalJobs": 11388,
+  "fitJobs": 705,
   "universityJobs": 0,
   "nonProfitJobs": 0
  }
