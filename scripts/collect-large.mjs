@@ -440,9 +440,14 @@ async function worker() {
     } finally { clearTimeout(timer); }
     // Live progress streaming: every PROGRESS_EVERY boards, write a partial
     // snapshot and push it so the site updates during the run, not just after.
-    if (results.length - lastFlushCount >= PROGRESS_EVERY) {
+    if (results.length - lastFlushCount >= PROGRESS_EVERY && !flushInProgress) {
       lastFlushCount = results.length;
-      await flushProgress();
+      flushInProgress = true;
+      try {
+        await flushProgress();
+      } finally {
+        flushInProgress = false;
+      }
     }
   }
 }
@@ -452,6 +457,7 @@ const PROGRESS_EVERY = Math.max(1000, Number(process.env.PROGRESS_FLUSH_EVERY) |
 const REPO_ROOT = fileURLToPath(new URL('..', import.meta.url));
 const SNAPSHOT_NOTE = 'Employer ATS snapshot. Greenhouse uses first_published, Lever uses createdAt, and Ashby publishedAt may be a republication. Fit flags are computed from ATS title, location, description, salary, and applied-company data. Imported directory rows are candidates until their feed responds.';
 let lastFlushCount = 0;
+let flushInProgress = false; // prevent concurrent git pushes from multiple workers
 
 function buildSnapshot() {
   const nowTs = Date.now();
