@@ -67,7 +67,13 @@ export function isoDate(value) {
 
 export function titleFlags(title = '') {
   const t = String(title || '');
-  const excludedLevel = /\b(staff|principal|lead|manager|director|vp|vice president|chief|architect|distinguished|fellow|head|senior)\b/i.test(t) || /\bsr\.?\s/i.test(t) || /\bsr\.?\s*principal\b/i.test(t);
+  // Senior titles: words AND numeric levels (Engineer 4/5, L4/L5, Level 4, etc.)
+  // Numeric 4+ typically = senior at most companies (Capital One, Amazon, Google, etc.)
+  const excludedLevel = /\b(staff|principal|lead|manager|director|vp|vice president|chief|architect|distinguished|fellow|head|senior)\b/i.test(t)
+    || /\bsr\.?\s/i.test(t)
+    || /\b(engineer|developer|analyst|scientist)\s+[4-9]\b/i.test(t)
+    || /\bL[4-9]\b/i.test(t)
+    || /\blevel\s*[4-9]\b/i.test(t);
   const intern = /\b(intern|internship|co-op|coop|new grad|entry[- ]level|graduate program)\b/i.test(t);
   return { excludedLevel, intern };
 }
