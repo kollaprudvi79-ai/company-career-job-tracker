@@ -5,6 +5,20 @@ import { assessJob, classify, enrichJob, isoDate, isUsJob, normalizeCompany, rem
 import { isExtraType, extraBoardUrl, fetchExtraJobs, normalizeExtraJob } from './ats-extra.mjs';
 
 const sources = JSON.parse(await readFile(new URL('../directory-sources.json', import.meta.url)));
+// Extra boards (e.g., H-1B cap-exempt universities) — small file, merged with main directory
+try {
+  const extra = JSON.parse(await readFile(new URL('../directory-extra.json', import.meta.url)));
+  if (Array.isArray(extra) && extra.length) {
+    const seen = new Set(sources.map(s => `${s.type}:${s.token}`));
+    for (const b of extra) {
+      const key = `${b.type}:${b.token}`;
+      if (!seen.has(key)) { seen.add(key); sources.push(b); }
+    }
+    console.log(`Merged ${extra.length} extra boards from directory-extra.json`);
+  }
+} catch (e) {
+  console.log('No directory-extra.json (optional):', String((e && e.message) || e).slice(0, 80));
+}
 let previous = { jobs: [] };
 try { previous = JSON.parse(await readFile(new URL('../jobs.json', import.meta.url))); } catch {}
 // Historical date repair map (built Oct 6 2026): job id -> earliest commit
