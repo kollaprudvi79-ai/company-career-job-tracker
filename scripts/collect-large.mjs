@@ -54,6 +54,35 @@ try { appliedCompanies = JSON.parse(await readFile(new URL('../applied-companies
 const appliedSet = new Set(appliedCompanies.map(normalizeCompany));
 const appliedTokens = new Set(appliedCompanies.map(x => normalizeCompany(x).replace(/\s+/g, '')));
 
+// ---------- TIERED SWEEP (Oct 7 2026): hot boards every run, full directory weekly ----------
+// 90% of the 48k boards never produce jobs. On normal sweeps, check only "hot"
+// boards (produced a job in the last 14 days) plus always-hot extras (universities).
+// A full deep sweep runs automatically if the last one was >7 days ago.
+const HOT_DAYS = 14;
+const DEEP_SWEEP_DAYS = 7;
+const nowMs = Date.now();
+const lastDeepMs = collectorState.lastDeepSweep ? Date.parse(collectorState.lastDeepSweep) : 0;
+let isDeepSweep = (nowMs - lastDeepMs) > DEEP_SWEEP_DAYS * 24 * 3600 * 1000;
+if (isDeepSweep) {
+  console.log('DEEP SWEEP: checking all boards (last deep sweep >7d ago or never)');
+  collectorState.lastDeepSweep = new Date(nowMs).toISOString();
+} else if (previous && Array.isArray(previous.jobs)) {
+  const cutoff = nowMs - HOT_DAYS * 24 * 3600 * 1000;
+  const hotKeys = new Set();
+  for (const j of previous.jobs) {
+    const fs = j.firstSeen ? Date.parse(j.firstSeen) : 0;
+    if (fs >= cutoff && j.boardKey) hotKeys.add(j.boardKey);
+  }
+  const before = sources.length;
+  const hotSources = sources.filter(s => {
+    if (s._fromExtra) return true; // universities/nonprofits always hot
+    return hotKeys.has(`${s.type}:${String(s.token || '').toLowerCase()}`);
+  });
+  console.log(`TIERED SWEEP: ${hotSources.length}/${before} boards (hot: jobs in last ${HOT_DAYS}d + extras)`);
+  sources.length = 0;
+  sources.push(...hotSources);
+}
+
 function safe(url) {
   try { const u = new URL(url); return u.protocol === 'https:' ? u.href : null; } catch { return null; }
 }
