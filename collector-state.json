@@ -4,6 +4,6 @@
   "batchSize": 100000,
   "discovered": 48182,
   "sweepInProgress": true,
-  "sweepAttempted": 40000,
+  "sweepAttempted": 48000,
   "sweepTotal": 48182
 }
