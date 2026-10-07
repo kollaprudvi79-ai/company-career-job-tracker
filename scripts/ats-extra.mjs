@@ -39,7 +39,7 @@ export function extraBoardUrl(source) {
       const [p, s] = tok.split('/');
       return `https://sjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=${encodeURIComponent(p || '')}&siteid=${encodeURIComponent(s || '')}`;
     }
-    case 'phenom': return `https://${tok.replace(/\/+$/, '')}/search-results`;
+    case 'phenom': return tok.includes('/') ? `https://${tok.replace(/\/+$/, '')}` : `https://${tok.replace(/\/+$/, '')}/search-results`;
     case 'paylocity': return `https://recruiting.paylocity.com/recruiting/jobs/All/${encodeURIComponent(tok)}`;
     case 'zoho': {
       const [portal, tld] = tok.split('/');
@@ -336,7 +336,7 @@ async function fetchBrassring(x, signal) {
 // ---------- phenom: SSR-embedded eagerLoadRefineSearch JSON ----------
 async function fetchPhenom(x, signal) {
   const tok = String(x.token).replace(/\/+$/, '');
-  const base = `https://${tok}/search-results`;
+  const base = tok.includes('/') ? `https://${tok}` : `https://${tok}/search-results`;
   const out = [];
   let total = Infinity;
   for (let from = 0; from < total && from <= 2000; from += 10) {
