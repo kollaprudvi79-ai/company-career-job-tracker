@@ -1,1 +1,147 @@
-[{"company": "University of Washington", "type": "workday", "token": "wd5.myworkdaysite.com/uw/UWHires"}, {"company": "Stanford University", "type": "oracle", "token": "careersearch.stanford.edu/stanford"}, {"company": "University of Pennsylvania", "type": "workday", "token": "wd1.myworkdaysite.com/upenn/careers-at-penn"}, {"company": "Cornell University", "type": "workday", "token": "cornell.wd1.myworkdayjobs.com/cornell/CornellCareerPage"}, {"company": "University of Chicago", "type": "workday", "token": "uchicago.wd5.myworkdayjobs.com/uchicago/External"}, {"company": "University of Texas at Austin", "type": "workday", "token": "utaustin.wd1.myworkdayjobs.com/utaustin/UTstaff"}, {"company": "Texas A&M University", "type": "workday", "token": "tamus.wd1.myworkdayjobs.com/tamus/TAMUS_External"}, {"company": "Ohio State University", "type": "workday", "token": "osu.wd1.myworkdayjobs.com/osu/OSUCareers"}, {"company": "Yale University", "type": "phenom", "token": "careers.yale.edu/us/en/search-results"}]
+[
+  {
+    "company": "University of Washington",
+    "type": "workday",
+    "token": "wd5.myworkdaysite.com/uw/UWHires"
+  },
+  {
+    "company": "Stanford University",
+    "type": "oracle",
+    "token": "careersearch.stanford.edu/stanford"
+  },
+  {
+    "company": "University of Pennsylvania",
+    "type": "workday",
+    "token": "wd1.myworkdaysite.com/upenn/careers-at-penn"
+  },
+  {
+    "company": "Cornell University",
+    "type": "workday",
+    "token": "cornell.wd1.myworkdayjobs.com/cornell/CornellCareerPage"
+  },
+  {
+    "company": "University of Chicago",
+    "type": "workday",
+    "token": "uchicago.wd5.myworkdayjobs.com/uchicago/External"
+  },
+  {
+    "company": "University of Texas at Austin",
+    "type": "workday",
+    "token": "utaustin.wd1.myworkdayjobs.com/utaustin/UTstaff"
+  },
+  {
+    "company": "Texas A&M University",
+    "type": "workday",
+    "token": "tamus.wd1.myworkdayjobs.com/tamus/TAMUS_External"
+  },
+  {
+    "company": "Ohio State University",
+    "type": "workday",
+    "token": "osu.wd1.myworkdayjobs.com/osu/OSUCareers"
+  },
+  {
+    "company": "Yale University",
+    "type": "phenom",
+    "token": "careers.yale.edu/us/en/search-results"
+  },
+  {
+    "company": "HCA Healthcare",
+    "type": "phenom",
+    "token": "careers.hcahealthcare.com"
+  },
+  {
+    "company": "Ascension",
+    "type": "phenom",
+    "token": "jobs.ascension.org"
+  },
+  {
+    "company": "CommonSpirit Health",
+    "type": "phenom",
+    "token": "commonspirit.careers"
+  },
+  {
+    "company": "Kaiser Permanente",
+    "type": "smartrecruiters",
+    "token": "KaiserPermanente3"
+  },
+  {
+    "company": "Cleveland Clinic",
+    "type": "workday",
+    "token": "ccf.wd1.myworkdayjobs.com/ccf/ClevelandClinicCareers"
+  },
+  {
+    "company": "Mass General Brigham",
+    "type": "workday",
+    "token": "massgeneralbrigham.wd1.myworkdayjobs.com/massgeneralbrigham/External"
+  },
+  {
+    "company": "NewYork-Presbyterian",
+    "type": "phenom",
+    "token": "careers.nyp.org"
+  },
+  {
+    "company": "AdventHealth",
+    "type": "phenom",
+    "token": "jobs.adventhealth.com"
+  },
+  {
+    "company": "Tenet Healthcare",
+    "type": "phenom",
+    "token": "jobs.tenethealth.com"
+  },
+  {
+    "company": "Banner Health",
+    "type": "workday",
+    "token": "bannerhealth.wd108.myworkdayjobs.com/bannerhealth/External"
+  },
+  {
+    "company": "Sutter Health",
+    "type": "phenom",
+    "token": "jobs.sutterhealth.org"
+  },
+  {
+    "company": "Memorial Hermann",
+    "type": "phenom",
+    "token": "jobs.memorialhermann.org"
+  },
+  {
+    "company": "Houston Methodist",
+    "type": "icims",
+    "token": "careers-houstonmethodist"
+  },
+  {
+    "company": "Baylor College of Medicine",
+    "type": "successfactors",
+    "token": "jobs.bcm.edu"
+  },
+  {
+    "company": "American Red Cross",
+    "type": "workday",
+    "token": "americanredcross.wd1.myworkdayjobs.com/americanredcross/External"
+  },
+  {
+    "company": "Feeding America",
+    "type": "jobvite",
+    "token": "feedingamerica"
+  },
+  {
+    "company": "Habitat for Humanity",
+    "type": "brassring",
+    "token": "26053/5396"
+  },
+  {
+    "company": "The Nature Conservancy",
+    "type": "workday",
+    "token": "nature.wd108.myworkdayjobs.com/nature/External"
+  },
+  {
+    "company": "American Cancer Society",
+    "type": "workday",
+    "token": "acs.wd5.myworkdayjobs.com/acs/External"
+  },
+  {
+    "company": "Boys & Girls Clubs of America",
+    "type": "icims",
+    "token": "careers-bgca"
+  }
+]
