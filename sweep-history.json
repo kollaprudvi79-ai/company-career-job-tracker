@@ -238,5 +238,20 @@
   "fitJobs": 716,
   "universityJobs": 0,
   "nonProfitJobs": 0
+ },
+ {
+  "sweep": 41,
+  "date": "2026-10-07",
+  "time": "20:26",
+  "startTime": "2026-10-07T20:26:36.916Z",
+  "endTime": "2026-10-07T20:33:48.780Z",
+  "durationMin": 7,
+  "boardsChecked": 4518,
+  "boardsOk": 4512,
+  "newJobs": 3,
+  "totalJobs": 11374,
+  "fitJobs": 713,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
  }
 ]
