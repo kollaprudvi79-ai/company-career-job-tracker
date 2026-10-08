@@ -1,7 +1,7 @@
 name: Collect employer jobs
 on:
   schedule:
-    - cron: '5,45 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -34,7 +34,7 @@ jobs:
           git pull --rebase -Xours origin main
           git push origin main
       - run: node scripts/ingest.mjs
-      - run: python -m career_radar.cli --repo-root .
+      - run: python -m career_radar.cli --repo-root . --full
         working-directory: scripts
         env:
           BATCH_SIZE: '100000'
