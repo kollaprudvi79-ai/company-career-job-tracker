@@ -633,5 +633,345 @@
   "company": "NBC News",
   "type": "smartrecruiters",
   "token": "nbcuniversal3"
+ },
+ {
+  "company": "Mux",
+  "type": "ashby",
+  "token": "mux"
+ },
+ {
+  "company": "Commure",
+  "type": "ashby",
+  "token": "commure"
+ },
+ {
+  "company": "Encord",
+  "type": "ashby",
+  "token": "encord"
+ },
+ {
+  "company": "Consensys",
+  "type": "greenhouse",
+  "token": "consensys"
+ },
+ {
+  "company": "Human Interest",
+  "type": "greenhouse",
+  "token": "humaninterest"
+ },
+ {
+  "company": "Fastly",
+  "type": "greenhouse",
+  "token": "fastly"
+ },
+ {
+  "company": "Panthalassa",
+  "type": "greenhouse",
+  "token": "panthalassa"
+ },
+ {
+  "company": "Abnormal AI",
+  "type": "greenhouse",
+  "token": "abnormalsecurity"
+ },
+ {
+  "company": "Twilio",
+  "type": "greenhouse",
+  "token": "twilio"
+ },
+ {
+  "company": "ALSO",
+  "type": "ashby",
+  "token": "ridealso"
+ },
+ {
+  "company": "Stoke Space",
+  "type": "greenhouse",
+  "token": "stokespacetechnologies"
+ },
+ {
+  "company": "Apex Technology, Inc.",
+  "type": "ashby",
+  "token": "apex-technology-inc"
+ },
+ {
+  "company": "Numeral",
+  "type": "ashby",
+  "token": "numeral"
+ },
+ {
+  "company": "Inferact",
+  "type": "ashby",
+  "token": "inferact"
+ },
+ {
+  "company": "Filigran",
+  "type": "ashby",
+  "token": "filigran"
+ },
+ {
+  "company": "Flai",
+  "type": "ashby",
+  "token": "flai"
+ },
+ {
+  "company": "Front",
+  "type": "ashby",
+  "token": "frontcareers"
+ },
+ {
+  "company": "VulcanForms",
+  "type": "rippling",
+  "token": "vulcanforms"
+ },
+ {
+  "company": "AgentMail (YC S25)",
+  "type": "ashby",
+  "token": "agentmail"
+ },
+ {
+  "company": "Usul",
+  "type": "ashby",
+  "token": "usul"
+ },
+ {
+  "company": "Intuitive",
+  "type": "smartrecruiters",
+  "token": "intuitive"
+ },
+ {
+  "company": "ID.me",
+  "type": "greenhouse",
+  "token": "idme"
+ },
+ {
+  "company": "Western Digital",
+  "type": "smartrecruiters",
+  "token": "westerndigital"
+ },
+ {
+  "company": "Pure",
+  "type": "ashby",
+  "token": "pure"
+ },
+ {
+  "company": "Lightmatter",
+  "type": "greenhouse",
+  "token": "lightmatter"
+ },
+ {
+  "company": "Factory",
+  "type": "ashby",
+  "token": "factory"
+ },
+ {
+  "company": "PostHog",
+  "type": "ashby",
+  "token": "posthog"
+ },
+ {
+  "company": "Altruist",
+  "type": "greenhouse",
+  "token": "altruist"
+ },
+ {
+  "company": "Equinix",
+  "type": "workday",
+  "token": "equinix.wd1.myworkdayjobs.com/equinix/external"
+ },
+ {
+  "company": "AECOM",
+  "type": "smartrecruiters",
+  "token": "aecom2"
+ },
+ {
+  "company": "Cisco",
+  "type": "workday",
+  "token": "cisco.wd5.myworkdayjobs.com/cisco/cisco_careers"
+ },
+ {
+  "company": "ClickHouse",
+  "type": "ashby",
+  "token": "clickhouse"
+ },
+ {
+  "company": "OpenRouter",
+  "type": "ashby",
+  "token": "openrouter"
+ },
+ {
+  "company": "SpotOn",
+  "type": "ashby",
+  "token": "spoton"
+ },
+ {
+  "company": "Harness",
+  "type": "greenhouse",
+  "token": "harnessinc"
+ },
+ {
+  "company": "Semtech",
+  "type": "workday",
+  "token": "semtech.wd1.myworkdayjobs.com/semtech/semtechcareers"
+ },
+ {
+  "company": "Onebrief",
+  "type": "ashby",
+  "token": "onebrief"
+ },
+ {
+  "company": "KnowBe4",
+  "type": "greenhouse",
+  "token": "knowbe4"
+ },
+ {
+  "company": "Broadcom",
+  "type": "workday",
+  "token": "broadcom.wd1.myworkdayjobs.com/broadcom/external_career"
+ },
+ {
+  "company": "Addepar",
+  "type": "greenhouse",
+  "token": "addepar1"
+ },
+ {
+  "company": "Socket",
+  "type": "ashby",
+  "token": "socket"
+ },
+ {
+  "company": "PagerDuty",
+  "type": "greenhouse",
+  "token": "pagerduty"
+ },
+ {
+  "company": "New Relic",
+  "type": "greenhouse",
+  "token": "newrelic"
+ },
+ {
+  "company": "Calendly",
+  "type": "greenhouse",
+  "token": "calendly"
+ },
+ {
+  "company": "CertiK",
+  "type": "lever",
+  "token": "certik"
+ },
+ {
+  "company": "Anrok",
+  "type": "ashby",
+  "token": "anrok"
+ },
+ {
+  "company": "Peloton Interactive",
+  "type": "greenhouse",
+  "token": "peloton"
+ },
+ {
+  "company": "Docker, Inc",
+  "type": "ashby",
+  "token": "docker"
+ },
+ {
+  "company": "Zoom",
+  "type": "workday",
+  "token": "zoom.wd5.myworkdayjobs.com/zoom/zoom"
+ },
+ {
+  "company": "FINNY",
+  "type": "ashby",
+  "token": "finny"
+ },
+ {
+  "company": "Devoted Health",
+  "type": "workday",
+  "token": "devoted.wd1.myworkdayjobs.com/devoted/devoted"
+ },
+ {
+  "company": "Oyster\u00ae",
+  "type": "ashby",
+  "token": "oyster"
+ },
+ {
+  "company": "Genius Sports",
+  "type": "greenhouse",
+  "token": "geniussports"
+ },
+ {
+  "company": "ASML",
+  "type": "workday",
+  "token": "asml.wd3.myworkdayjobs.com/asml/asmlext1"
+ },
+ {
+  "company": "Privia Health",
+  "type": "smartrecruiters",
+  "token": "priviahealth"
+ },
+ {
+  "company": "Intel",
+  "type": "workday",
+  "token": "intel.wd1.myworkdayjobs.com/intel/external"
+ },
+ {
+  "company": "Tandem Diabetes",
+  "type": "workday",
+  "token": "tandemdiabetes.wd12.myworkdayjobs.com/tandemdiabetes/tandemdiabetes"
+ },
+ {
+  "company": "Genesys",
+  "type": "workday",
+  "token": "genesys.wd1.myworkdayjobs.com/genesys/genesys"
+ },
+ {
+  "company": "KLA",
+  "type": "workday",
+  "token": "kla.wd1.myworkdayjobs.com/kla/search"
+ },
+ {
+  "company": "NXP Semiconductors",
+  "type": "workday",
+  "token": "nxp.wd3.myworkdayjobs.com/nxp/careers"
+ },
+ {
+  "company": "Arctic Wolf Networks",
+  "type": "workday",
+  "token": "arcticwolf.wd1.myworkdayjobs.com/arcticwolf/external"
+ },
+ {
+  "company": "Yum! Brands",
+  "type": "oracle",
+  "token": "eczd.fa.us2.oraclecloud.com/cx_1"
+ },
+ {
+  "company": "Entegris",
+  "type": "workday",
+  "token": "entegris.wd1.myworkdayjobs.com/entegris/entegriscareers"
+ },
+ {
+  "company": "Zillow",
+  "type": "workday",
+  "token": "zillow.wd5.myworkdayjobs.com/zillow/zillow_group_external"
+ },
+ {
+  "company": "ITW",
+  "type": "workday",
+  "token": "itw.wd5.myworkdayjobs.com/itw/external"
+ },
+ {
+  "company": "Motorola Solutions",
+  "type": "workday",
+  "token": "motorolasolutions.wd5.myworkdayjobs.com/motorolasolutions/careers"
+ },
+ {
+  "company": "PayPal",
+  "type": "workday",
+  "token": "paypal.wd1.myworkdayjobs.com/paypal/jobs"
+ },
+ {
+  "company": "Applied Materials",
+  "type": "workday",
+  "token": "amat.wd1.myworkdayjobs.com/amat/external"
  }
 ]
