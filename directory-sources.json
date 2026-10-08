@@ -13165,11 +13165,6 @@
   "token": "rockitdata"
  },
  {
-  "company": "Rubenstein Law, P.A.",
-  "type": "jazzhr",
-  "token": "rubensteinlaw"
- },
- {
   "company": "Savan",
   "type": "jazzhr",
   "token": "savangroup"
@@ -17693,11 +17688,6 @@
   "company": "Fa Ewmy Saasfaprod1",
   "type": "oracle",
   "token": "fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
- },
- {
-  "company": "Fa Exew Saasfaprod1",
-  "type": "oracle",
-  "token": "fa-exew-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
  },
  {
   "company": "Fa Exvu Saasfaprod1 (CX_1)",
