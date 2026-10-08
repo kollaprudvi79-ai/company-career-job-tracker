@@ -19,10 +19,8 @@ jobs:
           python-version: '3.11'
       - run: pip install -r scripts/career_radar/requirements.txt
       - run: python scripts/clean_boards.py
-      - run: python -m career_radar.discover --repo-root .
-        working-directory: scripts
-      - run: python -m career_radar.cli --repo-root . --full
-        working-directory: scripts
+      - run: PYTHONPATH=scripts python -m career_radar.discover --repo-root .
+      - run: PYTHONPATH=scripts python -m career_radar.cli --repo-root . --full
         env:
           BATCH_SIZE: '100000'
       - name: Commit snapshot
