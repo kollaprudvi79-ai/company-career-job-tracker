@@ -6,8 +6,8 @@
   },
   {
     "company": "Stanford University",
-    "type": "oracle",
-    "token": "careersearch.stanford.edu/stanford"
+    "type": "workday",
+    "token": "wd5.myworkdaysite.com/stanford/stanfordcareers"
   },
   {
     "company": "University of Pennsylvania",
@@ -17,131 +17,226 @@
   {
     "company": "Cornell University",
     "type": "workday",
-    "token": "cornell.wd1.myworkdayjobs.com/cornell/CornellCareerPage"
+    "token": "wd1.myworkdaysite.com/cornell/cornellcareers"
   },
   {
     "company": "University of Chicago",
     "type": "workday",
-    "token": "uchicago.wd5.myworkdayjobs.com/uchicago/External"
+    "token": "wd5.myworkdaysite.com/uchicago/uchicago"
   },
   {
-    "company": "University of Texas at Austin",
+    "company": "UT Austin",
     "type": "workday",
-    "token": "utaustin.wd1.myworkdayjobs.com/utaustin/UTstaff"
+    "token": "wd5.myworkdaysite.com/ut/utaustin"
   },
   {
-    "company": "Texas A&M University",
+    "company": "Texas A&M",
     "type": "workday",
-    "token": "tamus.wd1.myworkdayjobs.com/tamus/TAMUS_External"
+    "token": "wd5.myworkdaysite.com/tamu/tamu"
   },
   {
-    "company": "Ohio State University",
+    "company": "Ohio State",
     "type": "workday",
-    "token": "osu.wd1.myworkdayjobs.com/osu/OSUCareers"
+    "token": "wd5.myworkdaysite.com/osu/osu"
   },
   {
     "company": "Yale University",
-    "type": "phenom",
-    "token": "careers.yale.edu/us/en/search-results"
+    "type": "workday",
+    "token": "wd5.myworkdaysite.com/yale/yale"
   },
   {
     "company": "HCA Healthcare",
-    "type": "phenom",
-    "token": "careers.hcahealthcare.com"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/hca/hcacareers"
   },
   {
     "company": "Ascension",
-    "type": "phenom",
-    "token": "jobs.ascension.org"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/ascension/ascensioncareers"
   },
   {
     "company": "CommonSpirit Health",
-    "type": "phenom",
-    "token": "commonspirit.careers"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/commonspirit/commonspirit"
   },
   {
     "company": "Kaiser Permanente",
-    "type": "smartrecruiters",
-    "token": "KaiserPermanente3"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/kaiser/kaiser"
   },
   {
     "company": "Cleveland Clinic",
     "type": "workday",
-    "token": "ccf.wd1.myworkdayjobs.com/ccf/ClevelandClinicCareers"
+    "token": "wd1.myworkdayjobs.com/clevelandclinic/clevelandclinic"
   },
   {
     "company": "Mass General Brigham",
     "type": "workday",
-    "token": "massgeneralbrigham.wd1.myworkdayjobs.com/massgeneralbrigham/External"
+    "token": "wd1.myworkdayjobs.com/mgb/mgb"
   },
   {
     "company": "NewYork-Presbyterian",
-    "type": "phenom",
-    "token": "careers.nyp.org"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/nyp/nyp"
   },
   {
     "company": "AdventHealth",
-    "type": "phenom",
-    "token": "jobs.adventhealth.com"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/adventhealth/adventhealth"
   },
   {
     "company": "Tenet Healthcare",
-    "type": "phenom",
-    "token": "jobs.tenethealth.com"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/tenet/tenet"
   },
   {
     "company": "Banner Health",
     "type": "workday",
-    "token": "bannerhealth.wd108.myworkdayjobs.com/bannerhealth/External"
+    "token": "wd1.myworkdayjobs.com/banner/banner"
   },
   {
     "company": "Sutter Health",
-    "type": "phenom",
-    "token": "jobs.sutterhealth.org"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/sutter/sutter"
   },
   {
     "company": "Memorial Hermann",
-    "type": "phenom",
-    "token": "jobs.memorialhermann.org"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/memorialhermann/mh"
   },
   {
     "company": "Houston Methodist",
-    "type": "icims",
-    "token": "careers-houstonmethodist"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/houstonmethodist/hm"
   },
   {
     "company": "Baylor College of Medicine",
-    "type": "successfactors",
-    "token": "jobs.bcm.edu"
+    "type": "workday",
+    "token": "wd1.myworkdayjobs.com/bcm/bcm"
   },
   {
     "company": "American Red Cross",
     "type": "workday",
-    "token": "americanredcross.wd1.myworkdayjobs.com/americanredcross/External"
+    "token": "wd1.myworkdayjobs.com/redcross/redcross"
   },
   {
     "company": "Feeding America",
-    "type": "jobvite",
+    "type": "greenhouse",
     "token": "feedingamerica"
   },
   {
     "company": "Habitat for Humanity",
-    "type": "brassring",
-    "token": "26053/5396"
+    "type": "greenhouse",
+    "token": "habitat"
   },
   {
     "company": "The Nature Conservancy",
-    "type": "workday",
-    "token": "nature.wd108.myworkdayjobs.com/nature/External"
+    "type": "greenhouse",
+    "token": "natureconservancy"
   },
   {
     "company": "American Cancer Society",
-    "type": "workday",
-    "token": "acs.wd5.myworkdayjobs.com/acs/External"
+    "type": "greenhouse",
+    "token": "cancer"
   },
   {
     "company": "Boys & Girls Clubs of America",
-    "type": "icims",
-    "token": "careers-bgca"
+    "type": "greenhouse",
+    "token": "bgca"
+  },
+  {
+    "company": "Palantir",
+    "type": "lever",
+    "token": "palantir"
+  },
+  {
+    "company": "Block",
+    "type": "greenhouse",
+    "token": "block"
+  },
+  {
+    "company": "Scale AI",
+    "type": "greenhouse",
+    "token": "scaleai"
+  },
+  {
+    "company": "Twilio",
+    "type": "greenhouse",
+    "token": "twilio"
+  },
+  {
+    "company": "Asana",
+    "type": "greenhouse",
+    "token": "asana"
+  },
+  {
+    "company": "Hearst",
+    "type": "greenhouse",
+    "token": "hearst"
+  },
+  {
+    "company": "Take-Two",
+    "type": "greenhouse",
+    "token": "taketwo"
+  },
+  {
+    "company": "Miro",
+    "type": "ashby",
+    "token": "miro"
+  },
+  {
+    "company": "LinkedIn",
+    "type": "lever",
+    "token": "linkedin"
+  },
+  {
+    "company": "Coursera",
+    "type": "greenhouse",
+    "token": "coursera"
+  },
+  {
+    "company": "Confluent",
+    "type": "ashby",
+    "token": "confluent"
+  },
+  {
+    "company": "Udemy",
+    "type": "greenhouse",
+    "token": "udemy"
+  },
+  {
+    "company": "Constellation Brands",
+    "type": "ashby",
+    "token": "constellation"
+  },
+  {
+    "company": "MasterClass",
+    "type": "greenhouse",
+    "token": "masterclass"
+  },
+  {
+    "company": "Quanta Services",
+    "type": "ashby",
+    "token": "quanta"
+  },
+  {
+    "company": "Airtable",
+    "type": "greenhouse",
+    "token": "airtable"
+  },
+  {
+    "company": "HP",
+    "type": "greenhouse",
+    "token": "hp"
+  },
+  {
+    "company": "Disney",
+    "type": "greenhouse",
+    "token": "disney"
+  },
+  {
+    "company": "2U",
+    "type": "greenhouse",
+    "token": "2u"
   }
 ]
