@@ -14780,11 +14780,6 @@
   "token": "ggwgroup.wd103.myworkdayjobs.com/ggwgroup/ggwgroup"
  },
  {
-  "company": "Ghr (Lateral Ba Continuum)",
-  "type": "workday",
-  "token": "ghr.wd1.myworkdayjobs.com/ghr/lateral-ba_continuum"
- },
- {
   "company": "Ghr (Us Emplsv)",
   "type": "workday",
   "token": "ghr.wd1.myworkdayjobs.com/ghr/us-emplsv"
@@ -17965,11 +17960,6 @@
   "token": "iabeey.fa.ocs.oraclecloud.com/cx_1001"
  },
  {
-  "company": "Iaboey",
-  "type": "oracle",
-  "token": "iaboey.fa.ocs.oraclecloud.com/cx_2"
- },
- {
   "company": "Ialmme",
   "type": "oracle",
   "token": "ialmme.fa.ocs.oraclecloud.com/ciklum-career"
@@ -19225,16 +19215,6 @@
   "token": "turck.wd3.myworkdayjobs.com/turck/turck_careers"
  },
  {
-  "company": "Upenn",
-  "type": "workday",
-  "token": "upenn.wd1.myworkdayjobs.com/upenn/careers-at-penn"
- },
- {
-  "company": "Uslbm",
-  "type": "workday",
-  "token": "uslbm.wd1.myworkdayjobs.com/uslbm/inviteonly"
- },
- {
   "company": "Varsitybrands",
   "type": "workday",
   "token": "varsitybrands.wd503.myworkdayjobs.com/varsitybrands/externalcareersite"
@@ -19243,11 +19223,6 @@
   "company": "Velux",
   "type": "workday",
   "token": "velux.wd3.myworkdayjobs.com/velux/velux_residential"
- },
- {
-  "company": "Veralto",
-  "type": "workday",
-  "token": "veralto.wd1.myworkdayjobs.com/veralto/hachjobs"
  },
  {
   "company": "Verawholehealth",

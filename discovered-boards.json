@@ -973,5 +973,110 @@
   "company": "Applied Materials",
   "type": "workday",
   "token": "amat.wd1.myworkdayjobs.com/amat/external"
+ },
+ {
+  "company": "Harvard University",
+  "type": "smartrecruiters",
+  "token": "harvarduniversity"
+ },
+ {
+  "company": "Versant",
+  "type": "smartrecruiters",
+  "token": "versant3"
+ },
+ {
+  "company": "Lumentum",
+  "type": "workday",
+  "token": "lumentum.wd5.myworkdayjobs.com/lumentum/lite"
+ },
+ {
+  "company": "Porch",
+  "type": "workday",
+  "token": "porch.wd1.myworkdayjobs.com/porch/careers"
+ },
+ {
+  "company": "Gilead",
+  "type": "workday",
+  "token": "gilead.wd1.myworkdayjobs.com/gilead/gileadcareers"
+ },
+ {
+  "company": "Wiley",
+  "type": "workday",
+  "token": "wiley.wd1.myworkdayjobs.com/wiley/wiley_careers"
+ },
+ {
+  "company": "Vuori",
+  "type": "smartrecruiters",
+  "token": "vuoriinc"
+ },
+ {
+  "company": "Red Hat",
+  "type": "workday",
+  "token": "redhat.wd5.myworkdayjobs.com/redhat/jobs"
+ },
+ {
+  "company": "Arthur Grand Technologies",
+  "type": "smartrecruiters",
+  "token": "arthurgrandtechnologiesinc"
+ },
+ {
+  "company": "Fractal Analytics",
+  "type": "workday",
+  "token": "fractal.wd1.myworkdayjobs.com/fractal/careers"
+ },
+ {
+  "company": "Zendesk",
+  "type": "workday",
+  "token": "zendesk.wd1.myworkdayjobs.com/zendesk/zendesk"
+ },
+ {
+  "company": "Samsung",
+  "type": "workday",
+  "token": "sec.wd3.myworkdayjobs.com/sec/samsung_careers"
+ },
+ {
+  "company": "Rackspace",
+  "type": "workday",
+  "token": "rackspace.wd1.myworkdayjobs.com/rackspace/external"
+ },
+ {
+  "company": "GlobalFoundries",
+  "type": "workday",
+  "token": "globalfoundries.wd1.myworkdayjobs.com/globalfoundries/external"
+ },
+ {
+  "company": "Gates Foundation",
+  "type": "workday",
+  "token": "gatesfoundation.wd1.myworkdayjobs.com/gatesfoundation/gates"
+ },
+ {
+  "company": "Green Dot",
+  "type": "workday",
+  "token": "greendotcorp.wd1.myworkdayjobs.com/greendotcorp/gdc"
+ },
+ {
+  "company": "Eos Energy",
+  "type": "workday",
+  "token": "eosenergystorage.wd1.myworkdayjobs.com/eosenergystorage/eos"
+ },
+ {
+  "company": "Kyndryl",
+  "type": "workday",
+  "token": "kyndryl.wd5.myworkdayjobs.com/kyndryl/kyndrylprofessionalcareers"
+ },
+ {
+  "company": "Workday",
+  "type": "workday",
+  "token": "workday.wd5.myworkdayjobs.com/workday/workday"
+ },
+ {
+  "company": "Remitly",
+  "type": "workday",
+  "token": "remitly.wd5.myworkdayjobs.com/remitly/remitly_careers"
+ },
+ {
+  "company": "DXC Technology",
+  "type": "workday",
+  "token": "dxctechnology.wd1.myworkdayjobs.com/dxctechnology/dxcjobs"
  }
 ]
