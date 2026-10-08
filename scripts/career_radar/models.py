@@ -16,10 +16,46 @@ SALARY_FLOOR = 125000
 # US state abbreviations for location verification
 US_STATE_ABBRS = r"\b(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b"
 
-def _is_us_location(loc: str) -> bool:
-    """Check if location string contains US markers."""
+def _is_target_location(loc: str) -> bool:
+    """Check if location is in target countries: UK, Ireland, Canada, UAE, Australia, Norway, Italy, Europe, USA."""
     if not loc:
         return False
+    import re as _re
+    ll = loc.lower()
+    # United Kingdom
+    if _re.search(r"\b(united kingdom|\buk\b|england|scotland|wales|northern ireland|london|manchester|birmingham|leeds|liverpool|bristol|edinburgh|glasgow|sheffield|newcastle|nottingham|leicester|coventry|hull|bradford|cardiff|belfast|southampton|portsmouth|plymouth|derby|stoke|wolverhampton|norwich|luton)\b", ll):
+        return True
+    # Ireland
+    if _re.search(r"\b(ireland|dublin|cork|galway|limerick|waterford|drogheda)\b", ll):
+        return True
+    # Canada
+    if _re.search(r"\b(canada|toronto|vancouver|montreal|calgary|ottawa|edmonton|winnipeg|quebec|hamilton|kitchener|victoria|halifax|ontario|british columbia|alberta|manitoba|saskatchewan|nova scotia)\b", ll):
+        return True
+    if _re.search(r"\b(ON|BC|QC|AB|MB|SK|NS|NB|NL|PE|NT|YT|NU)\b", loc):
+        # Canadian province codes (avoid false positives - require Canada context or major city)
+        if _re.search(r"\b(canada|toronto|vancouver|montreal|calgary|ottawa)\b", ll):
+            return True
+    # UAE / Dubai
+    if _re.search(r"\b(uae|united arab emirates|dubai|abu dhabi|sharjah|ajman)\b", ll):
+        return True
+    # Australia
+    if _re.search(r"\b(australia|sydney|melbourne|brisbane|perth|adelaide|gold coast|canberra|newcastle|wollongong|geelong|hobart|darwin|nsw|vic|qld|wa\b|sa\b|tas|act)\b", ll):
+        return True
+    # Norway
+    if _re.search(r"\b(norway|norge|oslo|bergen|trondheim|stavanger|troms)\b", ll):
+        return True
+    # Italy
+    if _re.search(r"\b(italy|italia|milan|milano|rome|roma|turin|torino|naples|napoli|florence|firenze|bologna|genoa|venice)\b", ll):
+        return True
+    # Rest of Europe (major countries/cities)
+    if _re.search(r"\b(germany|deutschland|berlin|munich|hamburg|frankfurt|france|paris|lyon|spain|madrid|barcelona|netherlands|amsterdam|rotterdam|sweden|stockholm|switzerland|zurich|geneva|belgium|brussels|austria|vienna|denmark|copenhagen|finland|helsinki|portugal|lisbon|poland|warsaw|czech|prague|hungary|budapest|greece|athens|europe|eu\b)\b", ll):
+        return True
+    # USA (keep existing)
+    if _re.search(r"\b(united states|usa|u\.s\.a?\.)\b", ll):
+        return True
+    if _re.search(US_STATE_ABBRS, loc):
+        return True
+    return False
     import re as _re
     if _re.search(r"\b(united states|usa|u\.s\.a?\.)\b", loc, _re.I):
         return True
@@ -34,6 +70,7 @@ PROFILE_BY_ROLE = {
     "Data Scientist": "Data Scientist",
     "AI Engineer": "Data Scientist",
     "Full Stack .NET": ".NET Developer",
+    "Product Manager": "Default",
 }
 
 
@@ -193,6 +230,8 @@ def classify(title: Any = "", description: Any = "") -> Optional[str]:
         return "AI Engineer"
     if re.search(r"data analyst|business intelligence analyst|bi analyst|reporting analyst|product analyst|analytics analyst|business analyst", t):
         return "Data Analyst"
+    if re.search(r"product manager|senior product manager|associate product manager|technical product manager|data product manager|platform product manager|group product manager", t):
+        return "Product Manager"
     if re.search(r"\.net|asp\.net|c#|dotnet", t):
         return "Full Stack .NET"
     if (re.search(r"full.?stack|software (engineer|developer)|backend (engineer|developer)|application developer", t)
@@ -294,22 +333,19 @@ US_STATES = ("Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|De
              "District of Columbia")
 
 NON_US = re.compile(
-    r"canada|ontario|toronto|vancouver|montreal|calgary|waterloo|united kingdom|london|england|"
-    r"scotland|wales|ireland|dublin|germany|berlin|munich|france|paris|india|bangalore|bengaluru|"
-    r"hyderabad|pune|mumbai|delhi|jaipur|kolkata|ahmedabad|chennai|kochi|indore|lucknow|nagpur|"
-    r"surat|coimbatore|thiruvananthapuram|australia|sydney|melbourne|perth|brisbane|adelaide|"
-    r"singapore|tokyo|japan|brazil|sao paulo|mexico|mexico city|poland|warsaw|krakow|spain|madrid|"
-    r"barcelona|netherlands|amsterdam|israel|tel aviv|sweden|stockholm|norway|oslo|denmark|"
-    r"copenhagen|finland|helsinki|switzerland|zurich|austria|vienna|czech|prague|portugal|lisbon|"
-    r"italy|milan|rome|new zealand|auckland|hong kong|china|beijing|shanghai|shenzhen|south korea|"
-    r"seoul|philippines|manila|vietnam|hanoi|indonesia|jakarta|malaysia|kuala lumpur|argentina|"
-    r"buenos aires|chile|santiago|colombia|bogota|peru|lima|uruguay|montevideo|south africa|"
-    r"cape town|johannesburg|nigeria|lagos|kenya|nairobi|egypt|cairo|uae|dubai|abu dhabi|saudi|"
-    r"riyadh|qatar|doha|pakistan|islamabad|lahore|karachi|bangladesh|dhaka|sri lanka|colombo|"
-    r"nepal|kathmandu|\bapac\b|\bemea\b|tbilisi|\buk\b", re.I)
-
-_US_STATE_RE = re.compile(rf"\b({US_STATES})\b", re.I)
-_US_ABBR_RE = re.compile(r"(?:^|[\s,])(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b")
+    r"india|bangalore|bengaluru|hyderabad|pune|mumbai|delhi|jaipur|kolkata|ahmedabad|"
+    r"chennai|kochi|indore|lucknow|nagpur|surat|coimbatore|thiruvananthapuram|"
+    r"singapore|tokyo|japan|osaka|kyoto|brazil|sao paulo|rio de janeiro|"
+    r"mexico|mexico city|guadalajara|israel|tel aviv|jerusalem|"
+    r"new zealand|auckland|wellington|hong kong|china|beijing|shanghai|shenzhen|guangzhou|"
+    r"south korea|seoul|busan|philippines|manila|cebu|vietnam|hanoi|ho chi minh|"
+    r"indonesia|jakarta|malaysia|kuala lumpur|thailand|bangkok|taiwan|taipei|"
+    r"argentina|buenos aires|chile|santiago|colombia|bogota|peru|lima|"
+    r"uruguay|montevideo|south africa|johannesburg|cape town|nigeria|lagos|"
+    r"egypt|cairo|turkey|istanbul|saudi arabia|riyadh|jeddah|qatar|doha|kuwait|"
+    r"pakistan|karachi|lahore|bangladesh|dhaka|sri lanka|colombo|nepal|kathmandu|"
+    r"russia|moscow|ukraine|kyiv|belarus|kazakhstan|uzbekistan|"
+)
 
 
 def remote_assessment(location: Any = "", workplace: Any = None,
@@ -388,9 +424,9 @@ def assess_job(job: Job, now_ms: Optional[int] = None) -> Job:
     if job.remoteType == "non-us":
         blocks.append(job.remoteReason or "Location outside the US")
     elif job.remoteType == "remote-unknown":
-        blocks.append("Remote location not verified as US")
-    elif not job.usRemote and not _is_us_location(job.location or ""):
-        blocks.append("Location not verified as US")
+        blocks.append("Remote location not in target countries")
+    elif not job.usRemote and not _is_target_location(job.location or ""):
+        blocks.append("Location not in target countries")
     if flags.get("excludedLevel"):
         blocks.append("Excluded seniority/title level")
     if flags.get("intern"):
