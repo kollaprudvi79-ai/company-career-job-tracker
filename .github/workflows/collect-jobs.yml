@@ -44,7 +44,6 @@ jobs:
           fi
           git pull --rebase -Xours origin main
           git push origin main
-      - run: node scripts/ingest.mjs
       - run: python -m career_radar.cli --repo-root . --full
         working-directory: scripts
         env:
