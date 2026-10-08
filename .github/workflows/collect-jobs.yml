@@ -31,15 +31,15 @@ jobs:
             git commit -m 'Purge dead boards'
             git push origin main
           fi
-      - run: node --check scripts/ingest.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs && node --check scripts/discover.mjs
-      - run: node scripts/discover.mjs
+      - run: python -m career_radar.discover --repo-root .
+        working-directory: scripts
       - name: Commit discovered boards
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add discovered-boards.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh discovered boards'
+            git commit -m 'Discover new boards'
           fi
           git pull --rebase -Xours origin main
           git push origin main
