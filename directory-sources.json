@@ -6425,11 +6425,6 @@
   "token": "urbancompass"
  },
  {
-  "company": "US Conec, Ltd.",
-  "type": "greenhouse",
-  "token": "usconec"
- },
- {
   "company": "valaratomics",
   "type": "greenhouse",
   "token": "valaratomics"
@@ -15310,11 +15305,6 @@
   "token": "homedepot.wd5.myworkdayjobs.com/homedepot/careerdepot"
  },
  {
-  "company": "Hp (Exteu Ac Careersite)",
-  "type": "workday",
-  "token": "hp.wd5.myworkdayjobs.com/hp/exteu-ac-careersite"
- },
- {
   "company": "Hyperiongrp (Broadbean External)",
   "type": "workday",
   "token": "hyperiongrp.wd3.myworkdayjobs.com/hyperiongrp/broadbean_external"
@@ -17923,11 +17913,6 @@
   "company": "Events DC",
   "type": "oracle",
   "token": "fa-etlq-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
- },
- {
-  "company": "FirstEnergy",
-  "type": "oracle",
-  "token": "fa-etjd-saasfaprod1.fa.ocs.oraclecloud.com/firstenergycareers"
  },
  {
   "company": "Hilltop Holdings",
