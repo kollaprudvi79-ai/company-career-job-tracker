@@ -623,5 +623,15 @@
   "company": "Phylo",
   "type": "ashby",
   "token": "phylo"
+ },
+ {
+  "company": "ServiceNow",
+  "type": "smartrecruiters",
+  "token": "servicenow"
+ },
+ {
+  "company": "NBC News",
+  "type": "smartrecruiters",
+  "token": "nbcuniversal3"
  }
 ]
