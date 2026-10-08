@@ -17,7 +17,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --check scripts/ingest.mjs && node --check scripts/collect-large.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs && node --check scripts/discover.mjs
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install -r scripts/career_radar/requirements.txt
+      - run: node --check scripts/ingest.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs && node --check scripts/discover.mjs
       - run: node scripts/discover.mjs
       - name: Commit discovered boards
         run: |
@@ -30,7 +34,8 @@ jobs:
           git pull --rebase -Xours origin main
           git push origin main
       - run: node scripts/ingest.mjs
-      - run: node scripts/collect-large.mjs
+      - run: python -m career_radar.cli --repo-root .
+        working-directory: scripts
         env:
           BATCH_SIZE: '100000'
       - run: node scripts/filter-directory.mjs
