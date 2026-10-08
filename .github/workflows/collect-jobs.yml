@@ -21,6 +21,16 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r scripts/career_radar/requirements.txt
+      - run: python scripts/clean_boards.py
+      - name: Commit cleaned boards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add directory-sources.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Purge dead boards'
+            git push origin main
+          fi
       - run: node --check scripts/ingest.mjs && node --check scripts/filter-directory.mjs && node --check scripts/job-utils.mjs && node --check scripts/discover.mjs
       - run: node scripts/discover.mjs
       - name: Commit discovered boards
