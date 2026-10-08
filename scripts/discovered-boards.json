@@ -1,0 +1,887 @@
+[
+ {
+  "company": "Mirage",
+  "type": "ashby",
+  "token": "mirage"
+ },
+ {
+  "company": "Replit",
+  "type": "ashby",
+  "token": "replit"
+ },
+ {
+  "company": "Baseten",
+  "type": "ashby",
+  "token": "baseten"
+ },
+ {
+  "company": "Ironclad",
+  "type": "ashby",
+  "token": "ironcladhq"
+ },
+ {
+  "company": "Redpanda Data",
+  "type": "ashby",
+  "token": "redpanda-data"
+ },
+ {
+  "company": "Starburst",
+  "type": "greenhouse",
+  "token": "starburst"
+ },
+ {
+  "company": "Farther",
+  "type": "greenhouse",
+  "token": "fartherfinance"
+ },
+ {
+  "company": "Podium",
+  "type": "greenhouse",
+  "token": "podium81"
+ },
+ {
+  "company": "Huntress",
+  "type": "greenhouse",
+  "token": "huntress"
+ },
+ {
+  "company": "Cribl",
+  "type": "greenhouse",
+  "token": "cribl"
+ },
+ {
+  "company": "Tenstorrent",
+  "type": "greenhouse",
+  "token": "tenstorrent"
+ },
+ {
+  "company": "Vercel",
+  "type": "greenhouse",
+  "token": "vercel"
+ },
+ {
+  "company": "Roblox",
+  "type": "greenhouse",
+  "token": "roblox"
+ },
+ {
+  "company": "Robinhood",
+  "type": "greenhouse",
+  "token": "robinhood"
+ },
+ {
+  "company": "Relativity Space",
+  "type": "greenhouse",
+  "token": "relativity"
+ },
+ {
+  "company": "Crusoe",
+  "type": "ashby",
+  "token": "crusoe"
+ },
+ {
+  "company": "Sourcegraph",
+  "type": "greenhouse",
+  "token": "sourcegraph91"
+ },
+ {
+  "company": "DigitalOcean",
+  "type": "greenhouse",
+  "token": "digitalocean98"
+ },
+ {
+  "company": "Snowflake",
+  "type": "ashby",
+  "token": "snowflake"
+ },
+ {
+  "company": "Trulioo",
+  "type": "ashby",
+  "token": "trulioo"
+ },
+ {
+  "company": "DoorDash",
+  "type": "greenhouse",
+  "token": "doordashusa"
+ },
+ {
+  "company": "Honeycomb",
+  "type": "greenhouse",
+  "token": "honeycomb"
+ },
+ {
+  "company": "Traba",
+  "type": "ashby",
+  "token": "traba"
+ },
+ {
+  "company": "GoodLeap",
+  "type": "lever",
+  "token": "goodleap"
+ },
+ {
+  "company": "Klaviyo",
+  "type": "greenhouse",
+  "token": "klaviyo"
+ },
+ {
+  "company": "Slate Auto",
+  "type": "workday",
+  "token": "recar.wd108.myworkdayjobs.com/recar/slatecareers"
+ },
+ {
+  "company": "EarnIn",
+  "type": "greenhouse",
+  "token": "earnin"
+ },
+ {
+  "company": "ServiceNow",
+  "type": "smartrecruiters",
+  "token": "servicenow"
+ },
+ {
+  "company": "Capital One",
+  "type": "workday",
+  "token": "capitalone.wd12.myworkdayjobs.com/capitalone/capital_one"
+ },
+ {
+  "company": "Palo Alto Networks",
+  "type": "workday",
+  "token": "paloaltonetworks.wd5.myworkdayjobs.com/paloaltonetworks/panwexternalcareers"
+ },
+ {
+  "company": "Cisco",
+  "type": "workday",
+  "token": "cisco.wd5.myworkdayjobs.com/cisco/cisco_careers"
+ },
+ {
+  "company": "Salesforce",
+  "type": "workday",
+  "token": "salesforce.wd12.myworkdayjobs.com/salesforce/external_career_site"
+ },
+ {
+  "company": "Epic Games",
+  "type": "greenhouse",
+  "token": "epicgames"
+ },
+ {
+  "company": "Jeevy Fabrication",
+  "type": "ashby",
+  "token": "jeevyfabrication"
+ },
+ {
+  "company": "Broadcom",
+  "type": "workday",
+  "token": "broadcom.wd1.myworkdayjobs.com/broadcom/external_career"
+ },
+ {
+  "company": "FIS",
+  "type": "workday",
+  "token": "fis.wd5.myworkdayjobs.com/fis/searchjobs"
+ },
+ {
+  "company": "G2",
+  "type": "ashby",
+  "token": "g2"
+ },
+ {
+  "company": "Search results | Trane Technologies",
+  "type": "workday",
+  "token": "tranetechnologies.wd12.myworkdayjobs.com/tranetechnologies/trane_technologies_careers"
+ },
+ {
+  "company": "Vapi",
+  "type": "ashby",
+  "token": "vapi"
+ },
+ {
+  "company": "Aledade",
+  "type": "lever",
+  "token": "aledade"
+ },
+ {
+  "company": "SuperApp",
+  "type": "greenhouse",
+  "token": "superapp"
+ },
+ {
+  "company": "Fiserv",
+  "type": "workday",
+  "token": "fiserv.wd5.myworkdayjobs.com/fiserv/ext"
+ },
+ {
+  "company": "nCino",
+  "type": "greenhouse",
+  "token": "ncinoinc"
+ },
+ {
+  "company": "Trimble",
+  "type": "workday",
+  "token": "trimble.wd1.myworkdayjobs.com/trimble/trimblecareers"
+ },
+ {
+  "company": "Analog Devices",
+  "type": "workday",
+  "token": "analogdevices.wd1.myworkdayjobs.com/analogdevices/external"
+ },
+ {
+  "company": "Zillow",
+  "type": "workday",
+  "token": "zillow.wd5.myworkdayjobs.com/zillow/zillow_group_external"
+ },
+ {
+  "company": "Hercules",
+  "type": "ashby",
+  "token": "hercules"
+ },
+ {
+  "company": "Genesys",
+  "type": "workday",
+  "token": "genesys.wd1.myworkdayjobs.com/genesys/genesys"
+ },
+ {
+  "company": "Striveworks",
+  "type": "greenhouse",
+  "token": "striveworks"
+ },
+ {
+  "company": "Weedmaps",
+  "type": "greenhouse",
+  "token": "weedmaps77"
+ },
+ {
+  "company": "Rescale",
+  "type": "ashby",
+  "token": "rescale"
+ },
+ {
+  "company": "PlayStation",
+  "type": "greenhouse",
+  "token": "sonyinteractiveentertainmentglobal"
+ },
+ {
+  "company": "CreatorIQ",
+  "type": "ashby",
+  "token": "creatoriq"
+ },
+ {
+  "company": "Trust Wallet",
+  "type": "ashby",
+  "token": "trust-wallet"
+ },
+ {
+  "company": "Terac",
+  "type": "ashby",
+  "token": "terac"
+ },
+ {
+  "company": "HP",
+  "type": "workday",
+  "token": "hp.wd5.myworkdayjobs.com/hp/externalcareersite"
+ },
+ {
+  "company": "Thomson Reuters",
+  "type": "workday",
+  "token": "thomsonreuters.wd5.myworkdayjobs.com/thomsonreuters/external_career_site"
+ },
+ {
+  "company": "Iambic",
+  "type": "ashby",
+  "token": "iambic-therapeutics"
+ },
+ {
+  "company": "BambooHR",
+  "type": "greenhouse",
+  "token": "bamboohr17"
+ },
+ {
+  "company": "Normal Computing",
+  "type": "ashby",
+  "token": "normalcomputing"
+ },
+ {
+  "company": "NVIDIA",
+  "type": "workday",
+  "token": "nvidia.wd5.myworkdayjobs.com/nvidia/nvidiaexternalcareersite"
+ },
+ {
+  "company": "Curai Health",
+  "type": "lever",
+  "token": "curai"
+ },
+ {
+  "company": "Bespoke Labs",
+  "type": "ashby",
+  "token": "bespokelabs"
+ },
+ {
+  "company": "Expedia",
+  "type": "workday",
+  "token": "expedia.wd108.myworkdayjobs.com/expedia/search"
+ },
+ {
+  "company": "PostEra",
+  "type": "lever",
+  "token": "postera"
+ },
+ {
+  "company": "Gumloop",
+  "type": "ashby",
+  "token": "gumloop"
+ },
+ {
+  "company": "adaption",
+  "type": "ashby",
+  "token": "adaption"
+ },
+ {
+  "company": "Fullstack Academy",
+  "type": "workable",
+  "token": "fullstackacademy"
+ },
+ {
+  "company": "Booz Allen Hamilton",
+  "type": "workday",
+  "token": "bah.wd1.myworkdayjobs.com/bah/bah_jobs"
+ },
+ {
+  "company": "Bot Auto",
+  "type": "greenhouse",
+  "token": "botauto"
+ },
+ {
+  "company": "Tokyo Electron",
+  "type": "workday",
+  "token": "tel.wd3.myworkdayjobs.com/tel/tel-careers"
+ },
+ {
+  "company": "Oscilar",
+  "type": "ashby",
+  "token": "oscilar"
+ },
+ {
+  "company": "LG Ad Solutions",
+  "type": "ashby",
+  "token": "lgads"
+ },
+ {
+  "company": "Cogent",
+  "type": "ashby",
+  "token": "cogent-security"
+ },
+ {
+  "company": "Samsung",
+  "type": "workday",
+  "token": "sec.wd3.myworkdayjobs.com/sec/samsung_careers"
+ },
+ {
+  "company": "Tower Research Capital",
+  "type": "greenhouse",
+  "token": "towerresearchcapital"
+ },
+ {
+  "company": "Fractal Analytics",
+  "type": "workday",
+  "token": "fractal.wd1.myworkdayjobs.com/fractal/careers"
+ },
+ {
+  "company": "Motorola Solutions",
+  "type": "workday",
+  "token": "motorolasolutions.wd5.myworkdayjobs.com/motorolasolutions/careers"
+ },
+ {
+  "company": "Cadence",
+  "type": "workday",
+  "token": "cadence.wd1.myworkdayjobs.com/cadence/external_careers"
+ },
+ {
+  "company": "Fabrion",
+  "type": "ashby",
+  "token": "fabrion"
+ },
+ {
+  "company": "Coalition, Inc.",
+  "type": "greenhouse",
+  "token": "coalition"
+ },
+ {
+  "company": "Netskope",
+  "type": "greenhouse",
+  "token": "netskope"
+ },
+ {
+  "company": "LangChain",
+  "type": "ashby",
+  "token": "langchain"
+ },
+ {
+  "company": "Blooming Health",
+  "type": "ashby",
+  "token": "blooming-health"
+ },
+ {
+  "company": "Pulumi",
+  "type": "greenhouse",
+  "token": "pulumicorporation"
+ },
+ {
+  "company": "Alteryx",
+  "type": "workday",
+  "token": "alteryx.wd108.myworkdayjobs.com/alteryx/alteryxcareers"
+ },
+ {
+  "company": "Forgepoint",
+  "type": "ashby",
+  "token": "forgepoint"
+ },
+ {
+  "company": "Heartflow",
+  "type": "greenhouse",
+  "token": "heartflowinc"
+ },
+ {
+  "company": "Censys",
+  "type": "greenhouse",
+  "token": "censys"
+ },
+ {
+  "company": "Adobe",
+  "type": "workday",
+  "token": "adobe.wd5.myworkdayjobs.com/adobe/external_experienced"
+ },
+ {
+  "company": "Simple AI",
+  "type": "ashby",
+  "token": "simple-ai"
+ },
+ {
+  "company": "Ambral (YC S25)",
+  "type": "ashby",
+  "token": "ambral"
+ },
+ {
+  "company": "Hudson River Trading",
+  "type": "greenhouse",
+  "token": "wehrtyou"
+ },
+ {
+  "company": "Verkada",
+  "type": "greenhouse",
+  "token": "verkada"
+ },
+ {
+  "company": "Mastercard",
+  "type": "workday",
+  "token": "mastercard.wd1.myworkdayjobs.com/mastercard/corporatecareers"
+ },
+ {
+  "company": "Pluralis Research",
+  "type": "ashby",
+  "token": "pluralis-research"
+ },
+ {
+  "company": "Ancestry",
+  "type": "workday",
+  "token": "ancestry.wd501.myworkdayjobs.com/ancestry/careers"
+ },
+ {
+  "company": "Embedding VC",
+  "type": "ashby",
+  "token": "embedding-vc"
+ },
+ {
+  "company": "Hostinger",
+  "type": "ashby",
+  "token": "hostinger"
+ },
+ {
+  "company": "Vertical Relevance",
+  "type": "jazzhr",
+  "token": "verticalrelevance"
+ },
+ {
+  "company": "NewRocket",
+  "type": "greenhouse",
+  "token": "highmetric"
+ },
+ {
+  "company": "EvolutionIQ",
+  "type": "greenhouse",
+  "token": "evolutioniq"
+ },
+ {
+  "company": "Liquid AI",
+  "type": "ashby",
+  "token": "liquid-ai"
+ },
+ {
+  "company": "Reflection",
+  "type": "ashby",
+  "token": "reflectionai"
+ },
+ {
+  "company": "Picarro, Inc",
+  "type": "greenhouse",
+  "token": "picarroinc"
+ },
+ {
+  "company": "Maxar",
+  "type": "workday",
+  "token": "maxar.wd1.myworkdayjobs.com/maxar/vantor"
+ },
+ {
+  "company": "1mind",
+  "type": "ashby",
+  "token": "1mind"
+ },
+ {
+  "company": "Cresta",
+  "type": "greenhouse",
+  "token": "cresta"
+ },
+ {
+  "company": "Visa",
+  "type": "workday",
+  "token": "visa.wd5.myworkdayjobs.com/visa/visa"
+ },
+ {
+  "company": "Pax Historia",
+  "type": "ashby",
+  "token": "pax-historia"
+ },
+ {
+  "company": "Chariot",
+  "type": "ashby",
+  "token": "chariot"
+ },
+ {
+  "company": "Handshake",
+  "type": "ashby",
+  "token": "handshake"
+ },
+ {
+  "company": "Lightspeed",
+  "type": "ashby",
+  "token": "lightspeedhq"
+ },
+ {
+  "company": "Lattice Semiconductor",
+  "type": "workday",
+  "token": "latticesemi.wd5.myworkdayjobs.com/latticesemi/latticesemiconductorscareers"
+ },
+ {
+  "company": "d-Matrix",
+  "type": "ashby",
+  "token": "d-matrix"
+ },
+ {
+  "company": "Okta",
+  "type": "greenhouse",
+  "token": "okta"
+ },
+ {
+  "company": "Knowtex",
+  "type": "ashby",
+  "token": "knowtex"
+ },
+ {
+  "company": "Lightning AI",
+  "type": "greenhouse",
+  "token": "lightningai"
+ },
+ {
+  "company": "Neko Health",
+  "type": "ashby",
+  "token": "neko-health"
+ },
+ {
+  "company": "Relativity",
+  "type": "workday",
+  "token": "kcura.wd1.myworkdayjobs.com/kcura/external_career_site"
+ },
+ {
+  "company": "Pear VC",
+  "type": "ashby",
+  "token": "pear-vc"
+ },
+ {
+  "company": "Aslan",
+  "type": "ashby",
+  "token": "aslan"
+ },
+ {
+  "company": "iSoftStone",
+  "type": "jobvite",
+  "token": "isoftstone"
+ },
+ {
+  "company": "Sanas",
+  "type": "rippling",
+  "token": "sanas"
+ },
+ {
+  "company": "CoreWeave",
+  "type": "greenhouse",
+  "token": "coreweave"
+ },
+ {
+  "company": "Airwallex",
+  "type": "ashby",
+  "token": "airwallex"
+ },
+ {
+  "company": "The Nuclear Company",
+  "type": "greenhouse",
+  "token": "thenuclearcompany"
+ },
+ {
+  "company": "Axtria",
+  "type": "jazzhr",
+  "token": "axtriainc"
+ },
+ {
+  "company": "PayPal",
+  "type": "workday",
+  "token": "paypal.wd1.myworkdayjobs.com/paypal/jobs"
+ },
+ {
+  "company": "BJAK",
+  "type": "ashby",
+  "token": "bjakcareer"
+ },
+ {
+  "company": "Hewlett Packard Enterprise",
+  "type": "workday",
+  "token": "hpe.wd5.myworkdayjobs.com/hpe/jobsathpe"
+ },
+ {
+  "company": "AppViewX",
+  "type": "greenhouse",
+  "token": "appviewx"
+ },
+ {
+  "company": "Anduril Industries",
+  "type": "greenhouse",
+  "token": "andurilindustries"
+ },
+ {
+  "company": "Observe.AI",
+  "type": "greenhouse",
+  "token": "observeai"
+ },
+ {
+  "company": "Temporal Technologies",
+  "type": "ashby",
+  "token": "temporal"
+ },
+ {
+  "company": "CME Group",
+  "type": "workday",
+  "token": "cmegroup.wd1.myworkdayjobs.com/cmegroup/cme_careers"
+ },
+ {
+  "company": "Cohere",
+  "type": "ashby",
+  "token": "cohere"
+ },
+ {
+  "company": "Nuro",
+  "type": "greenhouse",
+  "token": "nuro"
+ },
+ {
+  "company": "Scale AI",
+  "type": "greenhouse",
+  "token": "scaleai"
+ },
+ {
+  "company": "Caribou",
+  "type": "greenhouse",
+  "token": "caribou"
+ },
+ {
+  "company": "Dialpad",
+  "type": "greenhouse",
+  "token": "dialpad"
+ },
+ {
+  "company": "Hewlett Packard Enterprise",
+  "type": "workday",
+  "token": "hpe.wd5.myworkdayjobs.com/hpe/wfmathpe"
+ },
+ {
+  "company": "Artificial Analysis",
+  "type": "ashby",
+  "token": "artificialanalysis"
+ },
+ {
+  "company": "Voyager Space",
+  "type": "greenhouse",
+  "token": "voyagertechnologiesinc"
+ },
+ {
+  "company": "Stand",
+  "type": "ashby",
+  "token": "standinsurance"
+ },
+ {
+  "company": "Sift",
+  "type": "ashby",
+  "token": "siftstack"
+ },
+ {
+  "company": "Otter AI",
+  "type": "greenhouse",
+  "token": "otterai"
+ },
+ {
+  "company": "Factset",
+  "type": "workday",
+  "token": "factset.wd108.myworkdayjobs.com/factset/factsetcareers"
+ },
+ {
+  "company": "West Monroe",
+  "type": "greenhouse",
+  "token": "westmonroe4"
+ },
+ {
+  "company": "Sonar",
+  "type": "lever",
+  "token": "sonarsource"
+ },
+ {
+  "company": "The Trade Desk",
+  "type": "greenhouse",
+  "token": "thetradedesk"
+ },
+ {
+  "company": "Phylo",
+  "type": "ashby",
+  "token": "phylo"
+ },
+ {
+  "company": "Nebius",
+  "type": "greenhouse",
+  "token": "nebius"
+ },
+ {
+  "company": "Elastic",
+  "type": "greenhouse",
+  "token": "elastic"
+ },
+ {
+  "company": "NBC News",
+  "type": "smartrecruiters",
+  "token": "nbcuniversal3"
+ },
+ {
+  "company": "ShiftKey",
+  "type": "ashby",
+  "token": "shiftkey"
+ },
+ {
+  "company": "FurtherAI",
+  "type": "ashby",
+  "token": "furtherai"
+ },
+ {
+  "company": "OKX",
+  "type": "greenhouse",
+  "token": "okx"
+ },
+ {
+  "company": "Rippling",
+  "type": "rippling",
+  "token": "rippling"
+ },
+ {
+  "company": "Hadrian",
+  "type": "ashby",
+  "token": "hadrian-automation"
+ },
+ {
+  "company": "BOLD",
+  "type": "greenhouse",
+  "token": "livecareer"
+ },
+ {
+  "company": "Luxury Presence",
+  "type": "lever",
+  "token": "luxurypresence"
+ },
+ {
+  "company": "Everpure",
+  "type": "greenhouse",
+  "token": "purestorage"
+ },
+ {
+  "company": "Artefact",
+  "type": "greenhouse",
+  "token": "artefact"
+ },
+ {
+  "company": "Databricks",
+  "type": "greenhouse",
+  "token": "databricks"
+ },
+ {
+  "company": "AbbVie",
+  "type": "smartrecruiters",
+  "token": "abbvie"
+ },
+ {
+  "company": "Worldpay",
+  "type": "workday",
+  "token": "worldpay.wd5.myworkdayjobs.com/worldpay/worldpay_external_careers_site"
+ },
+ {
+  "company": "OutSystems",
+  "type": "workday",
+  "token": "outsystems.wd503.myworkdayjobs.com/outsystems/outsystems"
+ },
+ {
+  "company": "GlobalFoundries",
+  "type": "workday",
+  "token": "globalfoundries.wd1.myworkdayjobs.com/globalfoundries/external"
+ },
+ {
+  "company": "Entrust",
+  "type": "workday",
+  "token": "entrust.wd1.myworkdayjobs.com/entrust/entrustcareers"
+ },
+ {
+  "company": "Bms",
+  "type": "workday",
+  "token": "bristolmyerssquibb.wd5.myworkdayjobs.com/bristolmyerssquibb/bms"
+ },
+ {
+  "company": "CrowdStrike",
+  "type": "workday",
+  "token": "crowdstrike.wd5.myworkdayjobs.com/crowdstrike/crowdstrikecareers"
+ },
+ {
+  "company": "eBay",
+  "type": "workday",
+  "token": "ebay.wd5.myworkdayjobs.com/ebay/apply"
+ },
+ {
+  "company": "Micron",
+  "type": "workday",
+  "token": "micron.wd1.myworkdayjobs.com/micron/external"
+ },
+ {
+  "company": "Wolters Kluwer",
+  "type": "workday",
+  "token": "wk.wd3.myworkdayjobs.com/wk/external"
+ },
+ {
+  "company": "Amgen",
+  "type": "workday",
+  "token": "amgen.wd1.myworkdayjobs.com/amgen/careers"
+ },
+ {
+  "company": "Workday",
+  "type": "workday",
+  "token": "workday.wd5.myworkdayjobs.com/workday/workday"
+ }
+]
