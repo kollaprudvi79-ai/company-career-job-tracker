@@ -20,11 +20,6 @@
   "token": "wayve"
  },
  {
-  "company": "Render",
-  "type": "ashby",
-  "token": "render"
- },
- {
   "company": "Xometry",
   "type": "greenhouse",
   "token": "xometry"
@@ -70,11 +65,6 @@
   "token": "rhombuspower"
  },
  {
-  "company": "Mercury",
-  "type": "greenhouse",
-  "token": "mercury"
- },
- {
   "company": "LiveRamp",
   "type": "workday",
   "token": "liveramp.wd5.myworkdayjobs.com/liveramp/liverampcareers"
@@ -88,11 +78,6 @@
   "company": "Lexical Intelligence",
   "type": "bamboohr",
   "token": "lexical"
- },
- {
-  "company": "1Password",
-  "type": "ashby",
-  "token": "1password"
  },
  {
   "company": "Defense Unicorns",
@@ -113,16 +98,6 @@
   "company": "Anduril Industries",
   "type": "greenhouse",
   "token": "andurilindustries"
- },
- {
-  "company": "WorkOS",
-  "type": "ashby",
-  "token": "workos"
- },
- {
-  "company": "Vercel",
-  "type": "greenhouse",
-  "token": "vercel"
  },
  {
   "company": "Astranis Space Technologies",
@@ -183,11 +158,6 @@
   "company": "Moderna",
   "type": "workday",
   "token": "modernatx.wd1.myworkdayjobs.com/modernatx/m_tx"
- },
- {
-  "company": "Aledade",
-  "type": "lever",
-  "token": "aledade"
  },
  {
   "company": "Factset",
@@ -300,11 +270,6 @@
   "token": "waabi"
  },
  {
-  "company": "Starburst",
-  "type": "greenhouse",
-  "token": "starburst"
- },
- {
   "company": "Vertex",
   "type": "workday",
   "token": "vertexinc.wd1.myworkdayjobs.com/vertexinc/vertexinc"
@@ -373,11 +338,6 @@
   "company": "Trulioo",
   "type": "ashby",
   "token": "trulioo"
- },
- {
-  "company": "Honeycomb",
-  "type": "greenhouse",
-  "token": "honeycomb"
  },
  {
   "company": "Trimble",
@@ -610,11 +570,6 @@
   "token": "phylo"
  },
  {
-  "company": "ServiceNow",
-  "type": "smartrecruiters",
-  "token": "servicenow"
- },
- {
   "company": "NBC News",
   "type": "smartrecruiters",
   "token": "nbcuniversal3"
@@ -630,11 +585,6 @@
   "token": "commure"
  },
  {
-  "company": "Encord",
-  "type": "ashby",
-  "token": "encord"
- },
- {
   "company": "Consensys",
   "type": "greenhouse",
   "token": "consensys"
@@ -645,19 +595,9 @@
   "token": "humaninterest"
  },
  {
-  "company": "Fastly",
-  "type": "greenhouse",
-  "token": "fastly"
- },
- {
   "company": "Panthalassa",
   "type": "greenhouse",
   "token": "panthalassa"
- },
- {
-  "company": "Abnormal AI",
-  "type": "greenhouse",
-  "token": "abnormalsecurity"
  },
  {
   "company": "ALSO",
@@ -745,11 +685,6 @@
   "token": "factory"
  },
  {
-  "company": "PostHog",
-  "type": "ashby",
-  "token": "posthog"
- },
- {
   "company": "Altruist",
   "type": "greenhouse",
   "token": "altruist"
@@ -768,11 +703,6 @@
   "company": "Cisco",
   "type": "workday",
   "token": "cisco.wd5.myworkdayjobs.com/cisco/cisco_careers"
- },
- {
-  "company": "ClickHouse",
-  "type": "ashby",
-  "token": "clickhouse"
  },
  {
   "company": "OpenRouter",
@@ -820,21 +750,6 @@
   "token": "socket"
  },
  {
-  "company": "PagerDuty",
-  "type": "greenhouse",
-  "token": "pagerduty"
- },
- {
-  "company": "New Relic",
-  "type": "greenhouse",
-  "token": "newrelic"
- },
- {
-  "company": "Calendly",
-  "type": "greenhouse",
-  "token": "calendly"
- },
- {
   "company": "CertiK",
   "type": "lever",
   "token": "certik"
@@ -843,16 +758,6 @@
   "company": "Anrok",
   "type": "ashby",
   "token": "anrok"
- },
- {
-  "company": "Peloton Interactive",
-  "type": "greenhouse",
-  "token": "peloton"
- },
- {
-  "company": "Docker, Inc",
-  "type": "ashby",
-  "token": "docker"
  },
  {
   "company": "Zoom",
@@ -883,11 +788,6 @@
   "company": "ASML",
   "type": "workday",
   "token": "asml.wd3.myworkdayjobs.com/asml/asmlext1"
- },
- {
-  "company": "Privia Health",
-  "type": "smartrecruiters",
-  "token": "priviahealth"
  },
  {
   "company": "Intel",
@@ -1068,5 +968,10 @@
   "company": "Worldpay",
   "type": "workday",
   "token": "worldpay.wd5.myworkdayjobs.com/worldpay/worldpay_external_careers_site"
+ },
+ {
+  "company": "Hewlett Packard Enterprise",
+  "type": "workday",
+  "token": "hpe.wd5.myworkdayjobs.com/hpe/jobsathpe"
  }
 ]

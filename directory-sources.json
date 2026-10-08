@@ -16235,16 +16235,6 @@
   "token": "tucsonaz.wd1.myworkdayjobs.com/tucsonaz/tucson_talent"
  },
  {
-  "company": "UAMS - All",
-  "type": "workday",
-  "token": "uasys.wd5.myworkdayjobs.com/uasys/uams_all_careers"
- },
- {
-  "company": "Uasys",
-  "type": "workday",
-  "token": "uasys.wd5.myworkdayjobs.com/uasys/uasys"
- },
- {
   "company": "University of Chicago",
   "type": "workday",
   "token": "uchicago.wd5.myworkdayjobs.com/uchicago/external"
