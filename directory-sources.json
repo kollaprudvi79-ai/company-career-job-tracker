@@ -11530,11 +11530,6 @@
   "token": "atecna"
  },
  {
-  "company": "Atomos",
-  "type": "teamtailor",
-  "token": "atomoswealth"
- },
- {
   "company": "Hirsch Group",
   "type": "teamtailor",
   "token": "hirschgroup"
@@ -11988,11 +11983,6 @@
   "company": "Endsight",
   "type": "pinpoint",
   "token": "endsight"
- },
- {
-  "company": "ES Talent Management",
-  "type": "pinpoint",
-  "token": "estalent"
  },
  {
   "company": "Gaming Innovation Group",
@@ -17953,11 +17943,6 @@
   "company": "Icbpjb",
   "type": "oracle",
   "token": "icbpjb.fa.ocs.oraclecloud.com/lazardprofessionalcareers"
- },
- {
-  "company": "Kroll",
-  "type": "oracle",
-  "token": "hcxs.fa.us2.oraclecloud.com/cx_1"
  },
  {
   "company": "LifeView Group",
