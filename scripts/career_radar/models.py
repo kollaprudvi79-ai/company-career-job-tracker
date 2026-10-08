@@ -12,6 +12,20 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 SALARY_FLOOR = 125000
+
+# US state abbreviations for location verification
+US_STATE_ABBRS = r"\b(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b"
+
+def _is_us_location(loc: str) -> bool:
+    """Check if location string contains US markers."""
+    if not loc:
+        return False
+    import re as _re
+    if _re.search(r"\b(united states|usa|u\.s\.a?\.)\b", loc, _re.I):
+        return True
+    if _re.search(US_STATE_ABBRS, loc):
+        return True
+    return False
 FRESH_WINDOW_DAYS = 7
 
 PROFILE_BY_ROLE = {
@@ -373,6 +387,10 @@ def assess_job(job: Job, now_ms: Optional[int] = None) -> Job:
         blocks.append("Outside 7-day window" if job.published else "Posting date unknown")
     if job.remoteType == "non-us":
         blocks.append(job.remoteReason or "Location outside the US")
+    elif job.remoteType == "remote-unknown":
+        blocks.append("Remote location not verified as US")
+    elif not job.usRemote and not _is_us_location(job.location or ""):
+        blocks.append("Location not verified as US")
     if flags.get("excludedLevel"):
         blocks.append("Excluded seniority/title level")
     if flags.get("intern"):
