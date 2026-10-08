@@ -483,8 +483,15 @@ class Sweep:
             hist = []
         hist.append(compute_sweep_history_entry(snap["jobs"], batch_sel))
         cutoff = (datetime.now(timezone.utc).timestamp() - 14 * 86400) * 1000
-        hist = [h for h in hist
-                if (datetime.fromisoformat(h["sweep"].replace("Z", "+00:00")).timestamp() * 1000) >= cutoff]
+        def _sweep_ms(h):
+            s = h.get("sweep")
+            if isinstance(s, (int, float)):
+                return float(s)
+            try:
+                return datetime.fromisoformat(str(s).replace("Z", "+00:00")).timestamp() * 1000
+            except Exception:
+                return 0
+        hist = [h for h in hist if _sweep_ms(h) >= cutoff]
         write_json(hist_path, hist[-400:])
 
         await self.flush_progress(len(batch_sel), previous_jobs, date_repair_map,
