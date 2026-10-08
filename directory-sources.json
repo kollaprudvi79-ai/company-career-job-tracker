@@ -6265,11 +6265,6 @@
   "token": "thunes"
  },
  {
-  "company": "timeleft",
-  "type": "greenhouse",
-  "token": "timeleft"
- },
- {
   "company": "toast",
   "type": "greenhouse",
   "token": "toast"
@@ -7365,11 +7360,6 @@
   "token": "matillion"
  },
  {
-  "company": "Mendix",
-  "type": "lever",
-  "token": "mendix"
- },
- {
   "company": "Merkle Science",
   "type": "lever",
   "token": "merklescience"
@@ -7968,11 +7958,6 @@
   "company": "The Predictive Index",
   "type": "greenhouse",
   "token": "predictiveindex"
- },
- {
-  "company": "TubeScience",
-  "type": "greenhouse",
-  "token": "tubescience52"
  },
  {
   "company": "Docugami",
@@ -11153,11 +11138,6 @@
   "company": "OCI INFORMATIQUE",
   "type": "teamtailor",
   "token": "groupeoci"
- },
- {
-  "company": "OLKA Sportresor",
-  "type": "teamtailor",
-  "token": "olkasportresor"
  },
  {
   "company": "OPTIVEUM sp. z o.o.",

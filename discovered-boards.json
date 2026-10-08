@@ -1078,5 +1078,15 @@
   "company": "DXC Technology",
   "type": "workday",
   "token": "dxctechnology.wd1.myworkdayjobs.com/dxctechnology/dxcjobs"
+ },
+ {
+  "company": "Relativity",
+  "type": "workday",
+  "token": "kcura.wd1.myworkdayjobs.com/kcura/external_career_site"
+ },
+ {
+  "company": "Worldpay",
+  "type": "workday",
+  "token": "worldpay.wd5.myworkdayjobs.com/worldpay/worldpay_external_careers_site"
  }
 ]
