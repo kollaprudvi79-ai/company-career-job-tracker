@@ -17,7 +17,7 @@ SALARY_FLOOR = 125000
 US_STATE_ABBRS = r"\b(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b"
 
 def _is_target_location(loc: str) -> bool:
-    """Check if location is in target countries: UK, Ireland, Canada, UAE, Australia, Norway, Italy, Europe (USA excluded)."""
+    """Check if location is in target countries: UK, Ireland, Canada, UAE, Australia, Norway, Italy, Switzerland, Singapore, Europe (USA excluded)."""
     if not loc:
         return False
     import re as _re
@@ -46,6 +46,12 @@ def _is_target_location(loc: str) -> bool:
         return True
     # Italy
     if _re.search(r"\b(italy|italia|milan|milano|rome|roma|turin|torino|naples|napoli|florence|firenze|bologna|genoa|venice)\b", ll):
+        return True
+    # Switzerland
+    if _re.search(r"\b(switzerland|schweiz|suisse|svizzera|zurich|z\u00fcrich|geneva|gen\u00e8ve|basel|bern|lausanne|lugano)\b", ll):
+        return True
+    # Singapore
+    if _re.search(r"\b(singapore|sg\b)\b", ll):
         return True
     # Rest of Europe (major countries/cities)
     if _re.search(r"\b(germany|deutschland|berlin|munich|hamburg|frankfurt|france|paris|lyon|spain|madrid|barcelona|netherlands|amsterdam|rotterdam|sweden|stockholm|switzerland|zurich|geneva|belgium|brussels|austria|vienna|denmark|copenhagen|finland|helsinki|portugal|lisbon|poland|warsaw|czech|prague|hungary|budapest|greece|athens|europe|eu\b)\b", ll):
