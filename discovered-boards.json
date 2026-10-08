@@ -15,11 +15,6 @@
   "token": "pomelocare"
  },
  {
-  "company": "Block",
-  "type": "greenhouse",
-  "token": "block"
- },
- {
   "company": "Wayve",
   "type": "greenhouse",
   "token": "wayve"
@@ -315,11 +310,6 @@
   "token": "vertexinc.wd1.myworkdayjobs.com/vertexinc/vertexinc"
  },
  {
-  "company": "Asana",
-  "type": "greenhouse",
-  "token": "asana"
- },
- {
   "company": "Firecrawl",
   "type": "ashby",
   "token": "firecrawl"
@@ -353,11 +343,6 @@
   "company": "Sourcegraph",
   "type": "greenhouse",
   "token": "sourcegraph91"
- },
- {
-  "company": "Scale AI",
-  "type": "greenhouse",
-  "token": "scaleai"
  },
  {
   "company": "Invisible Technologies",
@@ -673,11 +658,6 @@
   "company": "Abnormal AI",
   "type": "greenhouse",
   "token": "abnormalsecurity"
- },
- {
-  "company": "Twilio",
-  "type": "greenhouse",
-  "token": "twilio"
  },
  {
   "company": "ALSO",

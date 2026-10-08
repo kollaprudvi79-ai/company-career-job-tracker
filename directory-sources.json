@@ -4830,11 +4830,6 @@
   "token": "launchpadtechnologiesinc"
  },
  {
-  "company": "Launch Potato",
-  "type": "greenhouse",
-  "token": "launch2"
- },
- {
   "company": "Layer Health",
   "type": "greenhouse",
   "token": "layerhealth"
@@ -12030,11 +12025,6 @@
   "token": "networkplus"
  },
  {
-  "company": "Newfire Global Partners",
-  "type": "pinpoint",
-  "token": "newfireglobal"
- },
- {
   "company": "N\u00fcvitek",
   "type": "pinpoint",
   "token": "nuvitek"
@@ -15492,11 +15482,6 @@
  {
   "company": "Hpe",
   "type": "workday",
-  "token": "hpe.wd5.myworkdayjobs.com/hpe/jobsathpe"
- },
- {
-  "company": "Hpe",
-  "type": "workday",
   "token": "hpe.wd5.myworkdayjobs.com/hpe/wfmathpe"
  },
  {
@@ -17845,11 +17830,6 @@
   "token": "fa-etwq-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
  },
  {
-  "company": "Fa Eups Saasfaprod1",
-  "type": "oracle",
-  "token": "fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/ulsolutionscareers"
- },
- {
   "company": "Fa Eupt Saasfaprod1",
   "type": "oracle",
   "token": "fa-eupt-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
@@ -18113,11 +18093,6 @@
   "company": "Telenet",
   "type": "oracle",
   "token": "ebza.fa.em2.oraclecloud.com/cx_1001"
- },
- {
-  "company": "UL Solutions",
-  "type": "oracle",
-  "token": "fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
  },
  {
   "company": "University of South Florida",
@@ -19138,11 +19113,6 @@
   "company": "Tdwilliamson",
   "type": "workday",
   "token": "tdwilliamson.wd1.myworkdayjobs.com/tdwilliamson/tdwcareers"
- },
- {
-  "company": "Techwave",
-  "type": "workday",
-  "token": "techwave.wd108.myworkdayjobs.com/techwave/techwave_careers"
  },
  {
   "company": "Tera",
