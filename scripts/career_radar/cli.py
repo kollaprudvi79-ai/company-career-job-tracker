@@ -29,6 +29,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--extra-timeout", type=float,
                    default=float(os.environ.get("EXTRA_BOARD_TIMEOUT") or 25.0),
                    help="Per-board timeout seconds for extra ATS (default 25)")
+    p.add_argument("--full", action="store_true",
+                   default=os.environ.get("FULL_SWEEP", "").lower() in ("1", "true", "yes"),
+                   help="Full directory sweep: check ALL boards (default: tiered)")
     p.add_argument("--progress-every", type=int,
                    default=int(os.environ.get("PROGRESS_FLUSH_EVERY") or 3000),
                    help="Boards between progress flushes + git pushes (default 3000)")
@@ -44,6 +47,7 @@ def main(argv=None) -> int:
         std_timeout=args.timeout,
         extra_timeout=args.extra_timeout,
         progress_every=args.progress_every,
+        full=args.full,
     )
     try:
         summary = asyncio.run(sweep.run())

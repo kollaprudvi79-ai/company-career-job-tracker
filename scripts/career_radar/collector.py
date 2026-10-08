@@ -294,12 +294,13 @@ def git_push(repo: Path, message: str) -> bool:
 class Sweep:
     def __init__(self, repo: Path, workers: int = 24,
                  std_timeout: float = 8.0, extra_timeout: float = 25.0,
-                 progress_every: int = 3000):
+                 progress_every: int = 3000, full: bool = False):
         self.repo = repo
         self.workers = workers
         self.std_timeout = std_timeout
         self.extra_timeout = extra_timeout
         self.progress_every = progress_every
+        self.full = full
         self.results: List[Tuple[Dict, List[Job]]] = []
         self.done = 0
         self.flush_lock = asyncio.Lock()
@@ -381,10 +382,11 @@ class Sweep:
         state = load_json(repo / "collector-state.json", {}) or {}
         applied_check = applied_check_factory(repo / "applied-companies.json")
 
-        # Tiered selection: hot (7d) + directory-extra + rotating 1/16 slice.
+        # Board selection: full sweep or tiered (hot + rotating slice).
         selected, tier_info = select_boards(boards, previous_jobs, state,
                                             hot_days=HOT_DAYS,
-                                            slices=ROTATION_SLICES)
+                                            slices=ROTATION_SLICES,
+                                            full=self.full)
         # Yield-based ordering: best boards first.
         selected = order_by_yield(selected, state)
 

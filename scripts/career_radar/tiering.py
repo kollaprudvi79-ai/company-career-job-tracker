@@ -31,8 +31,24 @@ def _hash_key(key: str) -> int:
 
 def select_boards(boards: List[Board], previous_jobs: List[Job],
                   state: Dict, hot_days: int = HOT_DAYS,
-                  slices: int = ROTATION_SLICES):
-    """Return (selected, info) for this sweep; advances rotationIdx in state."""
+                  slices: int = ROTATION_SLICES, full: bool = False):
+    """Return (selected, info) for this sweep; advances rotationIdx in state.
+    
+    If full=True, selects ALL boards (full directory sweep).
+    """
+    if full:
+        # Full sweep: check every board
+        info = {
+            "total": len(boards),
+            "selected": len(boards),
+            "hot": 0,
+            "extra": 0,
+            "slice": 0,
+            "slice_idx": 0,
+            "slices": 1,
+            "mode": "full",
+        }
+        return boards, info
     now_ms = datetime.now(timezone.utc).timestamp() * 1000
 
     # Latest firstSeen per board from the previous snapshot.
