@@ -32,7 +32,8 @@ from .fetchers import FETCHERS, normalize
 from .fetchers_extra import EXTRA_TYPES, fetch_extra, is_extra_type, normalize_extra
 from .models import Board, BoardStatus, Job, assess_job, is_us_job, now_iso
 from .scoring import order_by_yield, record_yield, tfidf_dedupe, weighted_fit_score
-from .tiering import HOT_DAYS, ROTATION_SLICES, select_boards
+from .tiering import (CONT_HOT_DAYS, CONT_ROTATION_SLICES, HOT_DAYS,
+                      ROTATION_SLICES, select_boards)
 
 APP_VERSION = "20261007py"
 WORKDAY_CLAMP_MS = 30 * 24 * 3600 * 1000
@@ -294,13 +295,18 @@ def git_push(repo: Path, message: str) -> bool:
 class Sweep:
     def __init__(self, repo: Path, workers: int = 24,
                  std_timeout: float = 8.0, extra_timeout: float = 25.0,
-                 progress_every: int = 3000, full: bool = False):
+                 progress_every: int = 3000, full: bool = False,
+                 continuous: bool = False, max_hours: float = 5.5,
+                 iteration_sleep: float = 10.0):
         self.repo = repo
         self.workers = workers
         self.std_timeout = std_timeout
         self.extra_timeout = extra_timeout
         self.progress_every = progress_every
         self.full = full
+        self.continuous = continuous
+        self.max_hours = max_hours
+        self.iteration_sleep = iteration_sleep
         self.results: List[Tuple[Dict, List[Job]]] = []
         self.done = 0
         self.flush_lock = asyncio.Lock()
@@ -370,7 +376,15 @@ class Sweep:
             if self.progress_every and self.done % self.progress_every == 0:
                 await self.flush_progress(total, previous_jobs, date_repair_map, state)
 
-    async def run(self) -> Dict[str, Any]:
+    async def _run_iteration(self, hot_days: int = HOT_DAYS,
+                           slices: int = ROTATION_SLICES,
+                           full: bool | None = None) -> Dict[str, Any]:
+        """Run one full sweep iteration: select, fetch, snapshot, push."""
+        if full is None:
+            full = self.full
+        # Fresh per-iteration accumulation (continuous mode reuses the Sweep).
+        self.results = []
+        self.done = 0
         repo = self.repo
         sources = load_json(repo / "directory-sources.json", [])
         extra = load_json(repo / "directory-extra.json", [])
@@ -384,9 +398,9 @@ class Sweep:
 
         # Board selection: full sweep or tiered (hot + rotating slice).
         selected, tier_info = select_boards(boards, previous_jobs, state,
-                                            hot_days=HOT_DAYS,
-                                            slices=ROTATION_SLICES,
-                                            full=self.full)
+                                            hot_days=hot_days,
+                                            slices=slices,
+                                            full=full)
         # Yield-based ordering: best boards first.
         selected = order_by_yield(selected, state)
 
@@ -484,3 +498,82 @@ class Sweep:
         }
         print(json.dumps(summary))
         return summary
+
+    async def run(self) -> Dict[str, Any]:
+        """Entry point: single sweep, or the continuous 24/7 loop."""
+        if self.continuous:
+            return await self.run_continuous()
+        return await self._run_iteration()
+
+    async def run_continuous(self) -> Dict[str, Any]:
+        """Loop sweep iterations until the hour budget elapses.
+
+        Each iteration checks HOT boards (jobs found in the last 24h) plus a
+        tiny 1/48 rotating slice, then commits + pushes immediately. A
+        workflow triggers the next run before this one exits, so chained runs
+        give unbroken 24/7 coverage. State (rotationIdx, boardYield) persists
+        via git after every iteration, so a kill mid-iteration resumes cleanly
+        from the last committed state.
+        """
+        t_start = datetime.now(timezone.utc)
+        max_secs = self.max_hours * 3600.0
+        # Conservative first-iteration estimate; adapts from measured times.
+        est_iter_secs = 300.0
+        completed = 0
+        total_boards = 0
+        total_jobs = 0
+        total_new = 0
+        last_ok = True
+
+        while True:
+            elapsed = (datetime.now(timezone.utc) - t_start).total_seconds()
+            if elapsed + est_iter_secs > max_secs:
+                print(f"[continuous] stop: {elapsed / 3600:.2f}h elapsed + "
+                      f"~{est_iter_secs / 60:.1f}m est. iteration would exceed "
+                      f"{self.max_hours}h budget", flush=True)
+                break
+            completed += 1
+            print(f"[continuous] iteration {completed}, "
+                  f"elapsed {elapsed / 3600:.2f}h/{self.max_hours}h",
+                  flush=True)
+            t_iter = datetime.now(timezone.utc)
+            try:
+                summary = await self._run_iteration(
+                    hot_days=CONT_HOT_DAYS,
+                    slices=CONT_ROTATION_SLICES,
+                    full=False,
+                )
+            except Exception as e:
+                print(f"[continuous] iteration {completed} failed: {e}",
+                      file=sys.stderr)
+                completed -= 1
+                last_ok = False
+                break
+            iter_secs = (datetime.now(timezone.utc) - t_iter).total_seconds()
+            est_iter_secs = max(180.0, iter_secs * 1.5)
+            total_boards += summary.get("boards", 0)
+            total_jobs += summary.get("jobs", 0)
+            total_new += summary.get("recent24h", 0)
+
+            elapsed = (datetime.now(timezone.utc) - t_start).total_seconds()
+            if elapsed >= max_secs:
+                print(f"[continuous] budget reached: "
+                      f"{elapsed / 3600:.2f}h/{self.max_hours}h", flush=True)
+                break
+            sleep_for = min(float(self.iteration_sleep),
+                            max(0.0, max_secs - elapsed))
+            if sleep_for > 0:
+                await asyncio.sleep(sleep_for)
+
+        total_elapsed = (datetime.now(timezone.utc) - t_start).total_seconds()
+        final = {
+            "ok": last_ok,
+            "mode": "continuous",
+            "iterations": completed,
+            "boards": total_boards,
+            "jobs": total_jobs,
+            "recent24h": total_new,
+            "elapsedSec": round(total_elapsed, 1),
+        }
+        print(json.dumps(final))
+        return final

@@ -9,6 +9,10 @@ Every sweep checks:
 With 24 workers / 8s timeouts the per-sweep board budget is ~7,000-8,000
 (~5 min). ``slices=16`` keeps a sweep inside that budget while covering the
 full directory roughly every 10h (16 sweeps x 40 min).
+
+Continuous mode (24/7 service via chained workflow runs) uses an aggressive
+24h hot window and a 1/48 rotating slice: hot boards re-check every few
+minutes, full directory coverage every ~48 iterations (~2-3h).
 """
 from __future__ import annotations
 
@@ -19,6 +23,10 @@ from .models import Board, Job
 
 HOT_DAYS = 7
 ROTATION_SLICES = 16
+
+# Continuous 24/7 mode: freshest hot window, tiny rotating slice.
+CONT_HOT_DAYS = 1
+CONT_ROTATION_SLICES = 48
 
 
 def _hash_key(key: str) -> int:

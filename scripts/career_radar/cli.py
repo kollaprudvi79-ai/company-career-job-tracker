@@ -5,7 +5,8 @@ Usage:
 
 Environment overrides:
     BATCH_SIZE, BATCH_OFFSET, PROGRESS_FLUSH_EVERY, WORKERS,
-    BOARD_TIMEOUT (standard), EXTRA_BOARD_TIMEOUT
+    BOARD_TIMEOUT (standard), EXTRA_BOARD_TIMEOUT,
+    CONTINUOUS, MAX_HOURS, ITERATION_SLEEP
 """
 from __future__ import annotations
 
@@ -35,6 +36,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--progress-every", type=int,
                    default=int(os.environ.get("PROGRESS_FLUSH_EVERY") or 3000),
                    help="Boards between progress flushes + git pushes (default 3000)")
+    p.add_argument("--continuous", action="store_true",
+                   default=os.environ.get("CONTINUOUS", "").lower() in ("1", "true", "yes"),
+                   help="Continuous 24/7 mode: loop iterations until --max-hours, "
+                        "then exit cleanly for the next chained workflow run")
+    p.add_argument("--max-hours", type=float,
+                   default=float(os.environ.get("MAX_HOURS") or 5.5),
+                   help="Max runtime hours in continuous mode before clean exit (default 5.5)")
+    p.add_argument("--iteration-sleep", type=float,
+                   default=float(os.environ.get("ITERATION_SLEEP") or 10),
+                   help="Seconds to sleep between continuous iterations (default 10)")
     return p
 
 
@@ -48,6 +59,9 @@ def main(argv=None) -> int:
         extra_timeout=args.extra_timeout,
         progress_every=args.progress_every,
         full=args.full,
+        continuous=args.continuous,
+        max_hours=args.max_hours,
+        iteration_sleep=args.iteration_sleep,
     )
     try:
         summary = asyncio.run(sweep.run())
