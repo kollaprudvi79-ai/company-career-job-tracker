@@ -1,10 +1,5 @@
 [
  {
-  "company": "Fedex",
-  "type": "workday",
-  "token": "fedex.wd1.myworkdayjobs.com/fedex/fxe_apac_external"
- },
- {
   "company": "Company name",
   "type": "ashby",
   "token": "cribl"
@@ -18,56 +13,6 @@
   "company": "Jobgether",
   "type": "lever",
   "token": "jobgether"
- },
- {
-  "company": "Outreach",
-  "type": "lever",
-  "token": "outreach"
- },
- {
-  "company": "Paytm Payments Services",
-  "type": "lever",
-  "token": "paytmpayments"
- },
- {
-  "company": "Xsolla",
-  "type": "lever",
-  "token": "xsolla"
- },
- {
-  "company": "Cornell University (Cornellpositions)",
-  "type": "workday",
-  "token": "cornell.wd1.myworkdayjobs.com/cornell/cornellpositions"
- },
- {
-  "company": "Amgen",
-  "type": "workday",
-  "token": "amgen.wd1.myworkdayjobs.com/amgen/careers"
- },
- {
-  "company": "Athenahealth",
-  "type": "workday",
-  "token": "athenahealth.wd1.myworkdayjobs.com/athenahealth/external"
- },
- {
-  "company": "Corebridgefinancial",
-  "type": "workday",
-  "token": "corebridgefinancial.wd1.myworkdayjobs.com/corebridgefinancial/corebridgefinancial"
- },
- {
-  "company": "Travelhrportal",
-  "type": "workday",
-  "token": "travelhrportal.wd1.myworkdayjobs.com/travelhrportal/jobs"
- },
- {
-  "company": "Tsys",
-  "type": "workday",
-  "token": "tsys.wd1.myworkdayjobs.com/tsys/tsys"
- },
- {
-  "company": "Usaa",
-  "type": "workday",
-  "token": "usaa.wd1.myworkdayjobs.com/usaa/usaajobswd"
  },
  {
   "company": "Advanced",
