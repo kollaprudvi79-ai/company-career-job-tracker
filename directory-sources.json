@@ -1,10 +1,5 @@
 [
  {
-  "company": "WilsonAI",
-  "type": "ashby",
-  "token": "wilson"
- },
- {
   "company": "Jobgether",
   "type": "lever",
   "token": "jobgether"
