@@ -177,6 +177,10 @@ ROLE_PHRASES: Dict[str, List[str]] = {
                     "llm engineer", "mlops engineer", "generative ai engineer",
                     "applied ai engineer"],
     "Full Stack .NET": [".net", "asp.net", "c#", "dotnet"],
+    "Product Manager": ["product manager", "product owner",
+                        "technical product manager", "data product manager",
+                        "platform product manager", "group product manager",
+                        "senior product manager"],
 }
 
 SKILL_KEYWORDS = [
@@ -206,6 +210,8 @@ def weighted_fit_score(job: Job, description: str = "") -> int:
     rt = job.remoteType
     if rt == "us-remote":
         score += 20
+    elif rt == "intl":
+        score += 16  # target country — exactly what he wants
     elif rt in ("onsite", "hybrid"):
         score += 14
     elif rt == "not-remote":

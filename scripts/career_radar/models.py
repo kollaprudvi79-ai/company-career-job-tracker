@@ -53,6 +53,15 @@ def _is_target_location(loc: str) -> bool:
     # Singapore
     if _re.search(r"\b(singapore|sg\b)\b", ll):
         return True
+    # Saudi Arabia
+    if _re.search(r"\b(saudi arabia|saudi|riyadh|jeddah|dhahran|khobar|dammam|mecca|medina)\b", ll):
+        return True
+    # Qatar
+    if _re.search(r"\b(qatar|doha|lusail|al rayyan)\b", ll):
+        return True
+    # New Zealand
+    if _re.search(r"\b(new zealand|\bnz\b|auckland|wellington|christchurch|hamilton|dunedin|queenstown)\b", ll):
+        return True
     # Rest of Europe (major countries/cities)
     if _re.search(r"\b(germany|deutschland|berlin|munich|hamburg|frankfurt|france|paris|lyon|spain|madrid|barcelona|netherlands|amsterdam|rotterdam|sweden|stockholm|switzerland|zurich|geneva|belgium|brussels|austria|vienna|denmark|copenhagen|finland|helsinki|portugal|lisbon|poland|warsaw|czech|prague|hungary|budapest|greece|athens|europe|eu\b)\b", ll):
         return True
@@ -279,9 +288,12 @@ def parse_salary(text: Any = "", structured_text: Any = "") -> Dict[str, Any]:
 
 def title_flags(title: Any = "") -> Dict[str, bool]:
     t = str(title or "")
+    # Only truly out-of-reach rungs are excluded. "Senior", "Lead" and
+    # "Manager" are his target levels (Senior DE/DS, Product Manager,
+    # Engineering Manager) — they must NOT be blocked.
     excluded_level = (
-        bool(re.search(r"\b(staff|principal|lead|manager|director|vp|vice president|chief|architect|distinguished|fellow|head|senior)\b", t, re.I))
-        or bool(re.search(r"\bsr\.?\s", t, re.I))
+        bool(re.search(r"\b(staff|principal|distinguished|fellow|director|vp|vice president|chief|architect)\b", t, re.I))
+        or bool(re.search(r"\bhead of\b", t, re.I))
         or bool(re.search(r"\b(engineer|developer|analyst|scientist)\s+[4-9]\b", t, re.I))
         or bool(re.search(r"\bL[4-9]\b", t))
         or bool(re.search(r"\blevel\s*[4-9]\b", t, re.I))
@@ -290,7 +302,7 @@ def title_flags(title: Any = "") -> Dict[str, bool]:
     return {"excludedLevel": excluded_level, "intern": intern}
 
 
-def text_flags(title: Any = "", description: Any = "") -> Dict[str, Any]:
+def text_flags(title: Any = "", description: Any = "", location: Any = "") -> Dict[str, Any]:
     text = strip_html(description)
     lower = f"{title} {text}".lower()
     java_centric = (
@@ -311,11 +323,33 @@ def text_flags(title: Any = "", description: Any = "") -> Dict[str, Any]:
              for m in re.finditer(r"(\d{1,2})\s*\+?\s*(?:-|–|to)?\s*(\d{1,2})?\s*years?", lower)]
     years = [n for n in years if 0 < n <= 30]
     experience_max_years = max(years) if years else None
-    non_us_text = bool(re.search(
+    # Location-gated: only block when the JD's required country genuinely
+    # conflicts with the job's location (e.g. "must be based in India" on a
+    # Dubai posting). Same-country boilerplate (e.g. "right to work in the
+    # UK" on a London posting) is sponsorship paperwork, handled separately
+    # by sponsorshipRisk — it must not kill target-country fits.
+    non_us_text = False
+    _m = re.search(
         r"(\bir35\b|right to work in the (uk|united kingdom)|"
         r"must be (based|located|residing|living) in (the )?(uk|united kingdom|england|canada|india)|"
         r"uk[- ]based (only|role)|uk only role|canada[- ]based only|india[- ]based only|"
-        r"must (live|reside) in (the )?(uk|canada|india))", text, re.I))
+        r"must (live|reside) in (the )?(uk|canada|india))", text, re.I)
+    if _m:
+        _hit = _m.group(0).lower()
+        if "india" in _hit:
+            _required = "india"
+        elif "canada" in _hit:
+            _required = "canada"
+        else:
+            _required = "uk"  # uk / england / ir35
+        _signals = {
+            "uk": r"\b(united kingdom|\buk\b|england|scotland|wales|britain|london)\b",
+            "canada": r"\b(canada|toronto|vancouver|montreal|calgary|ottawa)\b",
+            "india": r"\b(india|bangalore|bengaluru|hyderabad|mumbai|delhi|chennai|pune)\b",
+        }
+        _loc = str(location or "").lower()
+        if not re.search(_signals[_required], _loc):
+            non_us_text = True
     return {"javaCentric": java_centric, "sponsorshipRisk": sponsorship_risk,
             "restricted": restricted, "experienceMaxYears": experience_max_years,
             "nonUsText": non_us_text}
@@ -333,6 +367,12 @@ US_STATES = ("Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|De
              "Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|"
              "District of Columbia")
 
+# Compiled location matchers. These were referenced by remote_assessment but
+# never defined — the resulting NameError was silently swallowed per-job by
+# the collector, which is why sweeps returned zero jobs.
+_US_STATE_RE = re.compile(r"\b(?:" + US_STATES + r")\b", re.I)
+_US_ABBR_RE = re.compile(US_STATE_ABBRS, re.I)
+
 NON_US = re.compile(
     r"india|bangalore|bengaluru|hyderabad|pune|mumbai|delhi|jaipur|kolkata|ahmedabad|"
     r"chennai|kochi|indore|lucknow|nagpur|surat|coimbatore|thiruvananthapuram|"
@@ -345,7 +385,8 @@ NON_US = re.compile(
     r"uruguay|montevideo|south africa|johannesburg|cape town|nigeria|lagos|"
     r"egypt|cairo|turkey|istanbul|saudi arabia|riyadh|jeddah|qatar|doha|kuwait|"
     r"pakistan|karachi|lahore|bangladesh|dhaka|sri lanka|colombo|nepal|kathmandu|"
-    r"russia|moscow|ukraine|kyiv|belarus|kazakhstan|uzbekistan|"
+    r"russia|moscow|ukraine|kyiv|belarus|kazakhstan|uzbekistan",
+    re.I  # ATS locations arrive capitalized ("Bangalore, India"); match them
 )
 
 
@@ -360,6 +401,12 @@ def remote_assessment(location: Any = "", workplace: Any = None,
     onsite_signal = (bool(re.search(r"on[- ]site|in[- ]office", lower))
                      or wp in ("onsite", "on-site"))
     has_non_us = bool(NON_US.search(loc))
+    # Target-country locations get their own type so the international
+    # pipeline (USA-excluded per the 2026-10-08 pivot) keeps them instead
+    # of lumping them into "non-us".
+    if _is_target_location(loc):
+        return {"usRemote": False, "remoteType": "intl",
+                "remoteReason": "Target country location"}
     has_us = (bool(re.search(r"\b(united states|usa|u\.s\.a\.|u\.s\.)\b", loc, re.I))
               or bool(_US_STATE_RE.search(loc)) or bool(_US_ABBR_RE.search(loc)))
     text_us_remote = bool(re.search(
@@ -403,8 +450,16 @@ def freshness(published: Optional[str], now_ms: Optional[int] = None) -> Dict[st
     }
 
 
-def is_us_job(job: Job) -> bool:
+def is_kept_job(job: Job) -> bool:
+    """Kept in jobs.json: target-country ("intl") and US-pipeline jobs alike,
+    unless a hard location-mismatch flag was set. USA-excluded *fit* is
+    decided by assess_job; the snapshot keeps US rows so the frontend's own
+    refit can show/hide them."""
     return job.remoteType != "non-us" and not (job.flags or {}).get("nonUsText")
+
+
+# Back-compat alias (old name lied after the international pivot).
+is_us_job = is_kept_job
 
 
 STAFFING_RE = re.compile(
@@ -443,7 +498,7 @@ def assess_job(job: Job, now_ms: Optional[int] = None) -> Job:
     if STAFFING_RE.search(job.company or ""):
         blocks.append("Staffing agency / consultancy")
     exp_max = flags.get("experienceMaxYears")
-    if exp_max and exp_max >= 7:
+    if exp_max and exp_max >= 9:
         blocks.append(f"Experience ask may be {exp_max}+ years")
     if job.salaryMax and job.salaryMax < SALARY_FLOOR:
         blocks.append("Listed salary is below $125k")
@@ -455,7 +510,9 @@ def assess_job(job: Job, now_ms: Optional[int] = None) -> Job:
         notes.append("Listed salary range reaches $125k")
     elif not job.salaryMax:
         notes.append("Salary not listed")
-    if job.remoteType in ("onsite", "hybrid"):
+    if job.remoteType == "intl":
+        notes.append("Target country location")
+    elif job.remoteType in ("onsite", "hybrid"):
         notes.append("US onsite/hybrid — relocation open")
     elif job.remoteType == "remote-unknown":
         notes.append("Remote — US eligibility unverified")
@@ -478,7 +535,7 @@ def enrich_job(base: Dict[str, Any], description: Any = "",
     """Port of enrichJob: salary parse + flags + remote + assess."""
     salary = parse_salary(description, structured_salary_text or base.get("salary") or "")
     tf = title_flags(base.get("title"))
-    xf = text_flags(base.get("title"), description)
+    xf = text_flags(base.get("title"), description, base.get("location"))
     if re.search(r"\bgovernment\b|\.gov\b", str(base.get("company") or ""), re.I):
         xf["restricted"] = True
     remote = remote_assessment(

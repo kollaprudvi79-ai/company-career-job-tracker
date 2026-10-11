@@ -30,7 +30,7 @@ import aiohttp
 
 from .fetchers import FETCHERS, normalize
 from .fetchers_extra import EXTRA_TYPES, fetch_extra, is_extra_type, normalize_extra
-from .models import Board, BoardStatus, Job, assess_job, is_us_job, now_iso
+from .models import Board, BoardStatus, Job, assess_job, is_kept_job, now_iso
 from .scoring import order_by_yield, record_yield, tfidf_dedupe, weighted_fit_score
 from .tiering import (CONT_HOT_DAYS, CONT_ROTATION_SLICES, HOT_DAYS,
                       ROTATION_SLICES, select_boards)
@@ -224,7 +224,7 @@ def build_snapshot(results: List[Tuple[Dict, List[Job]]],
     tfidf_dedupe(final)
 
     filtered = [j for j in final
-                if is_us_job(j) and not (j.flags or {}).get("restricted")
+                if is_kept_job(j) and not (j.flags or {}).get("restricted")
                 and j.remoteType != "non-us"]
 
     def _pub_ts(j: Job) -> float:
