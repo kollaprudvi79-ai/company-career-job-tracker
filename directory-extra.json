@@ -2018,5 +2018,70 @@
     "company": "Brainly",
     "type": "ashby",
     "token": "brainly"
+  },
+  {
+    "company": "Careem",
+    "type": "greenhouse",
+    "token": "careem"
+  },
+  {
+    "company": "Ziina",
+    "type": "ashby",
+    "token": "ziina"
+  },
+  {
+    "company": "Tamara",
+    "type": "greenhouse",
+    "token": "tamara"
+  },
+  {
+    "company": "Thunes",
+    "type": "greenhouse",
+    "token": "thunes"
+  },
+  {
+    "company": "Ninja Van",
+    "type": "lever",
+    "token": "ninjavan"
+  },
+  {
+    "company": "Mollie",
+    "type": "ashby",
+    "token": "mollie"
+  },
+  {
+    "company": "Intercom",
+    "type": "greenhouse",
+    "token": "intercom"
+  },
+  {
+    "company": "Xero",
+    "type": "ashby",
+    "token": "xero"
+  },
+  {
+    "company": "Monzo",
+    "type": "greenhouse",
+    "token": "monzo"
+  },
+  {
+    "company": "Deliveroo",
+    "type": "greenhouse",
+    "token": "deliveroo"
+  },
+  {
+    "company": "N26",
+    "type": "greenhouse",
+    "token": "n26"
+  },
+  {
+    "company": "Airtasker",
+    "type": "ashby",
+    "token": "airtasker"
+  },
+  {
+    "company": "SonarSource",
+    "type": "lever",
+    "token": "sonarsource"
   }
 ]
