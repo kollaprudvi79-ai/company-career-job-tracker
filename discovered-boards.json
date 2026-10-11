@@ -2793,5 +2793,10 @@
   "company": "Thales",
   "type": "workday",
   "token": "thales.wd3.myworkdayjobs.com/thales/careers"
+ },
+ {
+  "company": "Tether Operations Limited",
+  "type": "recruitee",
+  "token": "tether"
  }
 ]
