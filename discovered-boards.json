@@ -2943,5 +2943,15 @@
   "company": "Sonos",
   "type": "workday",
   "token": "sonos.wd1.myworkdayjobs.com/sonos/sonos"
+ },
+ {
+  "company": "ShiftKey",
+  "type": "ashby",
+  "token": "shiftkey"
+ },
+ {
+  "company": "FurtherAI",
+  "type": "ashby",
+  "token": "furtherai"
  }
 ]
