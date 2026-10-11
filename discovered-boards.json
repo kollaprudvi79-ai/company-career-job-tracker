@@ -1330,11 +1330,6 @@
   "token": "okx"
  },
  {
-  "company": "Sonar",
-  "type": "lever",
-  "token": "sonarsource"
- },
- {
   "company": "Bms",
   "type": "workday",
   "token": "bristolmyerssquibb.wd5.myworkdayjobs.com/bristolmyerssquibb/bms"
