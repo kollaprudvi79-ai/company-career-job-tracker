@@ -2798,5 +2798,150 @@
   "company": "Tether Operations Limited",
   "type": "recruitee",
   "token": "tether"
+ },
+ {
+  "company": "Cowboy Space Corporation",
+  "type": "ashby",
+  "token": "cowboyspace"
+ },
+ {
+  "company": "Forus",
+  "type": "ashby",
+  "token": "forus"
+ },
+ {
+  "company": "Generalist",
+  "type": "ashby",
+  "token": "generalist"
+ },
+ {
+  "company": "Peregrine",
+  "type": "greenhouse",
+  "token": "peregrinetechnologies"
+ },
+ {
+  "company": "Luma",
+  "type": "ashby",
+  "token": "lumaai"
+ },
+ {
+  "company": "Stord",
+  "type": "workday",
+  "token": "stord.wd503.myworkdayjobs.com/stord/stord_external_career"
+ },
+ {
+  "company": "Impulse Space",
+  "type": "pinpoint",
+  "token": "impulsespace"
+ },
+ {
+  "company": "Reliable Robotics Corporation",
+  "type": "ashby",
+  "token": "reliable-robotics"
+ },
+ {
+  "company": "Quindar",
+  "type": "ashby",
+  "token": "quindar"
+ },
+ {
+  "company": "Alarm.com",
+  "type": "greenhouse",
+  "token": "alarmcom"
+ },
+ {
+  "company": "DriveWealth",
+  "type": "greenhouse",
+  "token": "drivewealth"
+ },
+ {
+  "company": "Prime Intellect",
+  "type": "ashby",
+  "token": "primeintellect"
+ },
+ {
+  "company": "Gen",
+  "type": "ashby",
+  "token": "gen-digital"
+ },
+ {
+  "company": "Liberate",
+  "type": "greenhouse",
+  "token": "liberate"
+ },
+ {
+  "company": "Inflection AI",
+  "type": "greenhouse",
+  "token": "inflectionai"
+ },
+ {
+  "company": "NexHealth",
+  "type": "greenhouse",
+  "token": "nexhealth"
+ },
+ {
+  "company": "Pointclickcare",
+  "type": "lever",
+  "token": "pointclickcare"
+ },
+ {
+  "company": "Ditto",
+  "type": "ashby",
+  "token": "ditto"
+ },
+ {
+  "company": "Aurelian",
+  "type": "ashby",
+  "token": "aurelian"
+ },
+ {
+  "company": "SnapMagic",
+  "type": "ashby",
+  "token": "snapmagic"
+ },
+ {
+  "company": "Wix",
+  "type": "smartrecruiters",
+  "token": "wix2"
+ },
+ {
+  "company": "Kong",
+  "type": "ashby",
+  "token": "kong"
+ },
+ {
+  "company": "Super.com",
+  "type": "ashby",
+  "token": "super.com"
+ },
+ {
+  "company": "Lambda",
+  "type": "ashby",
+  "token": "lambda"
+ },
+ {
+  "company": "StackAdapt",
+  "type": "greenhouse",
+  "token": "stackadapt"
+ },
+ {
+  "company": "Mapbox",
+  "type": "ashby",
+  "token": "mapbox"
+ },
+ {
+  "company": "Nerdio",
+  "type": "rippling",
+  "token": "nerdio-careers"
+ },
+ {
+  "company": "Alkami",
+  "type": "workday",
+  "token": "alkami.wd12.myworkdayjobs.com/alkami/alkami"
+ },
+ {
+  "company": "Sonos",
+  "type": "workday",
+  "token": "sonos.wd1.myworkdayjobs.com/sonos/sonos"
  }
 ]
