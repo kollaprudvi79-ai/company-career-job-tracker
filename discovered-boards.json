@@ -2948,5 +2948,65 @@
   "company": "FurtherAI",
   "type": "ashby",
   "token": "furtherai"
+ },
+ {
+  "company": "DuckDuckGo",
+  "type": "ashby",
+  "token": "duck-duck-go"
+ },
+ {
+  "company": "o9 Solutions",
+  "type": "workday",
+  "token": "o9solutions.wd5.myworkdayjobs.com/o9solutions/o9solutionsexternal"
+ },
+ {
+  "company": "CareBridge (Elevance Health)",
+  "type": "workday",
+  "token": "elevancehealth.wd1.myworkdayjobs.com/elevancehealth/ant"
+ },
+ {
+  "company": "Loft Orbital",
+  "type": "lever",
+  "token": "loftorbital"
+ },
+ {
+  "company": "Florence Healthcare",
+  "type": "greenhouse",
+  "token": "florencehealthcare"
+ },
+ {
+  "company": "Cambridge Mobile Telematics",
+  "type": "greenhouse",
+  "token": "cambridgemobiletelematics"
+ },
+ {
+  "company": "Empower",
+  "type": "workday",
+  "token": "empower.wd12.myworkdayjobs.com/empower/empower"
+ },
+ {
+  "company": "Cognition",
+  "type": "ashby",
+  "token": "cognition"
+ },
+ {
+  "company": "PermitFlow",
+  "type": "ashby",
+  "token": "permitflow"
+ },
+ {
+  "company": "Ensemble",
+  "type": "workday",
+  "token": "ensemblehp.wd5.myworkdayjobs.com/ensemblehp/ensemblehealthpartnerscareers"
+ },
+ {
+  "company": "iHeartRadio",
+  "type": "workday",
+  "token": "iheartmedia.wd5.myworkdayjobs.com/iheartmedia/external_ihm"
+ },
+ {
+  "company": "Integral Ad Science",
+  "type": "workday",
+  "token": "integralads.wd1.myworkdayjobs.com/integralads/iascareers"
  }
 ]
