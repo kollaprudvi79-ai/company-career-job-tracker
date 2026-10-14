@@ -3008,5 +3008,20 @@
   "company": "Integral Ad Science",
   "type": "workday",
   "token": "integralads.wd1.myworkdayjobs.com/integralads/iascareers"
+ },
+ {
+  "company": "Distyl",
+  "type": "ashby",
+  "token": "distyl"
+ },
+ {
+  "company": "Hark",
+  "type": "greenhouse",
+  "token": "hark"
+ },
+ {
+  "company": "Poesis AI",
+  "type": "ashby",
+  "token": "poesis"
  }
 ]
