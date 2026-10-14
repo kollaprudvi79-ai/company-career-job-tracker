@@ -3023,5 +3023,135 @@
   "company": "Poesis AI",
   "type": "ashby",
   "token": "poesis"
+ },
+ {
+  "company": "Strive Health",
+  "type": "greenhouse",
+  "token": "strivehealth"
+ },
+ {
+  "company": "Whop",
+  "type": "ashby",
+  "token": "whop"
+ },
+ {
+  "company": "Cyberhaven",
+  "type": "ashby",
+  "token": "cyberhaven"
+ },
+ {
+  "company": "CodeRabbit",
+  "type": "ashby",
+  "token": "coderabbit"
+ },
+ {
+  "company": "Form Energy",
+  "type": "ashby",
+  "token": "formenergy"
+ },
+ {
+  "company": "eMed",
+  "type": "jazzhr",
+  "token": "emedlabsllc"
+ },
+ {
+  "company": "Imprint",
+  "type": "ashby",
+  "token": "imprint"
+ },
+ {
+  "company": "Tabby",
+  "type": "pinpoint",
+  "token": "tabby"
+ },
+ {
+  "company": "Core Scientific",
+  "type": "workday",
+  "token": "corescientific.wd108.myworkdayjobs.com/corescientific/corescientificcareers"
+ },
+ {
+  "company": "BILL",
+  "type": "greenhouse",
+  "token": "billcom"
+ },
+ {
+  "company": "Planet",
+  "type": "greenhouse",
+  "token": "planetlabs"
+ },
+ {
+  "company": "Anaplan",
+  "type": "greenhouse",
+  "token": "anaplan"
+ },
+ {
+  "company": "SentinelOne",
+  "type": "greenhouse",
+  "token": "sentinellabs"
+ },
+ {
+  "company": "Box",
+  "type": "greenhouse",
+  "token": "boxinc"
+ },
+ {
+  "company": "Tanium",
+  "type": "greenhouse",
+  "token": "tanium"
+ },
+ {
+  "company": "Nimble",
+  "type": "greenhouse",
+  "token": "nimblerobotics"
+ },
+ {
+  "company": "OneTrust",
+  "type": "greenhouse",
+  "token": "onetrust"
+ },
+ {
+  "company": "Ambarella",
+  "type": "workday",
+  "token": "ambarella.wd108.myworkdayjobs.com/ambarella/ambarella"
+ },
+ {
+  "company": "Motive",
+  "type": "greenhouse",
+  "token": "gomotive"
+ },
+ {
+  "company": "EverCommerce",
+  "type": "workday",
+  "token": "evercommerce.wd1.myworkdayjobs.com/evercommerce/evercommerce_careers"
+ },
+ {
+  "company": "YipitData",
+  "type": "greenhouse",
+  "token": "yipitdata"
+ },
+ {
+  "company": "IonQ",
+  "type": "greenhouse",
+  "token": "ionq"
+ },
+ {
+  "company": "NOX METALS",
+  "type": "ashby",
+  "token": "nox-metals"
+ },
+ {
+  "company": "Marqeta",
+  "type": "ashby",
+  "token": "marqeta-inc"
+ },
+ {
+  "company": "TD SYNNEX",
+  "type": "workday",
+  "token": "synnex.wd5.myworkdayjobs.com/synnex/tdsynnexcareers"
+ },
+ {
+  "company": "Lumafield",
+  "type": "lever",
+  "token": "lumafield"
  }
 ]
