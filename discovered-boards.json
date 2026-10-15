@@ -3158,5 +3158,150 @@
   "company": "Metropolis Technologies",
   "type": "greenhouse",
   "token": "metropolis"
+ },
+ {
+  "company": "Mintlify",
+  "type": "ashby",
+  "token": "mintlify"
+ },
+ {
+  "company": "Grafana Labs",
+  "type": "greenhouse",
+  "token": "grafanalabs"
+ },
+ {
+  "company": "Harvey",
+  "type": "ashby",
+  "token": "harvey"
+ },
+ {
+  "company": "Commonwealth Fusion Systems",
+  "type": "lever",
+  "token": "cfsenergy"
+ },
+ {
+  "company": "Aurora",
+  "type": "ashby",
+  "token": "aurora-operations-inc"
+ },
+ {
+  "company": "Altana",
+  "type": "greenhouse",
+  "token": "altanaai"
+ },
+ {
+  "company": "Nutanix",
+  "type": "jobvite",
+  "token": "nutanix"
+ },
+ {
+  "company": "Tebra",
+  "type": "greenhouse",
+  "token": "tebra"
+ },
+ {
+  "company": "Wasabi Technologies",
+  "type": "greenhouse",
+  "token": "wasabi"
+ },
+ {
+  "company": "zerohash",
+  "type": "breezy",
+  "token": "zero-hash"
+ },
+ {
+  "company": "SmartAsset",
+  "type": "greenhouse",
+  "token": "smartasset"
+ },
+ {
+  "company": "Freshworks",
+  "type": "smartrecruiters",
+  "token": "freshworks"
+ },
+ {
+  "company": "Highnote",
+  "type": "greenhouse",
+  "token": "highnote"
+ },
+ {
+  "company": "Rad AI",
+  "type": "ashby",
+  "token": "radai"
+ },
+ {
+  "company": "CD Projekt",
+  "type": "smartrecruiters",
+  "token": "cdprojektred"
+ },
+ {
+  "company": "Fieldguide",
+  "type": "ashby",
+  "token": "fieldguide"
+ },
+ {
+  "company": "Hypercubic",
+  "type": "ashby",
+  "token": "hypercubic"
+ },
+ {
+  "company": "Chainalysis",
+  "type": "ashby",
+  "token": "chainalysis-careers"
+ },
+ {
+  "company": "Instructure",
+  "type": "ashby",
+  "token": "instructure"
+ },
+ {
+  "company": "Anchorage Digital",
+  "type": "lever",
+  "token": "anchorage"
+ },
+ {
+  "company": "Abridge",
+  "type": "ashby",
+  "token": "abridge"
+ },
+ {
+  "company": "MKS Instruments",
+  "type": "workday",
+  "token": "mksinst.wd1.myworkdayjobs.com/mksinst/mkscareersamericas"
+ },
+ {
+  "company": "SeatGeek",
+  "type": "greenhouse",
+  "token": "seatgeek"
+ },
+ {
+  "company": "Truebill",
+  "type": "greenhouse",
+  "token": "truebill"
+ },
+ {
+  "company": "PTC",
+  "type": "workday",
+  "token": "ptc.wd1.myworkdayjobs.com/ptc/ptc"
+ },
+ {
+  "company": "Recall.ai",
+  "type": "ashby",
+  "token": "recall"
+ },
+ {
+  "company": "Wrapbook",
+  "type": "ashby",
+  "token": "wrapbook"
+ },
+ {
+  "company": "Bloom Energy",
+  "type": "workday",
+  "token": "bloomenergy.wd1.myworkdayjobs.com/bloomenergy/bloomenergycareers"
+ },
+ {
+  "company": "Shift4 Payments",
+  "type": "workday",
+  "token": "shift4payments.wd108.myworkdayjobs.com/shift4payments/shift4_external_careersite"
  }
 ]
