@@ -3303,5 +3303,150 @@
   "company": "Shift4 Payments",
   "type": "workday",
   "token": "shift4payments.wd108.myworkdayjobs.com/shift4payments/shift4_external_careersite"
+ },
+ {
+  "company": "Wave Mobile Money",
+  "type": "greenhouse",
+  "token": "wavemm1"
+ },
+ {
+  "company": "Nectar Social",
+  "type": "ashby",
+  "token": "nectar-social"
+ },
+ {
+  "company": "Activision Blizzard",
+  "type": "workday",
+  "token": "xboxgaming.wd1.myworkdayjobs.com/xboxgaming/external"
+ },
+ {
+  "company": "Redwood Materials",
+  "type": "greenhouse",
+  "token": "redwoodmaterials"
+ },
+ {
+  "company": "Sidecar Health",
+  "type": "greenhouse",
+  "token": "sidecarhealth"
+ },
+ {
+  "company": "Constellation Software",
+  "type": "workday",
+  "token": "cbrands.wd5.myworkdayjobs.com/cbrands/cbi_external_careers"
+ },
+ {
+  "company": "SonderMind",
+  "type": "ashby",
+  "token": "sondermind"
+ },
+ {
+  "company": "LTK",
+  "type": "greenhouse",
+  "token": "shopltk"
+ },
+ {
+  "company": "Moxie",
+  "type": "ashby",
+  "token": "moxie"
+ },
+ {
+  "company": "Mesh++",
+  "type": "greenhouse",
+  "token": "mesh"
+ },
+ {
+  "company": "DDN",
+  "type": "ashby",
+  "token": "ddn"
+ },
+ {
+  "company": "MeridianLink",
+  "type": "ashby",
+  "token": "meridianlink"
+ },
+ {
+  "company": "The Farmer's Dog",
+  "type": "greenhouse",
+  "token": "thefarmersdog"
+ },
+ {
+  "company": "xAI",
+  "type": "greenhouse",
+  "token": "xai"
+ },
+ {
+  "company": "SpyCloud",
+  "type": "greenhouse",
+  "token": "spycloud"
+ },
+ {
+  "company": "Acquisition.com",
+  "type": "ashby",
+  "token": "acquisition"
+ },
+ {
+  "company": "Turnitin",
+  "type": "smartrecruiters",
+  "token": "turnitinllc"
+ },
+ {
+  "company": "TetraScience",
+  "type": "workable",
+  "token": "tetrascience"
+ },
+ {
+  "company": "Pax8",
+  "type": "workday",
+  "token": "pax8inc.wd12.myworkdayjobs.com/pax8inc/pax8careers"
+ },
+ {
+  "company": "Zyphra",
+  "type": "ashby",
+  "token": "zyphra"
+ },
+ {
+  "company": "Jeeves",
+  "type": "lever",
+  "token": "tryjeeves"
+ },
+ {
+  "company": "Datasite",
+  "type": "workday",
+  "token": "datasite.wd1.myworkdayjobs.com/datasite/datasite"
+ },
+ {
+  "company": "Macy's",
+  "type": "oracle",
+  "token": "ebwh.fa.us2.oraclecloud.com/cx_1001"
+ },
+ {
+  "company": "Blue Origin",
+  "type": "workday",
+  "token": "blueorigin.wd5.myworkdayjobs.com/blueorigin/blueorigin"
+ },
+ {
+  "company": "Latent",
+  "type": "ashby",
+  "token": "latent"
+ },
+ {
+  "company": "Boston Dynamics",
+  "type": "workday",
+  "token": "bostondynamics.wd1.myworkdayjobs.com/bostondynamics/boston_dynamics"
+ },
+ {
+  "company": "AutoStore",
+  "type": "workday",
+  "token": "autostore.wd3.myworkdayjobs.com/autostore/autostore"
+ },
+ {
+  "company": "Flutter Entertainment",
+  "type": "workday",
+  "token": "flutterbe.wd3.myworkdayjobs.com/flutterbe/flutterint_external"
+ },
+ {
+  "company": "DNV",
+  "type": "oracle",
+  "token": "ecyq.fa.em2.oraclecloud.com/cx_1"
  }
 ]
