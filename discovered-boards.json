@@ -3448,5 +3448,10 @@
   "company": "DNV",
   "type": "oracle",
   "token": "ecyq.fa.em2.oraclecloud.com/cx_1"
+ },
+ {
+  "company": "Apryse",
+  "type": "lever",
+  "token": "apryse"
  }
 ]
