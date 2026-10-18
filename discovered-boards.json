@@ -3473,5 +3473,30 @@
   "company": "Venice.ai",
   "type": "greenhouse",
   "token": "veniceai"
+ },
+ {
+  "company": "Yoodli AI Roleplays",
+  "type": "greenhouse",
+  "token": "yoodliinc"
+ },
+ {
+  "company": "Tomorrow.io",
+  "type": "greenhouse",
+  "token": "tomorrow"
+ },
+ {
+  "company": "Hipcamp",
+  "type": "rippling",
+  "token": "join-the-hipcamp-team"
+ },
+ {
+  "company": "Clair",
+  "type": "ashby",
+  "token": "clair"
+ },
+ {
+  "company": "Sitetracker",
+  "type": "lever",
+  "token": "sitetracker"
  }
 ]
