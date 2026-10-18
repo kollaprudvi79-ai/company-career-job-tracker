@@ -3453,5 +3453,25 @@
   "company": "Apryse",
   "type": "lever",
   "token": "apryse"
+ },
+ {
+  "company": "Sandbar",
+  "type": "ashby",
+  "token": "sandbar"
+ },
+ {
+  "company": "Alleviate Health",
+  "type": "ashby",
+  "token": "alleviatehealth"
+ },
+ {
+  "company": "Downtobid",
+  "type": "lever",
+  "token": "basis"
+ },
+ {
+  "company": "Venice.ai",
+  "type": "greenhouse",
+  "token": "veniceai"
  }
 ]
