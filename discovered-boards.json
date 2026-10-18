@@ -3498,5 +3498,80 @@
   "company": "Sitetracker",
   "type": "lever",
   "token": "sitetracker"
+ },
+ {
+  "company": "Watershed",
+  "type": "ashby",
+  "token": "watershed"
+ },
+ {
+  "company": "webAI",
+  "type": "ashby",
+  "token": "webai"
+ },
+ {
+  "company": "Apollo.io",
+  "type": "greenhouse",
+  "token": "apolloio"
+ },
+ {
+  "company": "TENEX.AI",
+  "type": "ashby",
+  "token": "tenex"
+ },
+ {
+  "company": "Gamma",
+  "type": "ashby",
+  "token": "gamma"
+ },
+ {
+  "company": "FalconX",
+  "type": "greenhouse",
+  "token": "falconx"
+ },
+ {
+  "company": "Radiant",
+  "type": "ashby",
+  "token": "radiant-industries"
+ },
+ {
+  "company": "PsiQuantum",
+  "type": "greenhouse",
+  "token": "psiquantum"
+ },
+ {
+  "company": "Upscale AI",
+  "type": "lever",
+  "token": "upscale-ai"
+ },
+ {
+  "company": "EquipmentShare",
+  "type": "greenhouse",
+  "token": "equipmentsharecom"
+ },
+ {
+  "company": "Aaru",
+  "type": "ashby",
+  "token": "aaru"
+ },
+ {
+  "company": "Fervo",
+  "type": "greenhouse",
+  "token": "fervoenergy"
+ },
+ {
+  "company": "Qualtrics",
+  "type": "greenhouse",
+  "token": "qualtrics"
+ },
+ {
+  "company": "OVERJET",
+  "type": "ashby",
+  "token": "overjet"
+ },
+ {
+  "company": "Material Security",
+  "type": "ashby",
+  "token": "materialsecurity"
  }
 ]
