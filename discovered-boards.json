@@ -3573,5 +3573,10 @@
   "company": "Material Security",
   "type": "ashby",
   "token": "materialsecurity"
+ },
+ {
+  "company": "Penumbra",
+  "type": "lever",
+  "token": "penumbrainc"
  }
 ]
