@@ -602,15 +602,15 @@
  {
   "sweep": 26,
   "date": "2026-11-10",
-  "time": "12:47",
-  "startTime": "2026-11-10T12:47:08.364Z",
-  "endTime": "2026-11-10T12:50:17.916Z",
+  "time": "12:51",
+  "startTime": "2026-11-10T12:51:31.906Z",
+  "endTime": "2026-11-10T12:54:37.958Z",
   "durationMin": 3,
-  "boardsChecked": 990,
-  "boardsOk": 950,
-  "newJobs": 35,
-  "totalJobs": 7914,
-  "fitJobs": 268,
+  "boardsChecked": 1030,
+  "boardsOk": 993,
+  "newJobs": 8,
+  "totalJobs": 7910,
+  "fitJobs": 269,
   "universityJobs": 0,
   "nonProfitJobs": 0
  }
