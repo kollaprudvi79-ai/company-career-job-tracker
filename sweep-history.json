@@ -90,25 +90,17 @@
   "nonProfitJobs": 0
  },
  {
-  "sweep": "2026-11-12T06:09:59.585746+00:00",
-  "newJobs": 145,
-  "universityJobs": 22,
-  "nonprofitJobs": 223,
-  "totalJobs": 8750,
-  "boards": 2304
- },
- {
   "sweep": 16,
   "date": "2026-11-12",
-  "time": "07:37",
-  "startTime": "2026-11-12T07:37:43.560Z",
-  "endTime": "2026-11-12T07:41:13.593Z",
+  "time": "07:43",
+  "startTime": "2026-11-12T07:43:24.335Z",
+  "endTime": "2026-11-12T07:47:31.384Z",
   "durationMin": 4,
-  "boardsChecked": 1168,
-  "boardsOk": 1135,
-  "newJobs": 4,
-  "totalJobs": 5550,
-  "fitJobs": 231,
+  "boardsChecked": 1520,
+  "boardsOk": 1485,
+  "newJobs": 1,
+  "totalJobs": 5555,
+  "fitJobs": 230,
   "universityJobs": 0,
   "nonProfitJobs": 0
  }
