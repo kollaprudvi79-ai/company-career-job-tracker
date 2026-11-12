@@ -1,10 +1,5 @@
 [
  {
-  "company": "FourKites",
-  "type": "greenhouse",
-  "token": "fourkites"
- },
- {
   "company": "Geotab",
   "type": "greenhouse",
   "token": "geotab"
@@ -2050,11 +2045,6 @@
   "token": "coherehealth"
  },
  {
-  "company": "Collibra",
-  "type": "greenhouse",
-  "token": "collibra"
- },
- {
   "company": "Compass Health Center",
   "type": "greenhouse",
   "token": "compasshealthcenter"
@@ -2118,11 +2108,6 @@
   "company": "CTC Lateral - Website & LinkedIn",
   "type": "greenhouse",
   "token": "chicagotrading"
- },
- {
-  "company": "Current",
-  "type": "greenhouse",
-  "token": "current"
  },
  {
   "company": "Current",
@@ -2575,11 +2560,6 @@
   "token": "honor"
  },
  {
-  "company": "Hover",
-  "type": "greenhouse",
-  "token": "hover"
- },
- {
   "company": "HP IQ",
   "type": "greenhouse",
   "token": "hpiq"
@@ -2663,11 +2643,6 @@
   "company": "Jane Street",
   "type": "greenhouse",
   "token": "janestreet"
- },
- {
-  "company": "Join Our Talent Community",
-  "type": "greenhouse",
-  "token": "axontalentcommunity"
  },
  {
   "company": "jumptrading",
@@ -4690,11 +4665,6 @@
   "token": "grow-therapy"
  },
  {
-  "company": "Happyrobot Inc.",
-  "type": "ashby",
-  "token": "happyrobot.ai"
- },
- {
   "company": "HOLYWATER TECH",
   "type": "ashby",
   "token": "holywater"
@@ -4823,11 +4793,6 @@
   "company": "Suite Studios",
   "type": "ashby",
   "token": "suite-studios"
- },
- {
-  "company": "SunnyData",
-  "type": "ashby",
-  "token": "sunnydata"
  },
  {
   "company": "Texture",
@@ -5770,11 +5735,6 @@
   "token": "appsilon-1739358905"
  },
  {
-  "company": "Axmed",
-  "type": "teamtailor",
-  "token": "axmed"
- },
- {
   "company": "Azqore SA",
   "type": "teamtailor",
   "token": "azqoresa"
@@ -6138,11 +6098,6 @@
   "company": "The Ardonagh Group",
   "type": "teamtailor",
   "token": "theardonaghgroup"
- },
- {
-  "company": "Trackline Marketing",
-  "type": "teamtailor",
-  "token": "tracklinemarketing"
  },
  {
   "company": "TradingView",
@@ -6558,11 +6513,6 @@
   "company": "Lucayan Technology Solutions LLC",
   "type": "rippling",
   "token": "lucayan-technology-solutions-llc"
- },
- {
-  "company": "MarketOnce",
-  "type": "rippling",
-  "token": "marketonce"
  },
  {
   "company": "Mfourmobileresearch",
@@ -7275,11 +7225,6 @@
   "token": "alto.wd1.myworkdayjobs.com/alto/fuzehealthcareersite"
  },
  {
-  "company": "Anaheim Ducks Hockey (Linkedin)",
-  "type": "workday",
-  "token": "anaheimducks.wd5.myworkdayjobs.com/anaheimducks/linkedin"
- },
- {
   "company": "Anaheim Ducks Hockey (ocViBE)",
   "type": "workday",
   "token": "anaheimducks.wd5.myworkdayjobs.com/anaheimducks/ocvibe"
@@ -7328,11 +7273,6 @@
   "company": "Cerence",
   "type": "workday",
   "token": "cerence.wd5.myworkdayjobs.com/cerence/cerence"
- },
- {
-  "company": "Chenmed",
-  "type": "workday",
-  "token": "chenmed.wd1.myworkdayjobs.com/chenmed/chenmed"
  },
  {
   "company": "Conagra Brands (Careers US)",
@@ -7535,11 +7475,6 @@
   "token": "axos.wd5.myworkdayjobs.com/axos/axos"
  },
  {
-  "company": "Bah (Confidential)",
-  "type": "workday",
-  "token": "bah.wd1.myworkdayjobs.com/bah/confidential"
- },
- {
   "company": "Bcbsa",
   "type": "workday",
   "token": "bcbsa.wd1.myworkdayjobs.com/bcbsa/careers"
@@ -7583,11 +7518,6 @@
   "company": "Brown Brothers Harriman (BBH)",
   "type": "workday",
   "token": "bbh.wd5.myworkdayjobs.com/bbh/bbh"
- },
- {
-  "company": "Bcbsnc",
-  "type": "workday",
-  "token": "bcbsnc.wd5.myworkdayjobs.com/bcbsnc/bcbsnc"
  },
  {
   "company": "Bdx",
@@ -7840,11 +7770,6 @@
   "token": "creditacceptance.wd5.myworkdayjobs.com/creditacceptance/credit_acceptance"
  },
  {
-  "company": "CrowdStrike",
-  "type": "workday",
-  "token": "crowdstrike.wd5.myworkdayjobs.com/crowdstrike/crowdstrikecareers"
- },
- {
   "company": "Cvshealth",
   "type": "workday",
   "token": "cvshealth.wd1.myworkdayjobs.com/cvshealth/cvs_health_careers"
@@ -7883,11 +7808,6 @@
   "company": "Digital Turbine",
   "type": "workday",
   "token": "digitalturbine.wd501.myworkdayjobs.com/digitalturbine/digital_turbine_external_careers"
- },
- {
-  "company": "Earlywarning",
-  "type": "workday",
-  "token": "earlywarning.wd5.myworkdayjobs.com/earlywarning/earlywarningcareers"
  },
  {
   "company": "Electrolux Group",
@@ -8018,11 +7938,6 @@
   "company": "Gdit",
   "type": "workday",
   "token": "gdit.wd5.myworkdayjobs.com/gdit/external_career_site"
- },
- {
-  "company": "Gehc",
-  "type": "workday",
-  "token": "gehc.wd5.myworkdayjobs.com/gehc/gehc_externalsite"
  },
  {
   "company": "Generac",
@@ -8543,11 +8458,6 @@
   "company": "TEL",
   "type": "workday",
   "token": "tel.wd3.myworkdayjobs.com/tel/tel-careers"
- },
- {
-  "company": "Teladoc",
-  "type": "workday",
-  "token": "teladoc.wd503.myworkdayjobs.com/teladoc/teladochealth_is_hiring"
  },
  {
   "company": "Thehartford",
@@ -9718,11 +9628,6 @@
   "company": "Rialtocapital",
   "type": "workday",
   "token": "rialtocapital.wd1.myworkdayjobs.com/rialtocapital/rialto"
- },
- {
-  "company": "Riministreet",
-  "type": "workday",
-  "token": "riministreet.wd1.myworkdayjobs.com/riministreet/riministreet"
  },
  {
   "company": "Sky",
