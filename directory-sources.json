@@ -1255,11 +1255,6 @@
   "token": "shepherd"
  },
  {
-  "company": "ShiftKey",
-  "type": "ashby",
-  "token": "shiftkey"
- },
- {
   "company": "Shiftsmart",
   "type": "ashby",
   "token": "shiftsmart"
@@ -3845,11 +3840,6 @@
   "token": "ajax"
  },
  {
-  "company": "Amazon RIVR",
-  "type": "lever",
-  "token": "rivr"
- },
- {
   "company": "AnaVation",
   "type": "lever",
   "token": "anavationllc"
@@ -5110,11 +5100,6 @@
   "token": "nuvei"
  },
  {
-  "company": "OOCA",
-  "type": "workable",
-  "token": "oocahq"
- },
- {
   "company": "Optasia",
   "type": "workable",
   "token": "optasia"
@@ -5830,11 +5815,6 @@
   "token": "centra"
  },
  {
-  "company": "Chip",
-  "type": "teamtailor",
-  "token": "chip"
- },
- {
   "company": "Codento",
   "type": "teamtailor",
   "token": "codento"
@@ -6205,11 +6185,6 @@
   "token": "uppstuk"
  },
  {
-  "company": "Urbasolar",
-  "type": "teamtailor",
-  "token": "urbasolar"
- },
- {
   "company": "Vidoori",
   "type": "teamtailor",
   "token": "vidoori"
@@ -6303,11 +6278,6 @@
   "company": "Exmox",
   "type": "personio",
   "token": "exmox-gmbh"
- },
- {
-  "company": "Fadata Group",
-  "type": "personio",
-  "token": "fadata-group"
  },
  {
   "company": "Hilscher",
@@ -7420,11 +7390,6 @@
   "token": "aep.wd1.myworkdayjobs.com/aep/aepcareersite"
  },
  {
-  "company": "Ag",
-  "type": "workday",
-  "token": "ag.wd3.myworkdayjobs.com/ag/airbus"
- },
- {
   "company": "Aig",
   "type": "workday",
   "token": "aig.wd1.myworkdayjobs.com/aig/aig"
@@ -8220,19 +8185,9 @@
   "token": "ksb.wd3.myworkdayjobs.com/ksb/ksb_externalcareersite"
  },
  {
-  "company": "Lbg",
-  "type": "workday",
-  "token": "lbg.wd3.myworkdayjobs.com/lbg/lbg_careers"
- },
- {
   "company": "LEGO",
   "type": "workday",
   "token": "lego.wd103.myworkdayjobs.com/lego/lego_external"
- },
- {
-  "company": "Leonardocompany",
-  "type": "workday",
-  "token": "leonardocompany.wd3.myworkdayjobs.com/leonardocompany/leonardocareersite"
  },
  {
   "company": "Lighting",
@@ -8615,11 +8570,6 @@
   "token": "transunion.wd5.myworkdayjobs.com/transunion/transunion"
  },
  {
-  "company": "Travelhrportal",
-  "type": "workday",
-  "token": "travelhrportal.wd1.myworkdayjobs.com/travelhrportal/jobs"
- },
- {
   "company": "Trendmicro",
   "type": "workday",
   "token": "trendmicro.wd3.myworkdayjobs.com/trendmicro/external"
@@ -8723,11 +8673,6 @@
   "company": "Eraneos",
   "type": "workday",
   "token": "eraneos.wd3.myworkdayjobs.com/eraneos/eraneos_external_career_site"
- },
- {
-  "company": "Evolent",
-  "type": "workday",
-  "token": "evolent.wd1.myworkdayjobs.com/evolent/external"
  },
  {
   "company": "Fugro",
@@ -9988,11 +9933,6 @@
   "company": "dymatrix",
   "type": "personio",
   "token": "dymatrix"
- },
- {
-  "company": "eorbit-gmbh",
-  "type": "personio",
-  "token": "eorbit-gmbh"
  },
  {
   "company": "maibornwolff",
