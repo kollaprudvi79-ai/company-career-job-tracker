@@ -1605,11 +1605,6 @@
   "token": "aestudio"
  },
  {
-  "company": "Affirm",
-  "type": "greenhouse",
-  "token": "affirm"
- },
- {
   "company": "Agoda",
   "type": "greenhouse",
   "token": "agoda"
@@ -2153,11 +2148,6 @@
   "company": "DataCamp",
   "type": "greenhouse",
   "token": "datacamp"
- },
- {
-  "company": "Datadog",
-  "type": "greenhouse",
-  "token": "datadog"
  },
  {
   "company": "DeepIntent",
@@ -4635,11 +4625,6 @@
   "token": "coinbase"
  },
  {
-  "company": "Wizeline",
-  "type": "greenhouse",
-  "token": "wizeline"
- },
- {
   "company": "B2spin",
   "type": "ashby",
   "token": "b2spin"
@@ -6480,11 +6465,6 @@
   "token": "gig"
  },
  {
-  "company": "In Tandem",
-  "type": "pinpoint",
-  "token": "intandem"
- },
- {
   "company": "inDrive",
   "type": "pinpoint",
   "token": "indrive"
@@ -7315,16 +7295,6 @@
   "token": "a1group.wd3.myworkdayjobs.com/a1group/a1_jobs_bg"
  },
  {
-  "company": "A1Group (A1 Jobs mk)",
-  "type": "workday",
-  "token": "a1group.wd3.myworkdayjobs.com/a1group/a1_jobs_mk"
- },
- {
-  "company": "A1Group (A1 Jobs sr)",
-  "type": "workday",
-  "token": "a1group.wd3.myworkdayjobs.com/a1group/a1_jobs_sr"
- },
- {
   "company": "Ac (Ec)",
   "type": "workday",
   "token": "arrow.wd1.myworkdayjobs.com/arrow/ec"
@@ -7995,11 +7965,6 @@
   "token": "usc.wd5.myworkdayjobs.com/usc/externalkeckusccareers"
  },
  {
-  "company": "FCA",
-  "type": "workday",
-  "token": "fca.wd3.myworkdayjobs.com/fca/fca_careers"
- },
- {
   "company": "Fifththird",
   "type": "workday",
   "token": "fifththird.wd5.myworkdayjobs.com/fifththird/53careers"
@@ -8163,11 +8128,6 @@
   "company": "Helenoftroy",
   "type": "workday",
   "token": "helenoftroy.wd503.myworkdayjobs.com/helenoftroy/main_hot"
- },
- {
-  "company": "Hpe",
-  "type": "workday",
-  "token": "hpe.wd5.myworkdayjobs.com/hpe/acjobsite"
  },
  {
   "company": "Hpe",
@@ -8643,11 +8603,6 @@
   "company": "Thehartford",
   "type": "workday",
   "token": "thehartford.wd5.myworkdayjobs.com/thehartford/careers_restricted"
- },
- {
-  "company": "Thomson Reuters",
-  "type": "workday",
-  "token": "thomsonreuters.wd5.myworkdayjobs.com/thomsonreuters/external_career_site"
  },
  {
   "company": "TransPerfect",
@@ -10063,11 +10018,6 @@
   "company": "sentinelgroup",
   "type": "jazzhr",
   "token": "sentinelgroup"
- },
- {
-  "company": "genmills",
-  "type": "workday",
-  "token": "genmills.wd1.myworkdayjobs.com/genmills/gmi_external_careers"
  },
  {
   "company": "General Intuition",
