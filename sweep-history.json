@@ -43,5 +43,50 @@
   "fitJobs": 226,
   "universityJobs": 0,
   "nonProfitJobs": 0
+ },
+ {
+  "sweep": 4,
+  "date": "2026-11-12",
+  "time": "01:49",
+  "startTime": "2026-11-12T01:49:48.815Z",
+  "endTime": "2026-11-12T01:53:37.744Z",
+  "durationMin": 4,
+  "boardsChecked": 1302,
+  "boardsOk": 1265,
+  "newJobs": 4,
+  "totalJobs": 5494,
+  "fitJobs": 226,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 8,
+  "date": "2026-11-12",
+  "time": "03:45",
+  "startTime": "2026-11-12T03:45:28.728Z",
+  "endTime": "2026-11-12T03:49:09.060Z",
+  "durationMin": 4,
+  "boardsChecked": 1271,
+  "boardsOk": 1237,
+  "newJobs": 4,
+  "totalJobs": 5539,
+  "fitJobs": 233,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 12,
+  "date": "2026-11-12",
+  "time": "05:37",
+  "startTime": "2026-11-12T05:37:48.900Z",
+  "endTime": "2026-11-12T05:41:22.463Z",
+  "durationMin": 4,
+  "boardsChecked": 1301,
+  "boardsOk": 1265,
+  "newJobs": 4,
+  "totalJobs": 5538,
+  "fitJobs": 232,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
  }
 ]
