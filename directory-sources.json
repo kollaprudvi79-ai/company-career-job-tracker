@@ -660,11 +660,6 @@
   "token": "insitro"
  },
  {
-  "company": "Ironclad",
-  "type": "ashby",
-  "token": "ironcladhq"
- },
- {
   "company": "Jobber",
   "type": "ashby",
   "token": "jobber"
@@ -823,11 +818,6 @@
   "company": "Mercor",
   "type": "ashby",
   "token": "mercor"
- },
- {
-  "company": "Mind Robotics",
-  "type": "ashby",
-  "token": "mindrobotics"
  },
  {
   "company": "Mirage",
@@ -1063,11 +1053,6 @@
   "company": "Powerline",
   "type": "ashby",
   "token": "powerline"
- },
- {
-  "company": "Prefect",
-  "type": "ashby",
-  "token": "prefect"
  },
  {
   "company": "Preply",
@@ -1908,11 +1893,6 @@
   "company": "Brunswick Group",
   "type": "greenhouse",
   "token": "brunswickgroup"
- },
- {
-  "company": "Buzz Solutions",
-  "type": "greenhouse",
-  "token": "buzzsolutions"
  },
  {
   "company": "C3 AI",
@@ -3985,11 +3965,6 @@
   "token": "hive"
  },
  {
-  "company": "Humble Robotics",
-  "type": "lever",
-  "token": "humble-robotics"
- },
- {
   "company": "Innovative Solutions",
   "type": "lever",
   "token": "innovativesol-2"
@@ -4938,11 +4913,6 @@
   "company": "D ONE",
   "type": "workable",
   "token": "d-one"
- },
- {
-  "company": "Datafied",
-  "type": "workable",
-  "token": "datafied-1"
  },
  {
   "company": "Dev.Pro",
@@ -7258,11 +7228,6 @@
   "company": "Aveva (ETAP Careers)",
   "type": "workday",
   "token": "aveva.wd3.myworkdayjobs.com/aveva/etap_careers"
- },
- {
-  "company": "Campbellsoup",
-  "type": "workday",
-  "token": "campbellsoup.wd5.myworkdayjobs.com/campbellsoup/externalcareers_globalsite"
  },
  {
   "company": "Cat (CaterpillarCareers)",
