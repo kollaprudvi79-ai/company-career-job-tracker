@@ -3275,11 +3275,6 @@
   "token": "spsnorthamerica"
  },
  {
-  "company": "squad",
-  "type": "greenhouse",
-  "token": "squad"
- },
- {
   "company": "stage",
   "type": "greenhouse",
   "token": "stage"
@@ -4160,11 +4155,6 @@
   "token": "unify"
  },
  {
-  "company": "United Tech",
-  "type": "lever",
-  "token": "vacancies"
- },
- {
   "company": "Unusual Ventures",
   "type": "lever",
   "token": "unusual"
@@ -4838,11 +4828,6 @@
   "company": "Innovaccer Analytics",
   "type": "workable",
   "token": "innovaccer-analytics"
- },
- {
-  "company": "Makro PRO",
-  "type": "workable",
-  "token": "joinmakropro"
  },
  {
   "company": "Leupold + Stevens, Inc.",
@@ -8050,11 +8035,6 @@
   "token": "hcrb.fa.us2.oraclecloud.com/cx"
  },
  {
-  "company": "ELCA Global",
-  "type": "oracle",
-  "token": "iaaras.fa.ocs.oraclecloud.com/cx_3"
- },
- {
   "company": "Events DC",
   "type": "oracle",
   "token": "fa-etlq-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
@@ -8213,11 +8193,6 @@
   "company": "tifin",
   "type": "greenhouse",
   "token": "tifin"
- },
- {
-  "company": "trinks",
-  "type": "greenhouse",
-  "token": "trinks"
  },
  {
   "company": "triplelift",
