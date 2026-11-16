@@ -4050,11 +4050,6 @@
   "token": "ro"
  },
  {
-  "company": "ScaleTech",
-  "type": "lever",
-  "token": "scale3c"
- },
- {
   "company": "Scismic",
   "type": "lever",
   "token": "scismic"
@@ -5195,11 +5190,6 @@
   "token": "easyapplyrekluti"
  },
  {
-  "company": "S-PRO",
-  "type": "recruitee",
-  "token": "spro"
- },
- {
   "company": "Shipping Technology",
   "type": "recruitee",
   "token": "shippingtechnology"
@@ -5633,11 +5623,6 @@
   "company": "Ocab AS",
   "type": "teamtailor",
   "token": "fbs"
- },
- {
-  "company": "Fortnox AB",
-  "type": "teamtailor",
-  "token": "fortnoxab"
  },
  {
   "company": "GBST",
@@ -7000,11 +6985,6 @@
   "token": "novartis.wd3.myworkdayjobs.com/novartis/internal_careers_for_acquired_entities"
  },
  {
-  "company": "Mars (External)",
-  "type": "workday",
-  "token": "mars.wd3.myworkdayjobs.com/mars/external"
- },
- {
   "company": "McKesson (CoverMyMeds External Careers)",
   "type": "workday",
   "token": "mckesson.wd3.myworkdayjobs.com/mckesson/covermymeds_external_careers"
@@ -7898,11 +7878,6 @@
   "company": "Mission Support & Test Services",
   "type": "oracle",
   "token": "ewij.fa.us8.oraclecloud.com/cx_2"
- },
- {
-  "company": "RAKBANK",
-  "type": "oracle",
-  "token": "iacqey.fa.ocs.oraclecloud.com/cx_1"
  },
  {
   "company": "Blue Cross Blue Shield of Michigan",
