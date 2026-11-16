@@ -6570,11 +6570,6 @@
   "token": "fincons"
  },
  {
-  "company": "foodchainidgroupinc",
-  "type": "jazzhr",
-  "token": "foodchainidgroupinc"
- },
- {
   "company": "Foxconn Industrial Internet - FII",
   "type": "jazzhr",
   "token": "foxconnassemblyllc"
@@ -6728,11 +6723,6 @@
   "company": "protagona",
   "type": "jazzhr",
   "token": "protagona"
- },
- {
-  "company": "Courser",
-  "type": "jazzhr",
-  "token": "ptg"
  },
  {
   "company": "Red Arch Solutions",
@@ -6995,11 +6985,6 @@
   "token": "sunlife.wd3.myworkdayjobs.com/sunlife/experienced"
  },
  {
-  "company": "Alkami",
-  "type": "workday",
-  "token": "alkami.wd12.myworkdayjobs.com/alkami/alkami"
- },
- {
   "company": "Nn Group (Wdexternal)",
   "type": "workday",
   "token": "nngroup.wd3.myworkdayjobs.com/nngroup/wdexternal"
@@ -7045,24 +7030,9 @@
   "token": "astro.wd3.myworkdayjobs.com/astro/astro_careers"
  },
  {
-  "company": "Athenago",
-  "type": "workday",
-  "token": "athenago.wd108.myworkdayjobs.com/athenago/athena"
- },
- {
   "company": "Aveva",
   "type": "workday",
   "token": "aveva.wd3.myworkdayjobs.com/aveva/aveva_careers"
- },
- {
-  "company": "Bdf",
-  "type": "workday",
-  "token": "bdf.wd103.myworkdayjobs.com/bdf/recrutement-banque-de-france"
- },
- {
-  "company": "Brownhealth",
-  "type": "workday",
-  "token": "brownhealth.wd12.myworkdayjobs.com/brownhealth/external_careers"
  },
  {
   "company": "Bupa",
@@ -7083,11 +7053,6 @@
   "company": "Pax8Inc",
   "type": "workday",
   "token": "pax8inc.wd12.myworkdayjobs.com/pax8inc/pax8careers"
- },
- {
-  "company": "Procore",
-  "type": "workday",
-  "token": "procore.wd12.myworkdayjobs.com/procore/procore_external_careers"
  },
  {
   "company": "Promachbuilt",
@@ -7145,11 +7110,6 @@
   "token": "clio.wd3.myworkdayjobs.com/clio/cliocareersite"
  },
  {
-  "company": "Copart",
-  "type": "workday",
-  "token": "copart.wd12.myworkdayjobs.com/copart/copart"
- },
- {
   "company": "Covestro",
   "type": "workday",
   "token": "covestro.wd3.myworkdayjobs.com/covestro/cov_external"
@@ -7165,19 +7125,9 @@
   "token": "dentsuaegis.wd3.myworkdayjobs.com/dentsuaegis/dan_global"
  },
  {
-  "company": "Digital Turbine",
-  "type": "workday",
-  "token": "digitalturbine.wd501.myworkdayjobs.com/digitalturbine/digital_turbine_external_careers"
- },
- {
   "company": "Electrolux Group",
   "type": "workday",
   "token": "electrolux.wd3.myworkdayjobs.com/electrolux/electroluxcareersite"
- },
- {
-  "company": "Flaschenpost",
-  "type": "workday",
-  "token": "flaschenpost.wd103.myworkdayjobs.com/flaschenpost/flaschenpost"
  },
  {
   "company": "Freseniusglobal (Fk Careers De)",
@@ -7210,11 +7160,6 @@
   "token": "turo.wd12.myworkdayjobs.com/turo/turo_careers"
  },
  {
-  "company": "Fnbcorp",
-  "type": "workday",
-  "token": "fnbcorp.wd501.myworkdayjobs.com/fnbcorp/fnbcorp"
- },
- {
   "company": "Freshfields",
   "type": "workday",
   "token": "freshfields.wd3.myworkdayjobs.com/freshfields/fbd_101"
@@ -7233,11 +7178,6 @@
   "company": "Rhe (R1111)",
   "type": "workday",
   "token": "rhe.wd3.myworkdayjobs.com/rhe/r1111"
- },
- {
-  "company": "GOC",
-  "type": "workday",
-  "token": "google.wd501.myworkdayjobs.com/google/gocjobs"
  },
  {
   "company": "Gunvor",
@@ -7288,11 +7228,6 @@
   "company": "ING",
   "type": "workday",
   "token": "ing.wd3.myworkdayjobs.com/ing/icsgblcor"
- },
- {
-  "company": "Insperity",
-  "type": "workday",
-  "token": "insperity.wd12.myworkdayjobs.com/insperity/nsp"
  },
  {
   "company": "Webtravelgroup",
@@ -7385,11 +7320,6 @@
   "token": "modmed.wd501.myworkdayjobs.com/modmed/modmed12"
  },
  {
-  "company": "Power the World",
-  "type": "workday",
-  "token": "monolithicpower.wd12.myworkdayjobs.com/monolithicpower/mps_careers"
- },
- {
   "company": "Montefiore",
   "type": "workday",
   "token": "montefiore.wd12.myworkdayjobs.com/montefiore/mmc"
@@ -7480,16 +7410,6 @@
   "token": "sggovterp.wd102.myworkdayjobs.com/sggovterp/publicservicecareers"
  },
  {
-  "company": "Shi",
-  "type": "workday",
-  "token": "shi.wd12.myworkdayjobs.com/shi/shicareers"
- },
- {
-  "company": "Syneoshealth",
-  "type": "workday",
-  "token": "syneoshealth.wd12.myworkdayjobs.com/syneoshealth/syneos_health_external_site"
- },
- {
   "company": "Takkt",
   "type": "workday",
   "token": "takkt.wd3.myworkdayjobs.com/takkt/takkt"
@@ -7525,26 +7445,6 @@
   "token": "westpacnz.wd105.myworkdayjobs.com/westpacnz/westpac_careers"
  },
  {
-  "company": "Workiva",
-  "type": "workday",
-  "token": "workiva.wd503.myworkdayjobs.com/workiva/careers"
- },
- {
-  "company": "Wsgr",
-  "type": "workday",
-  "token": "wsgr.wd503.myworkdayjobs.com/wsgr/wsgr"
- },
- {
-  "company": "Ah",
-  "type": "workday",
-  "token": "adventhealth.wd12.myworkdayjobs.com/adventhealth/ah_external_career_site"
- },
- {
-  "company": "Crescent",
-  "type": "workday",
-  "token": "crescentenergyco.wd108.myworkdayjobs.com/crescentenergyco/crescent_energy_careers"
- },
- {
   "company": "Eraneos",
   "type": "workday",
   "token": "eraneos.wd3.myworkdayjobs.com/eraneos/eraneos_external_career_site"
@@ -7558,11 +7458,6 @@
   "company": "Gable",
   "type": "workday",
   "token": "gable.wd3.myworkdayjobs.com/gable/careers"
- },
- {
-  "company": "Independencepet Group",
-  "type": "workday",
-  "token": "independencepetgroup.wd12.myworkdayjobs.com/independencepetgroup/careers"
  },
  {
   "company": "Intactfc",
@@ -7585,11 +7480,6 @@
   "token": "rabobank.wd3.myworkdayjobs.com/rabobank/jobs"
  },
  {
-  "company": "SCAN",
-  "type": "workday",
-  "token": "scanhealthplan.wd108.myworkdayjobs.com/scanhealthplan/scancareers"
- },
- {
   "company": "Symbotic",
   "type": "workday",
   "token": "symbotic.wd504.myworkdayjobs.com/symbotic/symbotic"
@@ -7603,11 +7493,6 @@
   "company": "Trinity",
   "type": "workday",
   "token": "trinitylifesciences.wd108.myworkdayjobs.com/trinitylifesciences/trinity"
- },
- {
-  "company": "Zekelman",
-  "type": "workday",
-  "token": "zekelman.wd12.myworkdayjobs.com/zekelman/careers"
  },
  {
   "company": "AIT Worldwide Logistics, Inc",
@@ -8280,11 +8165,6 @@
   "token": "fccfac.wd3.myworkdayjobs.com/fccfac/careers-carrieres"
  },
  {
-  "company": "Fina",
-  "type": "workday",
-  "token": "fina.wd103.myworkdayjobs.com/fina/deloitterecrute"
- },
- {
   "company": "Flutterbe",
   "type": "workday",
   "token": "flutterbe.wd3.myworkdayjobs.com/flutterbe/bfromania_external"
@@ -8308,16 +8188,6 @@
   "company": "Hempel",
   "type": "workday",
   "token": "hempel.wd3.myworkdayjobs.com/hempel/careersnolink"
- },
- {
-  "company": "Inari",
-  "type": "workday",
-  "token": "inari.wd108.myworkdayjobs.com/inari/inari_careers"
- },
- {
-  "company": "Marmon",
-  "type": "workday",
-  "token": "marmon.wd501.myworkdayjobs.com/marmon/marmon_internships"
  },
  {
   "company": "Maxine",
