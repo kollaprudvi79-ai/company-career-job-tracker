@@ -13,5 +13,35 @@
   "fitJobs": 139,
   "universityJobs": 0,
   "nonProfitJobs": 0
+ },
+ {
+  "sweep": 4,
+  "date": "2026-11-16",
+  "time": "01:49",
+  "startTime": "2026-11-16T01:49:16.101Z",
+  "endTime": "2026-11-16T01:52:53.820Z",
+  "durationMin": 4,
+  "boardsChecked": 1093,
+  "boardsOk": 1056,
+  "newJobs": 21,
+  "totalJobs": 4688,
+  "fitJobs": 144,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 8,
+  "date": "2026-11-16",
+  "time": "03:38",
+  "startTime": "2026-11-16T03:38:05.542Z",
+  "endTime": "2026-11-16T03:40:26.609Z",
+  "durationMin": 2,
+  "boardsChecked": 1093,
+  "boardsOk": 1058,
+  "newJobs": 6,
+  "totalJobs": 4696,
+  "fitJobs": 146,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
  }
 ]
