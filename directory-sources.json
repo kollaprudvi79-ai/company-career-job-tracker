@@ -1140,11 +1140,6 @@
   "token": "sardine"
  },
  {
-  "company": "Satispay",
-  "type": "ashby",
-  "token": "satispay"
- },
- {
   "company": "Scribd, Inc.",
   "type": "ashby",
   "token": "scribdinc"
@@ -3485,11 +3480,6 @@
   "token": "veracyte"
  },
  {
-  "company": "Vestmark Internship Program",
-  "type": "greenhouse",
-  "token": "internrecruiting"
- },
- {
   "company": "Via",
   "type": "greenhouse",
   "token": "via"
@@ -5590,11 +5580,6 @@
   "token": "hiire"
  },
  {
-  "company": "Horse Powertrain",
-  "type": "teamtailor",
-  "token": "horse"
- },
- {
   "company": "Huawei Ireland Research Centre",
   "type": "teamtailor",
   "token": "huaweiireland"
@@ -5658,11 +5643,6 @@
   "company": "CONVOTIS Iberia",
   "type": "teamtailor",
   "token": "convotisiberia"
- },
- {
-  "company": "NAFFCO",
-  "type": "teamtailor",
-  "token": "naffco"
  },
  {
   "company": "Nexer Group",
@@ -7740,11 +7720,6 @@
   "token": "fa-eqnr-saasfaprod1.fa.ocs.oraclecloud.com/cx_1020"
  },
  {
-  "company": "Fa Ertb Saasfaprod1",
-  "type": "oracle",
-  "token": "fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/cx_2"
- },
- {
   "company": "Fa Eupt Saasfaprod1",
   "type": "oracle",
   "token": "fa-eupt-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
@@ -8088,11 +8063,6 @@
   "company": "Phcgroup",
   "type": "workday",
   "token": "phcgroup.wd3.myworkdayjobs.com/phcgroup/epredia_careers"
- },
- {
-  "company": "Rbs",
-  "type": "workday",
-  "token": "rbs.wd3.myworkdayjobs.com/rbs/rbs"
  },
  {
   "company": "Sky",
