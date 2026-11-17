@@ -1275,11 +1275,6 @@
   "token": "supabase"
  },
  {
-  "company": "Tapcart Inc.",
-  "type": "ashby",
-  "token": "tapcart"
- },
- {
   "company": "TENEX.AI",
   "type": "ashby",
   "token": "tenex"
@@ -7998,11 +7993,6 @@
   "company": "Aett",
   "type": "workday",
   "token": "aett.wd3.myworkdayjobs.com/aett/versent"
- },
- {
-  "company": "Aimco",
-  "type": "workday",
-  "token": "aimco.wd10.myworkdayjobs.com/aimco/aimcocareers"
  },
  {
   "company": "Aptos",
