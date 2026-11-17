@@ -80,11 +80,6 @@
   "token": "alohi"
  },
  {
-  "company": "Angi",
-  "type": "ashby",
-  "token": "angi"
- },
- {
   "company": "Antares",
   "type": "ashby",
   "token": "antares"
@@ -175,11 +170,6 @@
   "token": "blooming-health"
  },
  {
-  "company": "Braiins",
-  "type": "ashby",
-  "token": "braiins"
- },
- {
   "company": "Brain Co.",
   "type": "ashby",
   "token": "brainco"
@@ -233,11 +223,6 @@
   "company": "Castleton Tower",
   "type": "ashby",
   "token": "castletontower"
- },
- {
-  "company": "Certifid, Inc",
-  "type": "ashby",
-  "token": "certifid"
  },
  {
   "company": "Cinder",
@@ -1565,11 +1550,6 @@
   "token": "airia"
  },
  {
-  "company": "AI Squared",
-  "type": "greenhouse",
-  "token": "aisquared"
- },
- {
   "company": "Akuna Capital",
   "type": "greenhouse",
   "token": "akunacapital"
@@ -2695,11 +2675,6 @@
   "token": "artefactlinkedin"
  },
  {
-  "company": "LINQ",
-  "type": "greenhouse",
-  "token": "emslinqinc"
- },
- {
   "company": "livecareer",
   "type": "greenhouse",
   "token": "livecareer"
@@ -2753,11 +2728,6 @@
   "company": "MCG Health",
   "type": "greenhouse",
   "token": "mcghealth"
- },
- {
-  "company": "michelscorporation",
-  "type": "greenhouse",
-  "token": "michelscorporation"
  },
  {
   "company": "Midi Health",
@@ -4220,16 +4190,6 @@
   "token": "aircapture"
  },
  {
-  "company": "AJ Boggs/ProPower",
-  "type": "greenhouse",
-  "token": "ajboggs"
- },
- {
-  "company": "AMP: AI-Powered Sortation for Waste and Recycling",
-  "type": "greenhouse",
-  "token": "ampsortation"
- },
- {
   "company": "Aperia Technologies, Inc",
   "type": "greenhouse",
   "token": "aperiatechnologies"
@@ -4575,16 +4535,6 @@
   "token": "openloophealth"
  },
  {
-  "company": "Optro",
-  "type": "ashby",
-  "token": "optro"
- },
- {
-  "company": "OuterSignal",
-  "type": "ashby",
-  "token": "outersignal"
- },
- {
   "company": "Patrianna",
   "type": "ashby",
   "token": "patrianna"
@@ -4608,11 +4558,6 @@
   "company": "Crogl",
   "type": "ashby",
   "token": "crogl"
- },
- {
-  "company": "Pivot Robotics",
-  "type": "ashby",
-  "token": "pivotrobotics"
  },
  {
   "company": "Rwazi, Inc.",
@@ -4923,11 +4868,6 @@
   "company": "ProgressSoft",
   "type": "workable",
   "token": "progressoft"
- },
- {
-  "company": "Rockstar",
-  "type": "workable",
-  "token": "rockstar-3"
  },
  {
   "company": "Rydoo",
@@ -5348,11 +5288,6 @@
   "company": "Genesis",
   "type": "breezy",
   "token": "gen-tech"
- },
- {
-  "company": "Helpware",
-  "type": "breezy",
-  "token": "helpware-inc"
  },
  {
   "company": "Idea Peddler",
@@ -5833,11 +5768,6 @@
   "company": "surplusmap",
   "type": "teamtailor",
   "token": "surplusmap"
- },
- {
-  "company": "SVP",
-  "type": "teamtailor",
-  "token": "svp"
  },
  {
   "company": "swan.io",
@@ -6585,11 +6515,6 @@
   "token": "h2oai"
  },
  {
-  "company": "Hays Electrical Services",
-  "type": "jazzhr",
-  "token": "hayselectricalservices"
- },
- {
   "company": "Hobbs Madison",
   "type": "jazzhr",
   "token": "hobbsmadison"
@@ -6713,11 +6638,6 @@
   "company": "Red Arch Solutions",
   "type": "jazzhr",
   "token": "redarchsolutions"
- },
- {
-  "company": "rockITdata",
-  "type": "jazzhr",
-  "token": "rockitdata"
  },
  {
   "company": "Scene+",
@@ -7845,11 +7765,6 @@
   "token": "fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
  },
  {
-  "company": "Fa Exvu Saasfaprod1 (CX_1)",
-  "type": "oracle",
-  "token": "fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
- },
- {
   "company": "Hcrb",
   "type": "oracle",
   "token": "hcrb.fa.us2.oraclecloud.com/bostonbeercareers"
@@ -7978,11 +7893,6 @@
   "company": "movableink",
   "type": "greenhouse",
   "token": "movableink"
- },
- {
-  "company": "nexamp",
-  "type": "greenhouse",
-  "token": "nexamp"
  },
  {
   "company": "oasishealthpartners",
