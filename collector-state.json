@@ -1,8 +1,8 @@
 {
   "nextOffset": 112,
-  "updatedAt": "2026-11-17T17:42:44.191Z",
+  "updatedAt": "2026-11-17T17:45:57.827Z",
   "batchSize": 12000,
-  "discovered": 1323,
+  "discovered": 1063,
   "lastDeepSweep": "2026-10-07T16:46:43.249Z",
-  "rotationIdx": 1
+  "rotationIdx": 2
 }
