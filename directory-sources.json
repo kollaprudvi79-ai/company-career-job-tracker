@@ -505,11 +505,6 @@
   "token": "futurefitai"
  },
  {
-  "company": "G2i Inc.",
-  "type": "ashby",
-  "token": "g2i"
- },
- {
   "company": "Gamma",
   "type": "ashby",
   "token": "gamma"
@@ -1083,11 +1078,6 @@
   "company": "Reframe Systems",
   "type": "ashby",
   "token": "reframesystems"
- },
- {
-  "company": "Reka",
-  "type": "ashby",
-  "token": "reka"
  },
  {
   "company": "Replicant",
@@ -2020,11 +2010,6 @@
   "token": "current81"
  },
  {
-  "company": "Customer.io",
-  "type": "greenhouse",
-  "token": "customerio"
- },
- {
   "company": "Databricks",
   "type": "greenhouse",
   "token": "databricks"
@@ -2318,11 +2303,6 @@
   "company": "Formation Bio",
   "type": "greenhouse",
   "token": "formationbio"
- },
- {
-  "company": "Fubo",
-  "type": "greenhouse",
-  "token": "fubotv"
  },
  {
   "company": "Future",
@@ -2955,11 +2935,6 @@
   "token": "try-picnic"
  },
  {
-  "company": "Pilot.com",
-  "type": "greenhouse",
-  "token": "pilothq"
- },
- {
   "company": "pinterest",
   "type": "greenhouse",
   "token": "pinterest"
@@ -3438,11 +3413,6 @@
   "company": "ujet",
   "type": "greenhouse",
   "token": "ujet"
- },
- {
-  "company": "Unite Us",
-  "type": "greenhouse",
-  "token": "uniteus"
  },
  {
   "company": "upstart",
@@ -5685,11 +5655,6 @@
   "token": "rebtel"
  },
  {
-  "company": "Resights",
-  "type": "teamtailor",
-  "token": "resightsaps"
- },
- {
   "company": "RUSH",
   "type": "teamtailor",
   "token": "rushdigital"
@@ -6178,11 +6143,6 @@
   "company": "Root Insurance",
   "type": "rippling",
   "token": "joinroot"
- },
- {
-  "company": "Loggerhead Insurance",
-  "type": "rippling",
-  "token": "loggerhead-risk-management-llc"
  },
  {
   "company": "Lucayan Technology Solutions LLC",
@@ -6715,19 +6675,9 @@
   "token": "vivsofttechnologiesfa"
  },
  {
-  "company": "VTS3",
-  "type": "jazzhr",
-  "token": "vts3"
- },
- {
   "company": "watu",
   "type": "jazzhr",
   "token": "watu"
- },
- {
-  "company": "WELL Health Technologies Corp",
-  "type": "jazzhr",
-  "token": "wellhealthtechnologiescorpc4"
  },
  {
   "company": "West 4th Strategy",
@@ -7410,11 +7360,6 @@
   "token": "expleo-jobs-ie-en.icims.com"
  },
  {
-  "company": "Expleo",
-  "type": "icims",
-  "token": "expleo-jobs-pt-en.icims.com"
- },
- {
   "company": "AAA Life Insurance Company",
   "type": "icims",
   "token": "careers-aaalife.icims.com"
@@ -7428,11 +7373,6 @@
   "company": "Steel Dynamics, Inc.",
   "type": "icims",
   "token": "careers-aluminumdynamics.icims.com"
- },
- {
-  "company": "Amyx, Inc.",
-  "type": "icims",
-  "token": "careers-amyx.icims.com"
  },
  {
   "company": "Applied Systems, Inc.",
@@ -7835,11 +7775,6 @@
   "token": "highmetric"
  },
  {
-  "company": "kallesgroup",
-  "type": "greenhouse",
-  "token": "kallesgroup"
- },
- {
   "company": "kargo22",
   "type": "greenhouse",
   "token": "kargo22"
@@ -7863,11 +7798,6 @@
   "company": "movableink",
   "type": "greenhouse",
   "token": "movableink"
- },
- {
-  "company": "oasishealthpartners",
-  "type": "greenhouse",
-  "token": "oasishealthpartners"
  },
  {
   "company": "octanelending",
@@ -8195,11 +8125,6 @@
   "token": "ozmocareers"
  },
  {
-  "company": "pdwcareers",
-  "type": "rippling",
-  "token": "pdwcareers"
- },
- {
   "company": "urban-sdk",
   "type": "rippling",
   "token": "urban-sdk"
@@ -8238,11 +8163,6 @@
   "company": "paretos-gmbh",
   "type": "personio",
   "token": "paretos-gmbh"
- },
- {
-  "company": "urari",
-  "type": "personio",
-  "token": "urari"
  },
  {
   "company": "sentinelgroup",
