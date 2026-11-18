@@ -1855,11 +1855,6 @@
   "token": "caseguard"
  },
  {
-  "company": "Celigo",
-  "type": "greenhouse",
-  "token": "celigo"
- },
- {
   "company": "CentralReach",
   "type": "greenhouse",
   "token": "centralreach"
@@ -2623,11 +2618,6 @@
   "company": "liftoff",
   "type": "greenhouse",
   "token": "liftoff"
- },
- {
-  "company": "Lighthouse",
-  "type": "greenhouse",
-  "token": "lighthouse"
  },
  {
   "company": "Lila Sciences",
@@ -4360,11 +4350,6 @@
   "token": "e-source"
  },
  {
-  "company": "E2B",
-  "type": "ashby",
-  "token": "e2b"
- },
- {
   "company": "Divine",
   "type": "ashby",
   "token": "divineresearch"
@@ -4498,11 +4483,6 @@
   "company": "Corvus Robotics",
   "type": "ashby",
   "token": "corvus-robotics"
- },
- {
-  "company": "Craft Machine Inc",
-  "type": "ashby",
-  "token": "craft.co"
  },
  {
   "company": "Crogl",
@@ -5355,11 +5335,6 @@
   "token": "webox-jobs"
  },
  {
-  "company": "wega Informatik AG",
-  "type": "breezy",
-  "token": "wega-informatik-ag"
- },
- {
   "company": "LINE MAN Wongnai",
   "type": "breezy",
   "token": "wongnai-media-co-ltd"
@@ -5420,11 +5395,6 @@
   "token": "bloqit"
  },
  {
-  "company": "Brut. France",
-  "type": "teamtailor",
-  "token": "brutfrance"
- },
- {
   "company": "CA Business Digital",
   "type": "teamtailor",
   "token": "cabusinessdigital"
@@ -5468,11 +5438,6 @@
   "company": "ECM - Engineering Conception Maintenance",
   "type": "teamtailor",
   "token": "ecm-crit"
- },
- {
-  "company": "EcoOnline",
-  "type": "teamtailor",
-  "token": "ecoonline"
  },
  {
   "company": "Ed:Za",
@@ -6875,11 +6840,6 @@
   "token": "promachbuilt.wd108.myworkdayjobs.com/promachbuilt/promach"
  },
  {
-  "company": "Pwc (Nonpublic Postings)",
-  "type": "workday",
-  "token": "pwc.wd3.myworkdayjobs.com/pwc/nonpublic_postings"
- },
- {
   "company": "Biibhr",
   "type": "workday",
   "token": "biibhr.wd3.myworkdayjobs.com/biibhr/external"
@@ -6998,11 +6958,6 @@
   "company": "Gunvor",
   "type": "workday",
   "token": "gunvor.wd3.myworkdayjobs.com/gunvor/gunvor_careers"
- },
- {
-  "company": "Hyperiongrp (Broadbean External)",
-  "type": "workday",
-  "token": "hyperiongrp.wd3.myworkdayjobs.com/hyperiongrp/broadbean_external"
  },
  {
   "company": "Hyperiongrp (Hyperion External)",
@@ -7253,11 +7208,6 @@
   "company": "Valeo",
   "type": "workday",
   "token": "valeo.wd3.myworkdayjobs.com/valeo/valeo_jobs"
- },
- {
-  "company": "Westpacnz",
-  "type": "workday",
-  "token": "westpacnz.wd105.myworkdayjobs.com/westpacnz/westpac_careers"
  },
  {
   "company": "Eraneos",

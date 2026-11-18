@@ -2423,5 +2423,280 @@
   "company": "Material Security",
   "type": "ashby",
   "token": "materialsecurity"
+ },
+ {
+  "company": "Iovance Biotherapeutics",
+  "type": "greenhouse",
+  "token": "iovancebiotherapeutics"
+ },
+ {
+  "company": "DigitalOcean",
+  "type": "greenhouse",
+  "token": "digitalocean98"
+ },
+ {
+  "company": "GovDash",
+  "type": "ashby",
+  "token": "govdash"
+ },
+ {
+  "company": "Profound",
+  "type": "ashby",
+  "token": "profound"
+ },
+ {
+  "company": "Polygon Technology",
+  "type": "ashby",
+  "token": "polygon-labs"
+ },
+ {
+  "company": "Positron",
+  "type": "rippling",
+  "token": "positron"
+ },
+ {
+  "company": "CommodityAI",
+  "type": "ashby",
+  "token": "commodityai"
+ },
+ {
+  "company": "Blackbaud",
+  "type": "workday",
+  "token": "blackbaud.wd1.myworkdayjobs.com/blackbaud/externalcareers"
+ },
+ {
+  "company": "Teladoc Health",
+  "type": "workday",
+  "token": "teladoc.wd503.myworkdayjobs.com/teladoc/teladochealth_is_hiring"
+ },
+ {
+  "company": "FIS",
+  "type": "workday",
+  "token": "fis.wd5.myworkdayjobs.com/fis/searchjobs"
+ },
+ {
+  "company": "Tulip Interfaces",
+  "type": "greenhouse",
+  "token": "tulip"
+ },
+ {
+  "company": "eBay",
+  "type": "workday",
+  "token": "ebay.wd5.myworkdayjobs.com/ebay/apply"
+ },
+ {
+  "company": "Solvd, Inc.",
+  "type": "ashby",
+  "token": "solvd"
+ },
+ {
+  "company": "Osano",
+  "type": "greenhouse",
+  "token": "osano"
+ },
+ {
+  "company": "Ruby Labs",
+  "type": "ashby",
+  "token": "ruby-labs"
+ },
+ {
+  "company": "Bms",
+  "type": "workday",
+  "token": "bristolmyerssquibb.wd5.myworkdayjobs.com/bristolmyerssquibb/bms"
+ },
+ {
+  "company": "Thomson Reuters",
+  "type": "workday",
+  "token": "thomsonreuters.wd5.myworkdayjobs.com/thomsonreuters/external_career_site"
+ },
+ {
+  "company": "CCC Intelligent Solutions",
+  "type": "workday",
+  "token": "cccis.wd1.myworkdayjobs.com/cccis/broadbean_external"
+ },
+ {
+  "company": "Conifers.ai",
+  "type": "greenhouse",
+  "token": "conifersaicareers"
+ },
+ {
+  "company": "Automox",
+  "type": "greenhouse",
+  "token": "automox"
+ },
+ {
+  "company": "Maxinsights",
+  "type": "ashby",
+  "token": "maxinsights"
+ },
+ {
+  "company": "NVIDIA",
+  "type": "workday",
+  "token": "nvidia.wd5.myworkdayjobs.com/nvidia/nvidiaexternalcareersite"
+ },
+ {
+  "company": "Blossom",
+  "type": "ashby",
+  "token": "blossom-health"
+ },
+ {
+  "company": "EverAI",
+  "type": "ashby",
+  "token": "everai"
+ },
+ {
+  "company": "WisdomAI",
+  "type": "ashby",
+  "token": "wisdom-ai"
+ },
+ {
+  "company": "Orbital",
+  "type": "ashby",
+  "token": "orbital"
+ },
+ {
+  "company": "TrueFoundry",
+  "type": "greenhouse",
+  "token": "truefoundry"
+ },
+ {
+  "company": "GiveCampus",
+  "type": "greenhouse",
+  "token": "givecampus"
+ },
+ {
+  "company": "Red Cell Partners",
+  "type": "greenhouse",
+  "token": "redcellpartners"
+ },
+ {
+  "company": "Bounteous",
+  "type": "lever",
+  "token": "bounteous"
+ },
+ {
+  "company": "ChipAgents",
+  "type": "ashby",
+  "token": "alpha-design-ai-inc"
+ },
+ {
+  "company": "Blue Rose Research",
+  "type": "greenhouse",
+  "token": "blueroseresearch"
+ },
+ {
+  "company": "PassiveLogic",
+  "type": "teamtailor",
+  "token": "passivelogic"
+ },
+ {
+  "company": "The New York Times",
+  "type": "greenhouse",
+  "token": "thenewyorktimes"
+ },
+ {
+  "company": "Apollo Health",
+  "type": "greenhouse",
+  "token": "openspace"
+ },
+ {
+  "company": "Lumos",
+  "type": "ashby",
+  "token": "lumos"
+ },
+ {
+  "company": "Skylo",
+  "type": "ashby",
+  "token": "skylo"
+ },
+ {
+  "company": "Camunda",
+  "type": "ashby",
+  "token": "camunda"
+ },
+ {
+  "company": "Nuit\u00e9e",
+  "type": "greenhouse",
+  "token": "nuitee"
+ },
+ {
+  "company": "Stellar Cyber",
+  "type": "workable",
+  "token": "stellar-cyber"
+ },
+ {
+  "company": "Coder",
+  "type": "ashby",
+  "token": "coder"
+ },
+ {
+  "company": "Moonlake AI",
+  "type": "ashby",
+  "token": "moonlake"
+ },
+ {
+  "company": "Productive Playhouse",
+  "type": "jazzhr",
+  "token": "productiveplayhouse"
+ },
+ {
+  "company": "Trellix",
+  "type": "workday",
+  "token": "trellix.wd1.myworkdayjobs.com/trellix/enterprisecareers"
+ },
+ {
+  "company": "CodeRoad",
+  "type": "greenhouse",
+  "token": "coderoad"
+ },
+ {
+  "company": "Rapid7",
+  "type": "workday",
+  "token": "mymoose.wd1.myworkdayjobs.com/mymoose/careers"
+ },
+ {
+  "company": "Linda Werner & Associates",
+  "type": "greenhouse",
+  "token": "lindawernerassociates"
+ },
+ {
+  "company": "Miratech",
+  "type": "smartrecruiters",
+  "token": "miratech1"
+ },
+ {
+  "company": "GenScript",
+  "type": "greenhouse",
+  "token": "genscript"
+ },
+ {
+  "company": "Wolters Kluwer",
+  "type": "workday",
+  "token": "wk.wd3.myworkdayjobs.com/wk/external"
+ },
+ {
+  "company": "Bosch",
+  "type": "smartrecruiters",
+  "token": "boschgroup"
+ },
+ {
+  "company": "LinkedIn",
+  "type": "smartrecruiters",
+  "token": "linkedin3"
+ },
+ {
+  "company": "Analog Devices",
+  "type": "workday",
+  "token": "analogdevices.wd1.myworkdayjobs.com/analogdevices/external"
+ },
+ {
+  "company": "Abbott",
+  "type": "workday",
+  "token": "abbott.wd5.myworkdayjobs.com/abbott/abbottcareers2"
+ },
+ {
+  "company": "Hewlett Packard Enterprise",
+  "type": "workday",
+  "token": "hpe.wd5.myworkdayjobs.com/hpe/wfmathpe"
  }
 ]
