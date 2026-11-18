@@ -1645,11 +1645,6 @@
   "token": "asm"
  },
  {
-  "company": "AssemblyAI",
-  "type": "greenhouse",
-  "token": "assemblyai"
- },
- {
   "company": "AssetWatch, Inc.",
   "type": "greenhouse",
   "token": "assetwatch"
@@ -6848,11 +6843,6 @@
   "company": "Ardian",
   "type": "workday",
   "token": "ardian.wd103.myworkdayjobs.com/ardian/ardiancareers"
- },
- {
-  "company": "Astro Malaysia Holdings Berhad (\u201cAstro\u201d)",
-  "type": "workday",
-  "token": "astro.wd3.myworkdayjobs.com/astro/astro_careers"
  },
  {
   "company": "Aveva",
