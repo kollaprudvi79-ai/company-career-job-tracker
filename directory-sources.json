@@ -885,11 +885,6 @@
   "token": "openai"
  },
  {
-  "company": "OpenArt AI",
-  "type": "ashby",
-  "token": "openart"
- },
- {
   "company": "Orchard Robotics",
   "type": "ashby",
   "token": "orchard"
@@ -1443,11 +1438,6 @@
   "company": "10a Labs",
   "type": "greenhouse",
   "token": "10alabs"
- },
- {
-  "company": "66degrees",
-  "type": "greenhouse",
-  "token": "66degrees"
  },
  {
   "company": "6sense",
@@ -2690,11 +2680,6 @@
   "token": "midihealth"
  },
  {
-  "company": "Mill",
-  "type": "greenhouse",
-  "token": "mill"
- },
- {
   "company": "Mission Lane",
   "type": "greenhouse",
   "token": "missionlane"
@@ -2878,11 +2863,6 @@
   "company": "Pave",
   "type": "greenhouse",
   "token": "paveakatroveinformationtechnologies"
- },
- {
-  "company": "Pelago",
-  "type": "greenhouse",
-  "token": "pelago"
  },
  {
   "company": "Penn Interactive",
@@ -6175,11 +6155,6 @@
   "token": "vouch-inc"
  },
  {
-  "company": "Wellinkscareers",
-  "type": "rippling",
-  "token": "wellinkscareers"
- },
- {
   "company": "Zadentech",
   "type": "rippling",
   "token": "zadentech"
@@ -7555,11 +7530,6 @@
   "token": "canada-appliedsystems.icims.com"
  },
  {
-  "company": "Ardent Eagle Solutions",
-  "type": "icims",
-  "token": "careers-ardenteagle.icims.com"
- },
- {
   "company": "Artemis Arc",
   "type": "icims",
   "token": "artemisarc-aptiveresources.icims.com"
@@ -7593,11 +7563,6 @@
   "company": "BSC",
   "type": "oracle",
   "token": "ecge.fa.us2.oraclecloud.com/cx_1"
- },
- {
-  "company": "Fa Eqnr Saasfaprod1",
-  "type": "oracle",
-  "token": "fa-eqnr-saasfaprod1.fa.ocs.oraclecloud.com/cx_1020"
  },
  {
   "company": "Fa Eupt Saasfaprod1",
@@ -7958,11 +7923,6 @@
   "company": "Tp",
   "type": "workday",
   "token": "tp.wd107.myworkdayjobs.com/tp/tp-icap"
- },
- {
-  "company": "Verdantas",
-  "type": "workday",
-  "token": "verdantas.wd108.myworkdayjobs.com/verdantas/verdantas"
  },
  {
   "company": "Verizon",
