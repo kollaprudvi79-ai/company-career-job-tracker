@@ -1470,11 +1470,6 @@
   "token": "abbyy"
  },
  {
-  "company": "ABC Legal Services",
-  "type": "greenhouse",
-  "token": "abclegalservices"
- },
- {
   "company": "Able",
   "type": "greenhouse",
   "token": "able"
@@ -3425,11 +3420,6 @@
   "token": "virtu"
  },
  {
-  "company": "VML MAP",
-  "type": "greenhouse",
-  "token": "map"
- },
- {
   "company": "VTEX",
   "type": "greenhouse",
   "token": "vtex"
@@ -5218,11 +5208,6 @@
   "company": "NETSEA Technologies",
   "type": "breezy",
   "token": "netsea-technologies"
- },
- {
-  "company": "Nexo",
-  "type": "breezy",
-  "token": "nexo"
  },
  {
   "company": "Next Generation Inc",
@@ -7833,11 +7818,6 @@
   "company": "Esswd",
   "type": "workday",
   "token": "esswd.wd501.myworkdayjobs.com/esswd/external"
- },
- {
-  "company": "Fccfac",
-  "type": "workday",
-  "token": "fccfac.wd3.myworkdayjobs.com/fccfac/careers-carrieres"
  },
  {
   "company": "Flutterbe",
