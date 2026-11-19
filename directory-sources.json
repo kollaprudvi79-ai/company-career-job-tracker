@@ -9591,5 +9591,47 @@
   "company": "Vanderbilt University",
   "token": "ecsr.fa.us2.oraclecloud.com/CX_1",
   "type": "oracle"
+ },
+ {
+  "company": "Feeding America",
+  "type": "jobvite",
+  "token": "feedingamerica",
+  "capExempt": true
+ },
+ {
+  "company": "Habitat for Humanity",
+  "type": "workday",
+  "token": "habitat.wd12.myworkdayjobs.com/habitat/External",
+  "capExempt": true
+ },
+ {
+  "company": "The Nature Conservancy",
+  "type": "workday",
+  "token": "nature.wd108.myworkdayjobs.com/nature/ExternalCareers",
+  "capExempt": true
+ },
+ {
+  "company": "American Cancer Society",
+  "type": "workday",
+  "token": "acs.wd5.myworkdayjobs.com/acs/ACSCareers",
+  "capExempt": true
+ },
+ {
+  "company": "Boys & Girls Clubs of America",
+  "type": "icims",
+  "token": "clubjobs-bgca.icims.com",
+  "capExempt": true
+ },
+ {
+  "company": "Yale University",
+  "type": "workday",
+  "token": "yale.wd1.myworkdayjobs.com/yale/External_Career_Site",
+  "capExempt": true
+ },
+ {
+  "company": "Stanford Health Care",
+  "type": "workday",
+  "token": "stanfordmedicine.wd115.myworkdayjobs.com/stanfordmedicine/SHC_External_Career_Site",
+  "capExempt": true
  }
 ]
