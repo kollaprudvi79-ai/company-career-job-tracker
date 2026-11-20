@@ -830,11 +830,6 @@
   "token": "nevis"
  },
  {
-  "company": "Norm Ai",
-  "type": "ashby",
-  "token": "norm-ai"
- },
- {
   "company": "Notion",
   "type": "ashby",
   "token": "notion"
@@ -1185,11 +1180,6 @@
   "token": "sola"
  },
  {
-  "company": "Solstice",
-  "type": "ashby",
-  "token": "solstice"
- },
- {
   "company": "Speak",
   "type": "ashby",
   "token": "speak"
@@ -1448,11 +1438,6 @@
   "company": "a16z",
   "type": "greenhouse",
   "token": "a16z"
- },
- {
-  "company": "ABACUS",
-  "type": "greenhouse",
-  "token": "abacus"
  },
  {
   "company": "ABBYY",
