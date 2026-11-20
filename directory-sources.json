@@ -1045,11 +1045,6 @@
   "token": "ravenna"
  },
  {
-  "company": "Reality Defender",
-  "type": "ashby",
-  "token": "realitydefender"
- },
- {
   "company": "Reducto",
   "type": "ashby",
   "token": "reducto"
@@ -1740,11 +1735,6 @@
   "token": "brex"
  },
  {
-  "company": "Bridgewater Associates",
-  "type": "greenhouse",
-  "token": "bridgewater89"
- },
- {
   "company": "BrightHire",
   "type": "greenhouse",
   "token": "brighthire"
@@ -1838,11 +1828,6 @@
   "company": "Citian",
   "type": "greenhouse",
   "token": "citian"
- },
- {
-  "company": "Cleveland Guardians - Baseball Operations",
-  "type": "greenhouse",
-  "token": "clevelandguardiansbops"
  },
  {
   "company": "Cloudflare",
@@ -2253,11 +2238,6 @@
   "company": "Gallup",
   "type": "greenhouse",
   "token": "gallup"
- },
- {
-  "company": "Gametime United",
-  "type": "greenhouse",
-  "token": "gametimeunited"
  },
  {
   "company": "Garner Health",
@@ -2743,11 +2723,6 @@
   "company": "nuro",
   "type": "greenhouse",
   "token": "nuro"
- },
- {
-  "company": "ocadogroup",
-  "type": "greenhouse",
-  "token": "ocadogroup"
  },
  {
   "company": "okta",
@@ -3735,11 +3710,6 @@
   "token": "klearnow"
  },
  {
-  "company": "Layup Parts",
-  "type": "lever",
-  "token": "layup"
- },
- {
   "company": "Lever Implementation Training Environment",
   "type": "lever",
   "token": "leverdemo-8"
@@ -4130,11 +4100,6 @@
   "token": "samayaai"
  },
  {
-  "company": "SirenOpt",
-  "type": "greenhouse",
-  "token": "sirenopt"
- },
- {
   "company": "SmartRent",
   "type": "greenhouse",
   "token": "smartrent"
@@ -4178,11 +4143,6 @@
   "company": "QuEra Computing, Inc.",
   "type": "greenhouse",
   "token": "queracomputinginc"
- },
- {
-  "company": "14 Technology Holdings",
-  "type": "greenhouse",
-  "token": "14technology"
  },
  {
   "company": "ApartmentIQ",
@@ -6573,11 +6533,6 @@
   "company": "Enverus",
   "type": "jobvite",
   "token": "enverus"
- },
- {
-  "company": "Sikich",
-  "type": "jobvite",
-  "token": "sikichcareers"
  },
  {
   "company": "Altamira Technologies Corp.",
