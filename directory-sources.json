@@ -3980,11 +3980,6 @@
   "token": "tutorintelligence"
  },
  {
-  "company": "UnifyID (acquired by Prove)",
-  "type": "lever",
-  "token": "unify"
- },
- {
   "company": "Unusual Ventures",
   "type": "lever",
   "token": "unusual"
@@ -4570,11 +4565,6 @@
   "token": "dnigov"
  },
  {
-  "company": "Emerging Travel Group",
-  "type": "workable",
-  "token": "emerging-travel-group"
- },
- {
   "company": "Euromonitor",
   "type": "workable",
   "token": "euromonitor"
@@ -4713,11 +4703,6 @@
   "company": "Rydoo",
   "type": "workable",
   "token": "rydoo"
- },
- {
-  "company": "Saalex",
-  "type": "workable",
-  "token": "saalex"
  },
  {
   "company": "Satori Analytics",
@@ -5453,11 +5438,6 @@
   "company": "LIGENTEC",
   "type": "teamtailor",
   "token": "ligentec"
- },
- {
-  "company": "Ludicrum Tech",
-  "type": "teamtailor",
-  "token": "ludicrumtech"
  },
  {
   "company": "Mendo.ai",
@@ -7283,11 +7263,6 @@
   "company": "GreenState Credit Union",
   "type": "icims",
   "token": "careers-greenstate.icims.com"
- },
- {
-  "company": "HERE",
-  "type": "icims",
-  "token": "careers-here.icims.com"
  },
  {
   "company": "HireRight",
