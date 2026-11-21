@@ -2698,5 +2698,80 @@
   "company": "Hewlett Packard Enterprise",
   "type": "workday",
   "token": "hpe.wd5.myworkdayjobs.com/hpe/wfmathpe"
+ },
+ {
+  "company": "Homebound",
+  "type": "ashby",
+  "token": "homebound"
+ },
+ {
+  "company": "AIOS",
+  "type": "ashby",
+  "token": "aios"
+ },
+ {
+  "company": "Ampersand",
+  "type": "ashby",
+  "token": "ampersand"
+ },
+ {
+  "company": "Skiffra",
+  "type": "ashby",
+  "token": "skiffra"
+ },
+ {
+  "company": "AppOmni",
+  "type": "greenhouse",
+  "token": "appomni"
+ },
+ {
+  "company": "Plug",
+  "type": "ashby",
+  "token": "plugmotors"
+ },
+ {
+  "company": "2K",
+  "type": "greenhouse",
+  "token": "2k"
+ },
+ {
+  "company": "Prove",
+  "type": "greenhouse",
+  "token": "prove"
+ },
+ {
+  "company": "Yext",
+  "type": "greenhouse",
+  "token": "yext"
+ },
+ {
+  "company": "Wheel",
+  "type": "ashby",
+  "token": "wheel"
+ },
+ {
+  "company": "Dun & Bradstreet",
+  "type": "lever",
+  "token": "dnb"
+ },
+ {
+  "company": "FloQast",
+  "type": "lever",
+  "token": "floqast"
+ },
+ {
+  "company": "Mirantis",
+  "type": "smartrecruiters",
+  "token": "mirantis"
+ },
+ {
+  "company": "Slate Auto",
+  "type": "workday",
+  "token": "recar.wd108.myworkdayjobs.com/recar/slatecareers"
+ },
+ {
+  "company": "Toyota Research Institute",
+  "type": "lever",
+  "token": "tri"
  }
 ]
