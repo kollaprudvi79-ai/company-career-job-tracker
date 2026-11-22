@@ -4730,11 +4730,6 @@
   "token": "valsoft-corp"
  },
  {
-  "company": "webook.com",
-  "type": "workable",
-  "token": "webook"
- },
- {
   "company": "Weekday AI",
   "type": "workable",
   "token": "weekday-1"
@@ -6728,11 +6723,6 @@
   "company": "KISS Beauty Group",
   "type": "workday",
   "token": "kissusa.wd12.myworkdayjobs.com/kissusa/kiss_careers_external"
- },
- {
-  "company": "LEGO",
-  "type": "workday",
-  "token": "lego.wd103.myworkdayjobs.com/lego/lego_external"
  },
  {
   "company": "Livenation",
