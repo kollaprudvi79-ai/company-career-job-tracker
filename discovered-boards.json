@@ -2773,5 +2773,225 @@
   "company": "Toyota Research Institute",
   "type": "lever",
   "token": "tri"
+ },
+ {
+  "company": "Ironclad",
+  "type": "ashby",
+  "token": "ironcladhq"
+ },
+ {
+  "company": "Parallel Web Systems",
+  "type": "ashby",
+  "token": "parallel"
+ },
+ {
+  "company": "Astera Labs",
+  "type": "greenhouse",
+  "token": "asteralabs"
+ },
+ {
+  "company": "Epirus",
+  "type": "greenhouse",
+  "token": "epirus"
+ },
+ {
+  "company": "Netskope",
+  "type": "greenhouse",
+  "token": "netskope"
+ },
+ {
+  "company": "Hotplate",
+  "type": "ashby",
+  "token": "hotplate"
+ },
+ {
+  "company": "Pacific Fusion",
+  "type": "greenhouse",
+  "token": "pacificfusion"
+ },
+ {
+  "company": "Ava Labs",
+  "type": "ashby",
+  "token": "ava-labs"
+ },
+ {
+  "company": "Amperity",
+  "type": "greenhouse",
+  "token": "amperity"
+ },
+ {
+  "company": "CoLab",
+  "type": "greenhouse",
+  "token": "colabsoftware"
+ },
+ {
+  "company": "Quantexa",
+  "type": "ashby",
+  "token": "quantexa"
+ },
+ {
+  "company": "Albedo",
+  "type": "greenhouse",
+  "token": "albedo"
+ },
+ {
+  "company": "Mark43",
+  "type": "greenhouse",
+  "token": "mark43"
+ },
+ {
+  "company": "Awardco",
+  "type": "greenhouse",
+  "token": "awardco"
+ },
+ {
+  "company": "Harry's Razor Company",
+  "type": "greenhouse",
+  "token": "harrys"
+ },
+ {
+  "company": "Forterra",
+  "type": "rippling",
+  "token": "forterra"
+ },
+ {
+  "company": "Owner.com",
+  "type": "ashby",
+  "token": "owner"
+ },
+ {
+  "company": "Simile",
+  "type": "ashby",
+  "token": "simile"
+ },
+ {
+  "company": "BYD",
+  "type": "greenhouse",
+  "token": "byd"
+ },
+ {
+  "company": "Phantom",
+  "type": "ashby",
+  "token": "phantom"
+ },
+ {
+  "company": "GE HealthCare",
+  "type": "workday",
+  "token": "gehc.wd5.myworkdayjobs.com/gehc/gehc_externalsite"
+ },
+ {
+  "company": "Veriff",
+  "type": "greenhouse",
+  "token": "veriff"
+ },
+ {
+  "company": "DualEntry",
+  "type": "ashby",
+  "token": "dualentry"
+ },
+ {
+  "company": "MeshyAI",
+  "type": "ashby",
+  "token": "meshy"
+ },
+ {
+  "company": "Megaport",
+  "type": "lever",
+  "token": "megaport"
+ },
+ {
+  "company": "Waystar",
+  "type": "workday",
+  "token": "waystar.wd1.myworkdayjobs.com/waystar/waystar"
+ },
+ {
+  "company": "Betterment",
+  "type": "greenhouse",
+  "token": "betterment"
+ },
+ {
+  "company": "Anima",
+  "type": "ashby",
+  "token": "anima"
+ },
+ {
+  "company": "Dataminr",
+  "type": "workday",
+  "token": "dataminr.wd12.myworkdayjobs.com/dataminr/dataminr"
+ },
+ {
+  "company": "SandboxAQ",
+  "type": "ashby",
+  "token": "sandboxaq"
+ },
+ {
+  "company": "Veho",
+  "type": "ashby",
+  "token": "veho-tech-inc"
+ },
+ {
+  "company": "Viz.ai",
+  "type": "ashby",
+  "token": "viz.ai"
+ },
+ {
+  "company": "Harper",
+  "type": "ashby",
+  "token": "harperinsure"
+ },
+ {
+  "company": "Prolific",
+  "type": "greenhouse",
+  "token": "prolific"
+ },
+ {
+  "company": "Vestwell",
+  "type": "greenhouse",
+  "token": "vestwell"
+ },
+ {
+  "company": "Perk",
+  "type": "ashby",
+  "token": "perk"
+ },
+ {
+  "company": "JBS USA",
+  "type": "jobvite",
+  "token": "jbs"
+ },
+ {
+  "company": "CrowdStrike",
+  "type": "workday",
+  "token": "crowdstrike.wd5.myworkdayjobs.com/crowdstrike/crowdstrikecareers"
+ },
+ {
+  "company": "SKIMS",
+  "type": "pinpoint",
+  "token": "skims"
+ },
+ {
+  "company": "Tempus Labs",
+  "type": "workday",
+  "token": "tempus.wd5.myworkdayjobs.com/tempus/tempus_careers"
+ },
+ {
+  "company": "Nike",
+  "type": "workday",
+  "token": "nike.wd1.myworkdayjobs.com/nike/nke"
+ },
+ {
+  "company": "Cohesity",
+  "type": "workday",
+  "token": "cohesity.wd5.myworkdayjobs.com/cohesity/cohesity_careers"
+ },
+ {
+  "company": "Trend Micro",
+  "type": "workday",
+  "token": "trendmicro.wd3.myworkdayjobs.com/trendmicro/external"
+ },
+ {
+  "company": "Cigna",
+  "type": "workday",
+  "token": "cigna.wd5.myworkdayjobs.com/cigna/cignacareers"
  }
 ]
