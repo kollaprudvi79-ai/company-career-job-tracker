@@ -62,15 +62,15 @@
  {
   "sweep": 36,
   "date": "2026-11-22",
-  "time": "17:43",
-  "startTime": "2026-11-22T17:43:00.671Z",
-  "endTime": "2026-11-22T17:43:58.710Z",
+  "time": "17:44",
+  "startTime": "2026-11-22T17:44:11.131Z",
+  "endTime": "2026-11-22T17:45:22.260Z",
   "durationMin": 1,
-  "boardsChecked": 456,
-  "boardsOk": 417,
-  "newJobs": 0,
-  "totalJobs": 4196,
-  "fitJobs": 87,
+  "boardsChecked": 617,
+  "boardsOk": 580,
+  "newJobs": 31,
+  "totalJobs": 4246,
+  "fitJobs": 89,
   "universityJobs": 0,
   "nonProfitJobs": 0
  }
