@@ -6550,11 +6550,6 @@
   "token": "7eleven.wd3.myworkdayjobs.com/7eleven/7elevenv2"
  },
  {
-  "company": "A1Group (A1 Jobs bg)",
-  "type": "workday",
-  "token": "a1group.wd3.myworkdayjobs.com/a1group/a1_jobs_bg"
- },
- {
   "company": "Aveva (ETAP Careers)",
   "type": "workday",
   "token": "aveva.wd3.myworkdayjobs.com/aveva/etap_careers"
@@ -6575,19 +6570,9 @@
   "token": "sunlife.wd3.myworkdayjobs.com/sunlife/experienced"
  },
  {
-  "company": "Nn Group (Wdexternal)",
-  "type": "workday",
-  "token": "nngroup.wd3.myworkdayjobs.com/nngroup/wdexternal"
- },
- {
   "company": "Norwegian Cruise Line Holdings (NCLH) (NCL Shoreside Careers)",
   "type": "workday",
   "token": "nclh.wd108.myworkdayjobs.com/nclh/ncl_shoreside_careers"
- },
- {
-  "company": "Novartis (Internal Careers for Acquired Entities)",
-  "type": "workday",
-  "token": "novartis.wd3.myworkdayjobs.com/novartis/internal_careers_for_acquired_entities"
  },
  {
   "company": "McKesson (CoverMyMeds External Careers)",
@@ -6610,24 +6595,9 @@
   "token": "ardian.wd103.myworkdayjobs.com/ardian/ardiancareers"
  },
  {
-  "company": "Aveva",
-  "type": "workday",
-  "token": "aveva.wd3.myworkdayjobs.com/aveva/aveva_careers"
- },
- {
-  "company": "Bupa",
-  "type": "workday",
-  "token": "bupa.wd3.myworkdayjobs.com/bupa/ext_career"
- },
- {
   "company": "BSI Group",
   "type": "workday",
   "token": "bsigroup.wd3.myworkdayjobs.com/bsigroup/bsi_careers"
- },
- {
-  "company": "Barclays",
-  "type": "workday",
-  "token": "barclays.wd3.myworkdayjobs.com/barclays/external_career_site_barclays"
  },
  {
   "company": "Pax8Inc",
@@ -6640,11 +6610,6 @@
   "token": "promachbuilt.wd108.myworkdayjobs.com/promachbuilt/promach"
  },
  {
-  "company": "Biibhr",
-  "type": "workday",
-  "token": "biibhr.wd3.myworkdayjobs.com/biibhr/external"
- },
- {
   "company": "Demegroup",
   "type": "workday",
   "token": "demegroup.wd3.myworkdayjobs.com/demegroup/careers_external"
@@ -6653,11 +6618,6 @@
   "company": "Dynata",
   "type": "workday",
   "token": "dynata.wd108.myworkdayjobs.com/dynata/careers"
- },
- {
-  "company": "CGM",
-  "type": "workday",
-  "token": "cgm.wd3.myworkdayjobs.com/cgm/cgm"
  },
  {
   "company": "Lgt (Linkonly)",
@@ -6685,29 +6645,9 @@
   "token": "clio.wd3.myworkdayjobs.com/clio/cliocareersite"
  },
  {
-  "company": "Covestro",
-  "type": "workday",
-  "token": "covestro.wd3.myworkdayjobs.com/covestro/cov_external"
- },
- {
-  "company": "Jonas (Perseus Careers1)",
-  "type": "workday",
-  "token": "talentmanagementsolution.wd3.myworkdayjobs.com/talentmanagementsolution/perseus-careers1"
- },
- {
-  "company": "Dentsuaegis",
-  "type": "workday",
-  "token": "dentsuaegis.wd3.myworkdayjobs.com/dentsuaegis/dan_global"
- },
- {
   "company": "Electrolux Group",
   "type": "workday",
   "token": "electrolux.wd3.myworkdayjobs.com/electrolux/electroluxcareersite"
- },
- {
-  "company": "Freseniusglobal (Fk Careers De)",
-  "type": "workday",
-  "token": "freseniusglobal.wd3.myworkdayjobs.com/freseniusglobal/fk_careers_de"
  },
  {
   "company": "Freseniusglobal (Linkedin)",
@@ -6718,11 +6658,6 @@
   "company": "Finastra",
   "type": "workday",
   "token": "finastra.wd3.myworkdayjobs.com/finastra/finc"
- },
- {
-  "company": "Us Finning",
-  "type": "workday",
-  "token": "finning.wd3.myworkdayjobs.com/finning/external"
  },
  {
   "company": "TRUMPF Graduates and Professionals (TRUMPF Students)",
@@ -6755,11 +6690,6 @@
   "token": "rhe.wd3.myworkdayjobs.com/rhe/r1111"
  },
  {
-  "company": "Gunvor",
-  "type": "workday",
-  "token": "gunvor.wd3.myworkdayjobs.com/gunvor/gunvor_careers"
- },
- {
   "company": "Helenoftroy",
   "type": "workday",
   "token": "helenoftroy.wd503.myworkdayjobs.com/helenoftroy/main_hot"
@@ -6773,11 +6703,6 @@
   "company": "ICON",
   "type": "workday",
   "token": "icon.wd3.myworkdayjobs.com/icon/broadbean_external"
- },
- {
-  "company": "IKO",
-  "type": "workday",
-  "token": "iko.wd3.myworkdayjobs.com/iko/iko_careers"
  },
  {
   "company": "Illuminate USA",
@@ -6810,19 +6735,9 @@
   "token": "kissusa.wd12.myworkdayjobs.com/kissusa/kiss_careers_external"
  },
  {
-  "company": "KSB",
-  "type": "workday",
-  "token": "ksb.wd3.myworkdayjobs.com/ksb/ksb_externalcareersite"
- },
- {
   "company": "LEGO",
   "type": "workday",
   "token": "lego.wd103.myworkdayjobs.com/lego/lego_external"
- },
- {
-  "company": "Lighting",
-  "type": "workday",
-  "token": "lighting.wd3.myworkdayjobs.com/lighting/jobs-and-careers"
  },
  {
   "company": "Livenation",
@@ -6850,11 +6765,6 @@
   "token": "lseg.wd3.myworkdayjobs.com/lseg/graduate_careers"
  },
  {
-  "company": "Manulife and John Hancock",
-  "type": "workday",
-  "token": "manulife.wd3.myworkdayjobs.com/manulife/mfcjh_jobs"
- },
- {
   "company": "Maxine",
   "type": "workday",
   "token": "maxine.wd3.myworkdayjobs.com/maxine/maxis-career"
@@ -6863,16 +6773,6 @@
   "company": "McKesson",
   "type": "workday",
   "token": "mckesson.wd3.myworkdayjobs.com/mckesson/external_careers"
- },
- {
-  "company": "Michelin",
-  "type": "workday",
-  "token": "michelinhr.wd3.myworkdayjobs.com/michelinhr/michelin"
- },
- {
-  "company": "Miele",
-  "type": "workday",
-  "token": "miele.wd3.myworkdayjobs.com/miele/miele-jobs"
  },
  {
   "company": "Modmed",
@@ -6915,11 +6815,6 @@
   "token": "relx.wd3.myworkdayjobs.com/relx/relx"
  },
  {
-  "company": "LexisNexis\u00ae Risk Solutions",
-  "type": "workday",
-  "token": "relx.wd3.myworkdayjobs.com/relx/risksolutions"
- },
- {
   "company": "Resmed",
   "type": "workday",
   "token": "resmed.wd3.myworkdayjobs.com/resmed/resmed_external_careers"
@@ -6933,11 +6828,6 @@
   "company": "Rite-Hite",
   "type": "workday",
   "token": "ritehite.wd12.myworkdayjobs.com/ritehite/rhh"
- },
- {
-  "company": "Roche",
-  "type": "workday",
-  "token": "roche.wd3.myworkdayjobs.com/roche/rog-a2o-gene"
  },
  {
   "company": "ROCKWOOL Group",
@@ -6965,29 +6855,9 @@
   "token": "sggovterp.wd102.myworkdayjobs.com/sggovterp/publicservicecareers"
  },
  {
-  "company": "Takkt",
-  "type": "workday",
-  "token": "takkt.wd3.myworkdayjobs.com/takkt/takkt"
- },
- {
   "company": "TC Energy",
   "type": "workday",
   "token": "tcenergy.wd3.myworkdayjobs.com/tcenergy/career_site_tc"
- },
- {
-  "company": "TD",
-  "type": "workday",
-  "token": "td.wd3.myworkdayjobs.com/td/td_bank_careers"
- },
- {
-  "company": "TEL",
-  "type": "workday",
-  "token": "tel.wd3.myworkdayjobs.com/tel/tel-careers"
- },
- {
-  "company": "Trendmicro",
-  "type": "workday",
-  "token": "trendmicro.wd3.myworkdayjobs.com/trendmicro/external"
  },
  {
   "company": "Valeo",
@@ -7600,19 +7470,9 @@
   "token": "techquarter"
  },
  {
-  "company": "Aett",
-  "type": "workday",
-  "token": "aett.wd3.myworkdayjobs.com/aett/versent"
- },
- {
   "company": "Aptos",
   "type": "workday",
   "token": "aptos.wd108.myworkdayjobs.com/aptos/revionics"
- },
- {
-  "company": "Babelgroup",
-  "type": "workday",
-  "token": "babelgroup.wd103.myworkdayjobs.com/babelgroup/rec_external_career_site"
  },
  {
   "company": "Daw",
@@ -7638,11 +7498,6 @@
   "company": "Esswd",
   "type": "workday",
   "token": "esswd.wd501.myworkdayjobs.com/esswd/external"
- },
- {
-  "company": "Flutterbe",
-  "type": "workday",
-  "token": "flutterbe.wd3.myworkdayjobs.com/flutterbe/bfromania_external"
  },
  {
   "company": "Groundswell",
@@ -7690,24 +7545,9 @@
   "token": "phcgroup.wd3.myworkdayjobs.com/phcgroup/epredia_careers"
  },
  {
-  "company": "Sky",
-  "type": "workday",
-  "token": "sky.wd3.myworkdayjobs.com/sky/tux"
- },
- {
   "company": "Starfish",
   "type": "workday",
   "token": "starfish.wd501.myworkdayjobs.com/starfish/careers"
- },
- {
-  "company": "Takeaway",
-  "type": "workday",
-  "token": "takeaway.wd3.myworkdayjobs.com/takeaway/jet-ecs-r"
- },
- {
-  "company": "Talentmanagementsolution",
-  "type": "workday",
-  "token": "talentmanagementsolution.wd3.myworkdayjobs.com/talentmanagementsolution/vestauk"
  },
  {
   "company": "Tp",
@@ -7925,11 +7765,6 @@
   "token": "cerebras"
  },
  {
-  "company": "Cornell University",
-  "token": "cornell.wd1.myworkdayjobs.com/cornell/cornellpositions",
-  "type": "workday"
- },
- {
   "company": "Scale AI",
   "token": "scaleai",
   "type": "greenhouse"
@@ -7983,11 +7818,6 @@
   "company": "Vercel",
   "token": "vercel",
   "type": "greenhouse"
- },
- {
-  "company": "Northwestern Mutual",
-  "token": "northwesternmutual",
-  "type": "smartrecruiters"
  },
  {
   "company": "Peloton",
