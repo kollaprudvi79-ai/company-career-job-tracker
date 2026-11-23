@@ -3945,11 +3945,6 @@
   "token": "veepee"
  },
  {
-  "company": "Vida Health",
-  "type": "lever",
-  "token": "vida"
- },
- {
   "company": "vivenu GmbH",
   "type": "lever",
   "token": "vivenu"
@@ -6535,11 +6530,6 @@
   "token": "4flow.wd3.myworkdayjobs.com/4flow/4flow"
  },
  {
-  "company": "7-Eleven (7Elevenv2)",
-  "type": "workday",
-  "token": "7eleven.wd3.myworkdayjobs.com/7eleven/7elevenv2"
- },
- {
   "company": "Aveva (ETAP Careers)",
   "type": "workday",
   "token": "aveva.wd3.myworkdayjobs.com/aveva/etap_careers"
@@ -6548,11 +6538,6 @@
   "company": "Avanade",
   "type": "workday",
   "token": "accenture.wd103.myworkdayjobs.com/accenture/avanadecareers"
- },
- {
-  "company": "Sok",
-  "type": "workday",
-  "token": "sok.wd502.myworkdayjobs.com/sok/s-ryhman-avoimet-tyopaikat"
  },
  {
   "company": "Sun Life (Experienced)",
@@ -6575,34 +6560,9 @@
   "token": "mckesson.wd3.myworkdayjobs.com/mckesson/sourcer_on_req"
  },
  {
-  "company": "Enercity",
-  "type": "workday",
-  "token": "enercity.wd3.myworkdayjobs.com/enercity/enercity_extern"
- },
- {
-  "company": "Ardian",
-  "type": "workday",
-  "token": "ardian.wd103.myworkdayjobs.com/ardian/ardiancareers"
- },
- {
-  "company": "BSI Group",
-  "type": "workday",
-  "token": "bsigroup.wd3.myworkdayjobs.com/bsigroup/bsi_careers"
- },
- {
   "company": "Pax8Inc",
   "type": "workday",
   "token": "pax8inc.wd12.myworkdayjobs.com/pax8inc/pax8careers"
- },
- {
-  "company": "Promachbuilt",
-  "type": "workday",
-  "token": "promachbuilt.wd108.myworkdayjobs.com/promachbuilt/promach"
- },
- {
-  "company": "Demegroup",
-  "type": "workday",
-  "token": "demegroup.wd3.myworkdayjobs.com/demegroup/careers_external"
  },
  {
   "company": "Dynata",
@@ -6620,19 +6580,9 @@
   "token": "litera.wd12.myworkdayjobs.com/litera/litera_careers"
  },
  {
-  "company": "Every day Chemours",
-  "type": "workday",
-  "token": "chemours.wd103.myworkdayjobs.com/chemours/chemours"
- },
- {
   "company": "CIBC",
   "type": "workday",
   "token": "cibc.wd3.myworkdayjobs.com/cibc/search"
- },
- {
-  "company": "Clio",
-  "type": "workday",
-  "token": "clio.wd3.myworkdayjobs.com/clio/cliocareersite"
  },
  {
   "company": "Electrolux Group",
@@ -6660,11 +6610,6 @@
   "token": "turo.wd12.myworkdayjobs.com/turo/turo_careers"
  },
  {
-  "company": "Freshfields",
-  "type": "workday",
-  "token": "freshfields.wd3.myworkdayjobs.com/freshfields/fbd_101"
- },
- {
   "company": "FWD",
   "type": "workday",
   "token": "fwd.wd3.myworkdayjobs.com/fwd/fwdcareersite"
@@ -6675,11 +6620,6 @@
   "token": "galileo.wd3.myworkdayjobs.com/galileo/galileo_career_site"
  },
  {
-  "company": "Rhe (R1111)",
-  "type": "workday",
-  "token": "rhe.wd3.myworkdayjobs.com/rhe/r1111"
- },
- {
   "company": "Helenoftroy",
   "type": "workday",
   "token": "helenoftroy.wd503.myworkdayjobs.com/helenoftroy/main_hot"
@@ -6688,11 +6628,6 @@
   "company": "Euronext",
   "type": "workday",
   "token": "hrhub.wd3.myworkdayjobs.com/hrhub/euronext_career_page"
- },
- {
-  "company": "ICON",
-  "type": "workday",
-  "token": "icon.wd3.myworkdayjobs.com/icon/broadbean_external"
  },
  {
   "company": "Illuminate USA",
@@ -6730,44 +6665,14 @@
   "token": "livenation.wd503.myworkdayjobs.com/livenation/lnexternalsite"
  },
  {
-  "company": "Lombardodier",
-  "type": "workday",
-  "token": "lombardodier.wd3.myworkdayjobs.com/lombardodier/lombard_odier_careers"
- },
- {
-  "company": "Lonza",
-  "type": "workday",
-  "token": "lonza.wd3.myworkdayjobs.com/lonza/lonza_careers"
- },
- {
   "company": "Lseg",
   "type": "workday",
   "token": "lseg.wd3.myworkdayjobs.com/lseg/careers"
  },
  {
-  "company": "Lseg",
-  "type": "workday",
-  "token": "lseg.wd3.myworkdayjobs.com/lseg/graduate_careers"
- },
- {
-  "company": "Maxine",
-  "type": "workday",
-  "token": "maxine.wd3.myworkdayjobs.com/maxine/maxis-career"
- },
- {
   "company": "McKesson",
   "type": "workday",
   "token": "mckesson.wd3.myworkdayjobs.com/mckesson/external_careers"
- },
- {
-  "company": "Modmed",
-  "type": "workday",
-  "token": "modmed.wd501.myworkdayjobs.com/modmed/modmed12"
- },
- {
-  "company": "Montefiore",
-  "type": "workday",
-  "token": "montefiore.wd12.myworkdayjobs.com/montefiore/mmc"
  },
  {
   "company": "Management Sciences for Health (MSH)",
@@ -6810,11 +6715,6 @@
   "token": "risepoint.wd503.myworkdayjobs.com/risepoint/risepoint"
  },
  {
-  "company": "Rite-Hite",
-  "type": "workday",
-  "token": "ritehite.wd12.myworkdayjobs.com/ritehite/rhh"
- },
- {
   "company": "ROCKWOOL Group",
   "type": "workday",
   "token": "rockwoolgroup.wd3.myworkdayjobs.com/rockwoolgroup/rockwool"
@@ -6825,11 +6725,6 @@
   "token": "roquette.wd3.myworkdayjobs.com/roquette/external"
  },
  {
-  "company": "Slack",
-  "type": "workday",
-  "token": "salesforce.wd12.myworkdayjobs.com/salesforce/slack"
- },
- {
   "company": "SBM",
   "type": "workday",
   "token": "sbmmanagement.wd108.myworkdayjobs.com/sbmmanagement/sbm"
@@ -6838,11 +6733,6 @@
   "company": "Sggovterp",
   "type": "workday",
   "token": "sggovterp.wd102.myworkdayjobs.com/sggovterp/publicservicecareers"
- },
- {
-  "company": "TC Energy",
-  "type": "workday",
-  "token": "tcenergy.wd3.myworkdayjobs.com/tcenergy/career_site_tc"
  },
  {
   "company": "Valeo",
@@ -6860,24 +6750,9 @@
   "token": "fugro.wd3.myworkdayjobs.com/fugro/careers"
  },
  {
-  "company": "Gable",
-  "type": "workday",
-  "token": "gable.wd3.myworkdayjobs.com/gable/careers"
- },
- {
   "company": "Intactfc",
   "type": "workday",
   "token": "intactfc.wd3.myworkdayjobs.com/intactfc/intactfc"
- },
- {
-  "company": "Maschmeyer Concrete",
-  "type": "workday",
-  "token": "maschmeyer.wd12.myworkdayjobs.com/maschmeyer/mcc"
- },
- {
-  "company": "Permian Resources",
-  "type": "workday",
-  "token": "permianres.wd12.myworkdayjobs.com/permianres/permian_resources_careers"
  },
  {
   "company": "Rabobank",
@@ -7460,11 +7335,6 @@
   "token": "aptos.wd108.myworkdayjobs.com/aptos/revionics"
  },
  {
-  "company": "Daw",
-  "type": "workday",
-  "token": "daw.wd3.myworkdayjobs.com/daw/daw_careers"
- },
- {
   "company": "Desjardins",
   "type": "workday",
   "token": "desjardins.wd10.myworkdayjobs.com/desjardins/desjardins2"
@@ -7780,11 +7650,6 @@
   "type": "lever"
  },
  {
-  "company": "ServiceNow",
-  "token": "servicenow",
-  "type": "smartrecruiters"
- },
- {
   "company": "Toast",
   "token": "toast",
   "type": "greenhouse"
@@ -7908,12 +7773,6 @@
   "company": "Public.com",
   "token": "public",
   "type": "greenhouse"
- },
- {
-  "capExempt": true,
-  "company": "Northeastern University",
-  "token": "northeastern.wd1.myworkdayjobs.com/northeastern/careers",
-  "type": "workday"
  },
  {
   "capExempt": true,
