@@ -2995,11 +2995,6 @@
   "token": "sezzle"
  },
  {
-  "company": "SHEIN",
-  "type": "greenhouse",
-  "token": "shein"
- },
- {
   "company": "Sigma Computing",
   "type": "greenhouse",
   "token": "sigmacomputing"
@@ -5215,11 +5210,6 @@
   "token": "cabusinessdigital"
  },
  {
-  "company": "Tecknuovo",
-  "type": "teamtailor",
-  "token": "careers-tecknuovo"
- },
- {
   "company": "Centra Technology",
   "type": "teamtailor",
   "token": "centra"
@@ -5690,11 +5680,6 @@
   "token": "ohpen"
  },
  {
-  "company": "Principal33",
-  "type": "personio",
-  "token": "principal33"
- },
- {
   "company": "Servistio",
   "type": "personio",
   "token": "servistio"
@@ -5778,11 +5763,6 @@
   "company": "taod",
   "type": "personio",
   "token": "taod"
- },
- {
-  "company": "Confluence Technologies",
-  "type": "pinpoint",
-  "token": "confluence"
  },
  {
   "company": "Continental Services",
