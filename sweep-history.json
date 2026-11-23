@@ -1,1 +1,47 @@
-[{"sweep": "2026-11-23T14:14:34.037949+00:00", "newJobs": 67, "universityJobs": 17, "nonprofitJobs": 189, "totalJobs": 6942, "boards": 1813}]
+[
+ {
+  "sweep": 32,
+  "date": "2026-11-23",
+  "time": "15:46",
+  "startTime": "2026-11-23T15:46:01.635Z",
+  "endTime": "2026-11-23T15:47:35.549Z",
+  "durationMin": 2,
+  "boardsChecked": 641,
+  "boardsOk": 598,
+  "newJobs": 4,
+  "totalJobs": 4447,
+  "fitJobs": 94,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 36,
+  "date": "2026-11-23",
+  "time": "17:45",
+  "startTime": "2026-11-23T17:45:22.508Z",
+  "endTime": "2026-11-23T17:46:38.824Z",
+  "durationMin": 1,
+  "boardsChecked": 487,
+  "boardsOk": 448,
+  "newJobs": 0,
+  "totalJobs": 4377,
+  "fitJobs": 94,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 44,
+  "date": "2026-11-23",
+  "time": "21:40",
+  "startTime": "2026-11-23T21:40:21.908Z",
+  "endTime": "2026-11-23T21:41:16.732Z",
+  "durationMin": 1,
+  "boardsChecked": 482,
+  "boardsOk": 448,
+  "newJobs": 16,
+  "totalJobs": 4378,
+  "fitJobs": 94,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ }
+]
