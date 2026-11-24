@@ -5,11 +5,6 @@
   "token": "geotab"
  },
  {
-  "company": "Motive",
-  "type": "greenhouse",
-  "token": "gomotive"
- },
- {
   "company": "samsara",
   "type": "greenhouse",
   "token": "samsara"
@@ -38,11 +33,6 @@
   "company": "Adaptive Security",
   "type": "ashby",
   "token": "adaptivesecurity"
- },
- {
-  "company": "Afference Inc",
-  "type": "ashby",
-  "token": "afference"
  },
  {
   "company": "AfterQuery",
@@ -798,11 +788,6 @@
   "company": "Ncontracts",
   "type": "ashby",
   "token": "ncontracts"
- },
- {
-  "company": "Neara",
-  "type": "ashby",
-  "token": "neara"
  },
  {
   "company": "Nelo",
@@ -1940,11 +1925,6 @@
   "token": "datacamp"
  },
  {
-  "company": "DeepIntent",
-  "type": "greenhouse",
-  "token": "deepintent"
- },
- {
   "company": "DEPT\u00ae",
   "type": "greenhouse",
   "token": "dept"
@@ -2933,11 +2913,6 @@
   "company": "Ritual",
   "type": "greenhouse",
   "token": "ritual"
- },
- {
-  "company": "Roadie",
-  "type": "greenhouse",
-  "token": "roadie"
  },
  {
   "company": "Robinhood",
@@ -4605,11 +4580,6 @@
   "token": "pierce"
  },
  {
-  "company": "Pinewood.AI",
-  "type": "workable",
-  "token": "pinewoodaicareers"
- },
- {
   "company": "PLANET S.A.",
   "type": "workable",
   "token": "planet-sa-1"
@@ -5200,11 +5170,6 @@
   "token": "bearingpointnetherlands"
  },
  {
-  "company": "Bloq.it",
-  "type": "teamtailor",
-  "token": "bloqit"
- },
- {
   "company": "CA Business Digital",
   "type": "teamtailor",
   "token": "cabusinessdigital"
@@ -5518,11 +5483,6 @@
   "company": "Telenor",
   "type": "teamtailor",
   "token": "telenorsharedservices"
- },
- {
-  "company": "Tendios",
-  "type": "teamtailor",
-  "token": "tendios"
  },
  {
   "company": "Twoday Finland",
@@ -6760,11 +6720,6 @@
   "token": "emea-external-aitworldwide.icims.com"
  },
  {
-  "company": "AVIAN, LLC",
-  "type": "icims",
-  "token": "careers-levelupllc.icims.com"
- },
- {
   "company": "StoneX",
   "type": "icims",
   "token": "english-stonex.icims.com"
@@ -6885,11 +6840,6 @@
   "token": "careers-greensky.icims.com"
  },
  {
-  "company": "GreenState Credit Union",
-  "type": "icims",
-  "token": "careers-greenstate.icims.com"
- },
- {
   "company": "HireRight",
   "type": "icims",
   "token": "careers-hireright1.icims.com"
@@ -6945,11 +6895,6 @@
   "token": "careers-sklifescienceinc.icims.com"
  },
  {
-  "company": "Starr",
-  "type": "icims",
-  "token": "careers-starr.icims.com"
- },
- {
   "company": "steampunk",
   "type": "icims",
   "token": "careers-steampunk.icims.com"
@@ -6978,11 +6923,6 @@
   "company": "Xerox",
   "type": "icims",
   "token": "careers-esinc.icims.com"
- },
- {
-  "company": "frontdoor, Inc.",
-  "type": "icims",
-  "token": "careers-frontdoor.icims.com"
  },
  {
   "company": "Milbank LLP",
@@ -7090,11 +7030,6 @@
   "token": "fa-ewkd-dev1-saasfaprod1.fa.ocs.oraclecloud.com/usf"
  },
  {
-  "company": "Fa Ewmy Saasfaprod1",
-  "type": "oracle",
-  "token": "fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/cx_1"
- },
- {
   "company": "Hcrb",
   "type": "oracle",
   "token": "hcrb.fa.us2.oraclecloud.com/bostonbeercareers"
@@ -7145,11 +7080,6 @@
   "token": "adaptivebiotechnologies"
  },
  {
-  "company": "arcotech",
-  "type": "greenhouse",
-  "token": "arcotech"
- },
- {
   "company": "avathon",
   "type": "greenhouse",
   "token": "avathon"
@@ -7178,11 +7108,6 @@
   "company": "ebury",
   "type": "greenhouse",
   "token": "ebury"
- },
- {
-  "company": "flatironhealth",
-  "type": "greenhouse",
-  "token": "flatironhealth"
  },
  {
   "company": "gotorq",
@@ -7255,11 +7180,6 @@
   "token": "sourcemeridian"
  },
  {
-  "company": "spoileralert",
-  "type": "greenhouse",
-  "token": "spoileralert"
- },
- {
   "company": "ssreferrals",
   "type": "greenhouse",
   "token": "ssreferrals"
@@ -7283,11 +7203,6 @@
   "company": "viaduct",
   "type": "greenhouse",
   "token": "viaduct"
- },
- {
-  "company": "whitetech",
-  "type": "greenhouse",
-  "token": "whitetech"
  },
  {
   "company": "fp",
@@ -7692,11 +7607,6 @@
  {
   "company": "Rover",
   "token": "rover",
-  "type": "lever"
- },
- {
-  "company": "Aledade",
-  "token": "aledade",
   "type": "lever"
  },
  {
