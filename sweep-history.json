@@ -1,1 +1,17 @@
-[{"sweep": "2026-11-24T02:04:07.667143+00:00", "newJobs": 100, "universityJobs": 16, "nonprofitJobs": 182, "totalJobs": 6961, "boards": 1797}]
+[
+ {
+  "sweep": 8,
+  "date": "2026-11-24",
+  "time": "03:41",
+  "startTime": "2026-11-24T03:41:43.436Z",
+  "endTime": "2026-11-24T03:43:04.962Z",
+  "durationMin": 1,
+  "boardsChecked": 634,
+  "boardsOk": 598,
+  "newJobs": 2,
+  "totalJobs": 4344,
+  "fitJobs": 82,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ }
+]
