@@ -675,11 +675,6 @@
   "token": "lightdash"
  },
  {
-  "company": "Linear",
-  "type": "ashby",
-  "token": "linear"
- },
- {
   "company": "LiteLLM",
   "type": "ashby",
   "token": "litellm"
@@ -6095,11 +6090,6 @@
   "token": "dtprosusa"
  },
  {
-  "company": "Electrum",
-  "type": "jazzhr",
-  "token": "electrummerkmotor"
- },
- {
   "company": "elucid",
   "type": "jazzhr",
   "token": "elucid"
@@ -7138,11 +7128,6 @@
   "company": "mixtiles",
   "type": "greenhouse",
   "token": "mixtiles"
- },
- {
-  "company": "movableink",
-  "type": "greenhouse",
-  "token": "movableink"
  },
  {
   "company": "octanelending",
