@@ -47,15 +47,15 @@
  {
   "sweep": 40,
   "date": "2026-11-24",
-  "time": "19:40",
-  "startTime": "2026-11-24T19:40:05.910Z",
-  "endTime": "2026-11-24T19:41:23.824Z",
+  "time": "19:41",
+  "startTime": "2026-11-24T19:41:38.525Z",
+  "endTime": "2026-11-24T19:42:59.991Z",
   "durationMin": 1,
-  "boardsChecked": 483,
-  "boardsOk": 442,
+  "boardsChecked": 488,
+  "boardsOk": 448,
   "newJobs": 0,
-  "totalJobs": 4342,
-  "fitJobs": 95,
+  "totalJobs": 4340,
+  "fitJobs": 94,
   "universityJobs": 0,
   "nonProfitJobs": 0
  }
