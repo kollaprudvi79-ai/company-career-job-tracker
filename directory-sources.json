@@ -45,11 +45,6 @@
   "token": "airwallex"
  },
  {
-  "company": "Alan",
-  "type": "ashby",
-  "token": "alan"
- },
- {
   "company": "Allica Bank",
   "type": "ashby",
   "token": "allica-bank"
@@ -203,11 +198,6 @@
   "company": "Castleton Tower",
   "type": "ashby",
   "token": "castletontower"
- },
- {
-  "company": "Cinder",
-  "type": "ashby",
-  "token": "cinder"
  },
  {
   "company": "Clair",
@@ -473,11 +463,6 @@
   "company": "Fundamental",
   "type": "ashby",
   "token": "fundamental"
- },
- {
-  "company": "FurtherAI",
-  "type": "ashby",
-  "token": "furtherai"
  },
  {
   "company": "Gamma",
@@ -875,11 +860,6 @@
   "token": "parker"
  },
  {
-  "company": "PartsBase Inc.",
-  "type": "ashby",
-  "token": "partsbase"
- },
- {
   "company": "Payabli",
   "type": "ashby",
   "token": "payabli"
@@ -1023,11 +1003,6 @@
   "company": "Reducto",
   "type": "ashby",
   "token": "reducto"
- },
- {
-  "company": "Reframe Systems",
-  "type": "ashby",
-  "token": "reframesystems"
  },
  {
   "company": "Replicant",
@@ -1398,11 +1373,6 @@
   "company": "8th Light",
   "type": "greenhouse",
   "token": "8thlightrebuild"
- },
- {
-  "company": "A11",
-  "type": "greenhouse",
-  "token": "projectaservicesgmbhcokg"
  },
  {
   "company": "a16z",
@@ -2153,11 +2123,6 @@
   "company": "Fin",
   "type": "greenhouse",
   "token": "intercom"
- },
- {
-  "company": "Financial Times",
-  "type": "greenhouse",
-  "token": "financialtimes33"
  },
  {
   "company": "FISCHER HOMES",
@@ -4085,11 +4050,6 @@
   "token": "queracomputinginc"
  },
  {
-  "company": "ApartmentIQ",
-  "type": "greenhouse",
-  "token": "apartmentiq"
- },
- {
   "company": "CoreStory",
   "type": "greenhouse",
   "token": "corestory"
@@ -4770,11 +4730,6 @@
   "token": "one-park-financial"
  },
  {
-  "company": "Performance Technologies",
-  "type": "workable",
-  "token": "performance-technologies"
- },
- {
   "company": "PRODYNA",
   "type": "workable",
   "token": "prodyna"
@@ -5138,11 +5093,6 @@
   "company": "Adveez for talents",
   "type": "teamtailor",
   "token": "adveez"
- },
- {
-  "company": "Agileday Oy",
-  "type": "teamtailor",
-  "token": "agiledayoy"
  },
  {
   "company": "Appsilon",
@@ -5523,11 +5473,6 @@
   "company": "Bankdata",
   "type": "teamtailor",
   "token": "bankdata"
- },
- {
-  "company": "BYD Auto do Brasil",
-  "type": "teamtailor",
-  "token": "bydbrazil"
  },
  {
   "company": "Astek Sweden AB",
@@ -6950,11 +6895,6 @@
   "token": "careers-amivero.icims.com"
  },
  {
-  "company": "IBEX Global",
-  "type": "icims",
-  "token": "phcareers-ibex.icims.com"
- },
- {
   "company": "ITT Inc.",
   "type": "icims",
   "token": "careersen-itt-inc.icims.com"
@@ -7118,11 +7058,6 @@
   "company": "mastercontrol",
   "type": "greenhouse",
   "token": "mastercontrol"
- },
- {
-  "company": "memoryblue",
-  "type": "greenhouse",
-  "token": "memoryblue"
  },
  {
   "company": "mixtiles",
@@ -7348,11 +7283,6 @@
   "company": "isoftstone",
   "type": "jobvite",
   "token": "isoftstone"
- },
- {
-  "company": "jobs-gigait",
-  "type": "jobvite",
-  "token": "jobs-gigait"
  },
  {
   "company": "mcn",
