@@ -2840,11 +2840,6 @@
   "token": "redventures"
  },
  {
-  "company": "Redwood Materials",
-  "type": "greenhouse",
-  "token": "redwoodmaterials"
- },
- {
   "company": "Referrals Only",
   "type": "greenhouse",
   "token": "thoughtworksreferral"
@@ -6783,11 +6778,6 @@
   "company": "International Data Group",
   "type": "icims",
   "token": "idccareers-emea-idg.icims.com"
- },
- {
-  "company": "INDUS Technology, Inc.",
-  "type": "icims",
-  "token": "careers-industechnology.icims.com"
  },
  {
   "company": "Integral Federal",
