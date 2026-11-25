@@ -1,1 +1,70 @@
-[{"sweep": "2026-11-25T07:25:33.416130+00:00", "newJobs": 162, "universityJobs": 16, "nonprofitJobs": 184, "totalJobs": 6721, "boards": 1779}]
+[
+ {
+  "sweep": "2026-11-25T07:25:33.416130+00:00",
+  "newJobs": 162,
+  "universityJobs": 16,
+  "nonprofitJobs": 184,
+  "totalJobs": 6721,
+  "boards": 1779
+ },
+ {
+  "sweep": 4,
+  "date": "2026-11-25",
+  "time": "01:42",
+  "startTime": "2026-11-25T01:42:07.023Z",
+  "endTime": "2026-11-25T01:43:17.405Z",
+  "durationMin": 1,
+  "boardsChecked": 605,
+  "boardsOk": 569,
+  "newJobs": 34,
+  "totalJobs": 4227,
+  "fitJobs": 83,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 8,
+  "date": "2026-11-25",
+  "time": "03:42",
+  "startTime": "2026-11-25T03:42:21.254Z",
+  "endTime": "2026-11-25T03:43:29.185Z",
+  "durationMin": 1,
+  "boardsChecked": 627,
+  "boardsOk": 592,
+  "newJobs": 19,
+  "totalJobs": 4330,
+  "fitJobs": 95,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 12,
+  "date": "2026-11-25",
+  "time": "05:41",
+  "startTime": "2026-11-25T05:41:57.764Z",
+  "endTime": "2026-11-25T05:42:52.847Z",
+  "durationMin": 1,
+  "boardsChecked": 478,
+  "boardsOk": 444,
+  "newJobs": 0,
+  "totalJobs": 4331,
+  "fitJobs": 94,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ },
+ {
+  "sweep": 16,
+  "date": "2026-11-25",
+  "time": "07:37",
+  "startTime": "2026-11-25T07:37:57.146Z",
+  "endTime": "2026-11-25T07:38:55.713Z",
+  "durationMin": 1,
+  "boardsChecked": 476,
+  "boardsOk": 442,
+  "newJobs": 2,
+  "totalJobs": 4325,
+  "fitJobs": 94,
+  "universityJobs": 0,
+  "nonProfitJobs": 0
+ }
+]
