@@ -45,11 +45,6 @@
   "token": "airwallex"
  },
  {
-  "company": "Allica Bank",
-  "type": "ashby",
-  "token": "allica-bank"
- },
- {
   "company": "Alohi SA",
   "type": "ashby",
   "token": "alohi"
@@ -288,11 +283,6 @@
   "company": "cursor",
   "type": "ashby",
   "token": "cursor"
- },
- {
-  "company": "Datatonic",
-  "type": "ashby",
-  "token": "datatonic"
  },
  {
   "company": "DatologyAI",
@@ -1995,11 +1985,6 @@
   "token": "energyhub"
  },
  {
-  "company": "Engine",
-  "type": "greenhouse",
-  "token": "engine"
- },
- {
   "company": "Enigma",
   "type": "greenhouse",
   "token": "enigmaio"
@@ -2553,11 +2538,6 @@
   "company": "Mixpanel",
   "type": "greenhouse",
   "token": "mixpanel"
- },
- {
-  "company": "momentenergy",
-  "type": "greenhouse",
-  "token": "momentenergy"
  },
  {
   "company": "mongodb",
@@ -3565,11 +3545,6 @@
   "token": "glsllc"
  },
  {
-  "company": "Gopuff",
-  "type": "lever",
-  "token": "gopuff"
- },
- {
   "company": "Gridware",
   "type": "lever",
   "token": "gridware"
@@ -3678,11 +3653,6 @@
   "company": "Metasite Business Solutions",
   "type": "lever",
   "token": "metasite"
- },
- {
-  "company": "Momenti, Inc.",
-  "type": "lever",
-  "token": "momenti-inc"
  },
  {
   "company": "Muttdata",
@@ -5155,11 +5125,6 @@
   "token": "edzagroup"
  },
  {
-  "company": "EER Poland",
-  "type": "teamtailor",
-  "token": "eerpoland"
- },
- {
   "company": "Embark Studios",
   "type": "teamtailor",
   "token": "embarkstudios"
@@ -6273,11 +6238,6 @@
   "company": "Landskill",
   "type": "jazzhr",
   "token": "therosdigitalportugal"
- },
- {
-  "company": "Trusted Media Brands",
-  "type": "jazzhr",
-  "token": "tmb"
  },
  {
   "company": "TotalSoft",
