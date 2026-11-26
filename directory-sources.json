@@ -1495,11 +1495,6 @@
   "token": "array"
  },
  {
-  "company": "Artefact",
-  "type": "greenhouse",
-  "token": "artefact"
- },
- {
   "company": "Ascend",
   "type": "greenhouse",
   "token": "ascend21"
@@ -1758,11 +1753,6 @@
   "company": "Coast",
   "type": "greenhouse",
   "token": "coast"
- },
- {
-  "company": "Cobre",
-  "type": "greenhouse",
-  "token": "cobre"
  },
  {
   "company": "Code for America",
@@ -2673,11 +2663,6 @@
   "company": "PerfectServe",
   "type": "greenhouse",
   "token": "perfectserve"
- },
- {
-  "company": "Perion Network Ltd",
-  "type": "greenhouse",
-  "token": "perionnetworkltd"
  },
  {
   "company": "perpay",

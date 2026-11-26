@@ -2998,5 +2998,65 @@
   "company": "Ethena",
   "type": "lever",
   "token": "ethena"
+ },
+ {
+  "company": "Kit",
+  "type": "ashby",
+  "token": "kit"
+ },
+ {
+  "company": "Motive",
+  "type": "greenhouse",
+  "token": "gomotive"
+ },
+ {
+  "company": "Stuut",
+  "type": "ashby",
+  "token": "stuut-ai"
+ },
+ {
+  "company": "Reflow",
+  "type": "ashby",
+  "token": "reflow"
+ },
+ {
+  "company": "Protege",
+  "type": "ashby",
+  "token": "protege"
+ },
+ {
+  "company": "Rackner",
+  "type": "greenhouse",
+  "token": "rackner"
+ },
+ {
+  "company": "Govini",
+  "type": "greenhouse",
+  "token": "air"
+ },
+ {
+  "company": "TribalScale",
+  "type": "greenhouse",
+  "token": "tribalscale"
+ },
+ {
+  "company": "Overtone",
+  "type": "ashby",
+  "token": "overtone"
+ },
+ {
+  "company": "Clio",
+  "type": "workday",
+  "token": "clio.wd3.myworkdayjobs.com/clio/cliocareersite"
+ },
+ {
+  "company": "Maxar",
+  "type": "workday",
+  "token": "maxar.wd1.myworkdayjobs.com/maxar/vantor"
+ },
+ {
+  "company": "Tokyo Electron",
+  "type": "workday",
+  "token": "tel.wd3.myworkdayjobs.com/tel/tel-careers"
  }
 ]
