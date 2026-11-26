@@ -1495,11 +1495,6 @@
   "token": "archer56"
  },
  {
-  "company": "Arco Educa\u00e7\u00e3o",
-  "type": "greenhouse",
-  "token": "arcoeducacao"
- },
- {
   "company": "Arize AI",
   "type": "greenhouse",
   "token": "arizeai"
@@ -2615,11 +2610,6 @@
   "token": "northbeam"
  },
  {
-  "company": "noxgroup",
-  "type": "greenhouse",
-  "token": "noxgroup"
- },
- {
   "company": "nscaleoperationsukltd",
   "type": "greenhouse",
   "token": "nscaleoperationsukltd"
@@ -2818,11 +2808,6 @@
   "company": "redventures",
   "type": "greenhouse",
   "token": "redventures"
- },
- {
-  "company": "Referrals Only",
-  "type": "greenhouse",
-  "token": "thoughtworksreferral"
  },
  {
   "company": "Rewards Network",
@@ -3253,11 +3238,6 @@
   "company": "waymo",
   "type": "greenhouse",
   "token": "waymo"
- },
- {
-  "company": "Weight Watchers",
-  "type": "greenhouse",
-  "token": "ww"
  },
  {
   "company": "westmonroe4",
@@ -3788,11 +3768,6 @@
   "company": "Tahoe Therapeutics",
   "type": "lever",
   "token": "tahoebio-ai"
- },
- {
-  "company": "Tala",
-  "type": "lever",
-  "token": "tala"
  },
  {
   "company": "Tendo",
@@ -4393,11 +4368,6 @@
   "company": "Euromonitor",
   "type": "workable",
   "token": "euromonitor"
- },
- {
-  "company": "Egon Zehnder",
-  "type": "workable",
-  "token": "ezrecruiting"
  },
  {
   "company": "Facet",
@@ -5635,11 +5605,6 @@
   "token": "ebiquity"
  },
  {
-  "company": "Gaming Innovation Group",
-  "type": "pinpoint",
-  "token": "gig"
- },
- {
   "company": "inDrive",
   "type": "pinpoint",
   "token": "indrive"
@@ -5860,11 +5825,6 @@
   "token": "advertimavisionag"
  },
  {
-  "company": "aerotech",
-  "type": "jazzhr",
-  "token": "aerotech"
- },
- {
   "company": "aliz",
   "type": "jazzhr",
   "token": "aliz"
@@ -6063,11 +6023,6 @@
   "company": "Infinitive Inc",
   "type": "jazzhr",
   "token": "infinitive"
- },
- {
-  "company": "infovisa",
-  "type": "jazzhr",
-  "token": "infovisa"
  },
  {
   "company": "Inside Out Hiring",
@@ -7295,11 +7250,6 @@
   "token": "dymatrix"
  },
  {
-  "company": "maibornwolff",
-  "type": "personio",
-  "token": "maibornwolff"
- },
- {
   "company": "ottonova",
   "type": "personio",
   "token": "ottonova"
@@ -7528,11 +7478,5 @@
   "company": "Public.com",
   "token": "public",
   "type": "greenhouse"
- },
- {
-  "capExempt": true,
-  "company": "Princeton University",
-  "token": "hub-princeton.icims.com",
-  "type": "icims"
  }
 ]
