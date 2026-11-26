@@ -395,11 +395,6 @@
   "token": "epianeuro"
  },
  {
-  "company": "Everstar",
-  "type": "ashby",
-  "token": "everstar"
- },
- {
   "company": "Fabrion",
   "type": "ashby",
   "token": "fabrion"
@@ -528,11 +523,6 @@
   "company": "HockeyStack",
   "type": "ashby",
   "token": "hockeystack"
- },
- {
-  "company": "HRS",
-  "type": "ashby",
-  "token": "hrs"
  },
  {
   "company": "Hyperbolic Labs",
@@ -693,11 +683,6 @@
   "company": "Marketing Architects",
   "type": "ashby",
   "token": "markarch"
- },
- {
-  "company": "Megazone Cloud US",
-  "type": "ashby",
-  "token": "megazone"
  },
  {
   "company": "Mento",
@@ -2608,11 +2593,6 @@
   "company": "Northbeam",
   "type": "greenhouse",
   "token": "northbeam"
- },
- {
-  "company": "nscaleoperationsukltd",
-  "type": "greenhouse",
-  "token": "nscaleoperationsukltd"
  },
  {
   "company": "nuro",
@@ -4748,11 +4728,6 @@
   "company": "cbs Corporate Business Solutions GmbH",
   "type": "recruitee",
   "token": "cbsconsulting"
- },
- {
-  "company": "celebrate company GmbH",
-  "type": "recruitee",
-  "token": "celebratecompany"
  },
  {
   "company": "ClanX",

@@ -2993,5 +2993,10 @@
   "company": "Cigna",
   "type": "workday",
   "token": "cigna.wd5.myworkdayjobs.com/cigna/cignacareers"
+ },
+ {
+  "company": "Ethena",
+  "type": "lever",
+  "token": "ethena"
  }
 ]
