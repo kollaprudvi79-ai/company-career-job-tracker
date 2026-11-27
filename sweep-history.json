@@ -1,1 +1,85 @@
-[{"sweep": "2026-11-27T22:33:43.857573+00:00", "newJobs": 32, "universityJobs": 15, "nonprofitJobs": 191, "totalJobs": 6613, "boards": 1745}]
+[
+  {
+    "sweep": 32,
+    "date": "2026-11-27",
+    "time": "15:43",
+    "startTime": "2026-11-27T15:43:08.184Z",
+    "endTime": "2026-11-27T15:44:27.587Z",
+    "durationMin": 1,
+    "boardsChecked": 605,
+    "boardsOk": 567,
+    "newJobs": 0,
+    "totalJobs": 4252,
+    "fitJobs": 81,
+    "universityJobs": 0,
+    "nonProfitJobs": 0
+  },
+  {
+    "sweep": 36,
+    "date": "2026-11-27",
+    "time": "17:42",
+    "startTime": "2026-11-27T17:42:31.626Z",
+    "endTime": "2026-11-27T17:43:30.171Z",
+    "durationMin": 1,
+    "boardsChecked": 454,
+    "boardsOk": 419,
+    "newJobs": 0,
+    "totalJobs": 4251,
+    "fitJobs": 80,
+    "universityJobs": 0,
+    "nonProfitJobs": 0
+  },
+  {
+    "sweep": 40,
+    "date": "2026-11-27",
+    "time": "19:42",
+    "startTime": "2026-11-27T19:42:27.449Z",
+    "endTime": "2026-11-27T19:43:37.857Z",
+    "durationMin": 1,
+    "boardsChecked": 598,
+    "boardsOk": 563,
+    "newJobs": 3,
+    "totalJobs": 4253,
+    "fitJobs": 84,
+    "universityJobs": 0,
+    "nonProfitJobs": 0
+  },
+  {
+    "sweep": 44,
+    "date": "2026-11-27",
+    "time": "21:42",
+    "startTime": "2026-11-27T21:42:29.131Z",
+    "endTime": "2026-11-27T21:43:50.276Z",
+    "durationMin": 1,
+    "boardsChecked": 598,
+    "boardsOk": 560,
+    "newJobs": 1,
+    "totalJobs": 4252,
+    "fitJobs": 81,
+    "universityJobs": 0,
+    "nonProfitJobs": 0
+  },
+  {
+    "sweep": "2026-11-27T22:33:43.857573+00:00",
+    "newJobs": 32,
+    "universityJobs": 15,
+    "nonprofitJobs": 191,
+    "totalJobs": 6613,
+    "boards": 1745
+  },
+  {
+    "sweep": 48,
+    "date": "2026-11-27",
+    "time": "23:37",
+    "startTime": "2026-11-27T23:37:45.861Z",
+    "endTime": "2026-11-27T23:38:53.787Z",
+    "durationMin": 1,
+    "boardsChecked": 585,
+    "boardsOk": 551,
+    "newJobs": 1,
+    "totalJobs": 4253,
+    "fitJobs": 81,
+    "universityJobs": 0,
+    "nonProfitJobs": 0
+  }
+]
