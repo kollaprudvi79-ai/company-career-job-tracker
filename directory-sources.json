@@ -1625,11 +1625,6 @@
   "token": "stackblitz"
  },
  {
-  "company": "Bondora",
-  "type": "greenhouse",
-  "token": "bondora"
- },
- {
   "company": "Boulevard",
   "type": "greenhouse",
   "token": "boulevard"
@@ -4790,11 +4785,6 @@
   "token": "justrussel"
  },
  {
-  "company": "CARE EXPERT B.V.",
-  "type": "recruitee",
-  "token": "careexpert"
- },
- {
   "company": "cigus GmbH",
   "type": "recruitee",
   "token": "cigusgmbh"
@@ -5070,11 +5060,6 @@
   "token": "etraveligroup"
  },
  {
-  "company": "Carasent",
-  "type": "teamtailor",
-  "token": "evimeria-1607938027"
- },
- {
   "company": "Ocab AS",
   "type": "teamtailor",
   "token": "fbs"
@@ -5240,11 +5225,6 @@
   "token": "securitas"
  },
  {
-  "company": "Shieldpay",
-  "type": "teamtailor",
-  "token": "shieldpay"
- },
- {
   "company": "SOFTSWISS",
   "type": "teamtailor",
   "token": "softswiss"
@@ -5253,11 +5233,6 @@
   "company": "Sparteo",
   "type": "teamtailor",
   "token": "sparteo"
- },
- {
-  "company": "Storm8",
-  "type": "teamtailor",
-  "token": "storm8"
  },
  {
   "company": "Superloop",
@@ -6610,11 +6585,6 @@
   "token": "careers-collaborationbetterstheworldvi.icims.com"
  },
  {
-  "company": "Urban Outfitters, Inc.",
-  "type": "icims",
-  "token": "homeoffice-eu-urbn.icims.com"
- },
- {
   "company": "Cotiviti",
   "type": "icims",
   "token": "careers-cotiviti.icims.com"
@@ -7063,11 +7033,6 @@
   "company": "Nadara",
   "type": "workday",
   "token": "nadara.wd3.myworkdayjobs.com/nadara/external"
- },
- {
-  "company": "Nkg",
-  "type": "workday",
-  "token": "nkg.wd103.myworkdayjobs.com/nkg/nkg-linkedin"
  },
  {
   "company": "Phcgroup",
